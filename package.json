@@ -1,0 +1,36 @@
+{
+  "name": "pmc",
+  "version": "1.0.0",
+  "description": "Polished Manuscripts Child Theme",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp prod --prod",
+    "bundle": "gulp bundle  --prod"
+  },
+  "requires": true,
+  "author": "klewis",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/register": "latest",
+    "babel-loader": "latest",
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-if": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-zip": "latest",
+    "jquery": "latest",
+    "vinyl-named": "latest",
+    "webpack-stream": "latest",
+    "yargs": "latest"
+  },
+  "dependencies": {
+    "gulp-cli": "latest"
+  }
+}

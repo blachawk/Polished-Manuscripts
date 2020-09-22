@@ -1,0 +1,7 @@
+node_modules
+dist
+src/js/parts/test-part.js
+src/js/test_bundle.js
+views
+views/**/*
+
