@@ -1,12 +1,9 @@
 <?php
 
 
-
-
-
-//_tn - CONNECT TO OUR CUSTOM STYLE SHEETS AND SCRIPTS FOR THIS CHILD THEME
+//_pm - CONNECT TO OUR CUSTOM STYLE SHEETS AND SCRIPTS FOR THIS CHILD THEME
 /*
-function _tn_child_assets()
+function _ac_child_assets()
 {
     //CSS
     wp_enqueue_style(
