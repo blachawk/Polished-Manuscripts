@@ -16,23 +16,23 @@ import info from './package.json';
 //create our workspace directory paths
 const paths = {
   styles: {
-    src: ['src/sass/uan_bundle.scss'],   //src/sass/test_bundle.scss
+    src: ['src/scss/pm_bundle.scss'],   //src/sass/test_bundle.scss
     dest: 'dist/css'
   },
   images: {
-    src: 'src/images/**/*.{jpg,jpeg,png,ico}',
+    src: 'src/images/**/*.{jpg,jpeg,png,ico,svg,gif}',
     dest: 'dist/images'
   },
   scripts: {
-    src: ['src/js/test_bundle.js'],
+    src: ['src/scripts/pm_bundle.js','src/scripts/pm_bundle_admin.js'],
     dest: 'dist/js'
   },
   other: {
-    src: ['index.htm', 'projects/**/*','src/**/*','!src/{images,js,sass,views}','!src/{images,js,sass,views}/**/*'],
+    src: ['src/**/*','!src/{images,scripts,scss,views}','!src/{images,scripts,scss,views}/**/*'],
     dest: 'dist/'
   },
   package: {
-    src: ['**/*', '!.vscode','!node_modules{,/**}','!packaged{,/**}','!src{,/**}','!projects{,/**}','!dist/index.htm','!dist/login{,/**}','!dist/others{,/**}','!dist/uan{,/**}','!.babelrc','!.gitignore','!gulpfile.babel.js','!package.json','!package-lock.json'],
+    src: ['**/*', '!.vscode','!node_modules{,/**}','!packaged{,/**}','!src{,/**}','!dist/login{,/**}','!dist/others{,/**}','!dist/uan{,/**}','!.babelrc','!.gitignore','!gulpfile.babel.js','!package.json','!package-lock.json'],
     dest: 'packaged'
   }
 };
@@ -43,7 +43,7 @@ export const clean = () => del(['dist']);
 //a constant to determine if we want to push dev or prod assets | used below
 const PRODUCTION = yargs.argv.prod;
 
-//manage sass
+//manage scss
 export const styles = () => {
   return gulp.src(paths.styles.src)
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
@@ -109,7 +109,8 @@ export const other = () => {
 const bserver = browserSync.create(); 
 export const serve = (done) =>  {
   bserver.init({
-    proxy: "local.ffa.ui"
+    port: 8081,
+    proxy: "http://local.pm"
   });
   done();
 }
@@ -124,15 +125,15 @@ export const reload = (done) => {
 export const watch = () => {
   gulp.watch('src/sass/**/*.scss', styles);
   gulp.watch('src/js/**/*.js', gulp.series(scripts,reload));
+  gulp.watch('**/*.php',reload);
   gulp.watch(paths.images.src, gulp.series(images,reload));
   gulp.watch(paths.other.src, gulp.series(other,reload));
-  gulp.watch(paths.other.src, gulp.series(other,reload)); 
 }
 
 //compress project to zip package (optional)
 export const compress = () => {
   return gulp.src(paths.package.src)
-  .pipe(greplace('_mtheme', info.name))
+  .pipe(greplace('_ac', info.name))
   .pipe(gzip(`${info.name}.zip`))
   .pipe(gulp.dest(paths.package.dest));
 }

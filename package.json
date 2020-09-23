@@ -30,7 +30,5 @@
     "webpack-stream": "latest",
     "yargs": "latest"
   },
-  "dependencies": {
-    "gulp-cli": "latest"
-  }
+  "dependencies": {}
 }
