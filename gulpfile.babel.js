@@ -25,7 +25,7 @@ const paths = {
   },
   scripts: {
     src: ['src/scripts/pm_bundle.js','src/scripts/pm_bundle_admin.js'],
-    dest: 'dist/js'
+    dest: 'dist/scripts'
   },
   other: {
     src: ['src/**/*','!src/{images,scripts,scss,views}','!src/{images,scripts,scss,views}/**/*'],
@@ -110,7 +110,7 @@ const bserver = browserSync.create();
 export const serve = (done) =>  {
   bserver.init({
     port: 8081,
-    proxy: "http://local.pm"
+    proxy: "http://local.pm/"
   });
   done();
 }

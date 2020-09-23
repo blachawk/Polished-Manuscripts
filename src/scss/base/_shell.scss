@@ -1,0 +1,21 @@
+//CREATE CUSTOM VARS
+//HEADER
+//FOOTER
+//MAIN CONTENT AREA
+//SIDEBARS
+//WIDGETS
+//MEDIA QUERIES
+
+/*
+DETAILED BRANDING STEPS:
+- install astra hooks via customizer - fallback theme hook calling
+- customizer background color styling - fallback scss
+- customizer typography - fallback add custom google fonts better match the logo, via add_action()
+- customizer footer colors - fallback scss
+- test and confirm that our chosen scss colors and shapes for elements, are being applied 
+- create custom post types and pages to show different scss options
+- if needed register a new navigation menu via code and then in the UI
+- if needed modify the header.php to represent the placement of new navigation. 
+- if needed add scroll-top-btn to header.php 
+- if needed reshape the footer shell via scss
+*/
