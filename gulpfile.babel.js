@@ -27,6 +27,10 @@ const paths = {
     src: ['src/scripts/pm_bundle.js','src/scripts/pm_bundle_admin.js'],
     dest: 'dist/scripts'
   },
+  views: {
+    src: ['src/views/**/*'],
+    dest: 'dist/views'
+  },
   other: {
     src: ['src/**/*','!src/{images,scripts,scss,views}','!src/{images,scripts,scss,views}/**/*'],
     dest: 'dist/'
@@ -105,12 +109,19 @@ export const other = () => {
   .pipe(gulp.dest(paths.other.dest));
 }
 
+//manage views (optional)
+export const views = () => {
+  return gulp.src(paths.views.src)
+  .pipe(gulp.dest(paths.views.dest));
+}
+
 //create the browsersync server & initialize locally with our workspace location
 const bserver = browserSync.create(); 
 export const serve = (done) =>  {
   bserver.init({
     port: 8081,
-    proxy: "http://local.pm/"
+    //proxy: "http://local.pm/"
+    proxy: "http://local.pmv/views/"
   });
   done();
 }
@@ -128,6 +139,7 @@ export const watch = () => {
   gulp.watch('**/*.php',reload);
   gulp.watch(paths.images.src, gulp.series(images,reload));
   gulp.watch(paths.other.src, gulp.series(other,reload));
+  gulp.watch(paths.views.src, gulp.series(views,reload));
 }
 
 //compress project to zip package (optional)
@@ -138,7 +150,7 @@ export const compress = () => {
   .pipe(gulp.dest(paths.package.dest));
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, other), serve, watch);
-export const prod = gulp.series(clean, gulp.parallel(styles, scripts, images, other));
+export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, other, views), serve, watch);
+export const prod = gulp.series(clean, gulp.parallel(styles, scripts, images));
 export const bundle = gulp.series(prod,compress);
 export default dev;

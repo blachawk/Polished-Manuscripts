@@ -8,6 +8,24 @@
 
 /*
 DETAILED BRANDING STEPS:
+
+- How to use and customize the Elementor default typography settings:
+https://docs.elementor.com/article/663-global-fonts
+
+- A more direct way for UI users to modify fonts and colors:
+* Log into the wp-admin area
+* Go to the page that needs font tweaking
+* Edit in Elementor mode
+
+//customizing the default settings
+* On the top left of page click hamburger icon -> site settings -> Fonts & Colors
+
+//using the default settings
+* Select the section that needs attention
+* From the left side panel, select Style -> Typography -> click the world icon -> select any of the default 4 options.
+
+...beyond that, any customizations can happen here!
+
 - customizer background color styling - fallback scss
 - customizer typography - fallback add custom google fonts better match the logo, via add_action()
 - customizer footer colors - fallback scss
@@ -20,5 +38,5 @@ DETAILED BRANDING STEPS:
 */
 
 body {
-    border:solid 2em saddlebrown;
+    border:solid 1em saddlebrown;
 }
