@@ -1,3 +1,41 @@
-body {
-    border:solid 1em pink;
-}
+//_ac-DOCK ALL CUSTOM STYLE SHEET FILES**
+
+//base
+@import './base/globalVars';
+@import './base/shell';
+@import './base/typo';
+@import './base/flexbox';
+
+//specific functionality
+// @import './func/menus';
+// @import './func/comments';
+// @import './func/pagination';
+// @import './func/sidebar';
+// @import './func/thumbnails';
+// @import './func/widgets';
+
+//templates
+@import './templates/404';
+@import './templates/pages';
+@import './templates/customposttype';
+// @import './templates/archive';
+// @import './templates/attachment';
+// @import './templates/author';
+// @import './templates/search';
+// @import './templates/single';
+// @import './templates/single-aside';
+// @import './templates/single-gallery';
+// @import './templates/single-image';
+// @import './templates/single-link';
+// @import './templates/single-quote';
+// @import './templates/single-video';
+// @import './templates/single';
+// @import './templates/tag';
+// @import './templates/taxonomy';
+// @import './templates/term';
+
+//plugins
+@import './plugins/contactform7';
+
+//trumps today
+@import './trumps/ie11';

@@ -1,0 +1,10 @@
+//_ac - IE11 NEEDS
+//add js classes where needed for IE11, then style classes here
+
+@media all and (-ms-high-contrast: none) and (max-width: 2000px),
+all and (-ms-high-contrast: active) and (max-width: 2000px) {
+    body {
+        //test
+        border: solid 1em red;
+    }
+}

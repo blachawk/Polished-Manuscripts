@@ -123,7 +123,7 @@ export const reload = (done) => {
 
 //watch everything
 export const watch = () => {
-  gulp.watch('src/sass/**/*.scss', styles);
+  gulp.watch('src/scss/**/*.scss', styles);
   gulp.watch('src/js/**/*.js', gulp.series(scripts,reload));
   gulp.watch('**/*.php',reload);
   gulp.watch(paths.images.src, gulp.series(images,reload));
