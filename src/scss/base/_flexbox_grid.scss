@@ -1,0 +1,41 @@
+//A Simple Flex Box Grid Setup - Modified 4/9/2020
+main,
+header,
+footer {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+
+            &.row-right {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: end;
+            }
+
+            &.items-center {
+                align-items: center;
+            }
+        }
+    }
+}
+
+header {
+    .row {
+        .col {
+            flex:1 1 auto;
+        }
+    }
+}

@@ -1,1 +1,31 @@
-//TYPOGRAPHY FONTS
+//TYPOGRAPHY
+
+html {
+    &.view01 {
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+    }
+
+    &.view02 {
+        body {
+            font-family: 'Peddana', sans-serif;
+        }
+    }
+
+    &.view03 {
+        body {
+            font-family: 'El Messiri', sans-serif;
+        }
+    }
+    &.view04 {
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+    }
+    &.view05 {
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+    }
+}
