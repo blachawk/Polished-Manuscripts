@@ -25,9 +25,9 @@
 }
 
 .ai-center {
-  align-items: center; 
-  //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
-  //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
+    align-items: center;
+    //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
+    //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
 h1,
@@ -62,6 +62,12 @@ p {
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+.shadow-fall {
+    -webkit-box-shadow: inset 0px 117px 60px -119px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 117px 60px -119px rgba(0,0,0,1);
+    box-shadow: inset 0px 117px 60px -119px rgba(0,0,0,1);
 }
 
 .txt-white {
@@ -109,6 +115,10 @@ p {
     padding: 0 2em;
 }
 
+.p-x-lg {
+    padding: 0 3em;
+}
+
 .p-y-sm {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -117,6 +127,10 @@ p {
 .p-y-md {
     padding-top: 2em;
     padding-bottom: 2em;
+}
+
+.p-btm-lg {
+    padding-bottom:3em;
 }
 
 .m-x-sm {
@@ -136,6 +150,14 @@ p {
 
 .m-y-md {
     margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.m-btm-sm {
+    margin-bottom: 1em;
+}
+
+.m-btm-md {
     margin-bottom: 2em;
 }
 
@@ -182,18 +204,31 @@ hr {
         display: block;
         margin: 0 auto;
     }
+}
 
-    &.mw-100 {
-        width: 100%;
-    }
-    //IE11 does not like using max-width:100% in flexbox.
-    &.mw-200 {
-        width:200px;
-    }
+.wmax-100 {
+    max-width: 100%;
+}
 
-    &.wmax-740 {
-        max-width: 46.42em;
-    }
+//IE11 does not like using max-width:100% in flexbox.
+.wmax-200 {
+    max-width: 200px;
+}
+
+.wmax-300 {
+    max-width: 300px;
+}
+
+.wmax-400 {
+    max-width: 400px;
+}
+
+.wmax-500 {
+    max-width: 500px;
+}
+
+.wmax-800 {
+    max-width: 800px;
 }
 
 .mx-size-sm {
@@ -201,16 +236,17 @@ hr {
 }
 
 h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: normal;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 3rem;
     color: #333;
 }
 
 h4 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.250rem;
-    font-weight: normal;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 500;
     color: #333;
 }
 
@@ -279,4 +315,6 @@ ol {
     background-color: lawngreen;
 }
 
-  
+.bg-c-penguin {
+    background-color: #f4f3ec;
+}

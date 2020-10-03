@@ -120,15 +120,20 @@ html {
 
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                 animation: animate-background linear 1s 1 normal forwards running;
-                animation-timing-function: ease-out;
+                //animation-timing-function: ease-out;
+                //transition-timing-function: cubic-bezier(1, 1, 1.58, 20);
+                animation-timing-function: cubic-bezier(1,.02,.66,.82);
+                
 
                 @keyframes animate-background {
                     from {
                         background-position: left;
+                        opacity:0;
                     }
 
                     to {
                         background-position: center;
+                        opacity:1;
                     }
                 }
             }
