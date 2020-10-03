@@ -1,31 +1,25 @@
-//CUSTOMIZE WORDPRESS NAVIGATION MENUS
-
-//hamburger menu 
+//CUSTOMIZE STATIC NAVIGATION MENUS
 
 html {
     body {
         .mhamburger {
-
+            position: fixed;
+            top: 0.5em;
+            right: 0.25em;
+            z-index: 9999;
+            padding: 0.5rem 1rem;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: space-between;
 
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 0.5rem 1rem;
-
-            button {
-
+            .top-menu-btn {
+                padding: 0.25rem 0.75rem;
                 color: rgba(255, 255, 255, 0.5);
                 background-color: #d81e06;
                 border-color: rgba(255, 255, 255, 0.1);
                 opacity: 0.9;
-
                 font-size: 1.25rem;
-                line-height: 1;
-                padding: 0.25rem 0.75rem;
                 border: 1px solid transparent;
                 border-radius: 0.5rem;
                 transition: 0.3s;
@@ -91,8 +85,8 @@ html {
                         box-shadow:
                             0 0.4em 0 0 #fff,
                             0 0.8em 0 0 #fff;
-                            transition: all .2s ease-in-out;
-                            transform: translateY(6px) rotate(0deg);
+                        transition: all .2s ease-in-out;
+                        transform: translateY(6px) rotate(0deg);
 
                     }
                 }
@@ -100,17 +94,94 @@ html {
         }
 
         .top-menu {
+
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 3s, opacity 0.5s linear;
+
             position: absolute;
             top: 0px;
             right: 0px;
             bottom: 0px;
             left: 0px;
-            background-color: #333;
             padding: 1em;
             margin: 0;
 
-            p {
-                color: #fff;
+            border: solid 0.5em #d81e06;
+            -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
+            transition: visibility 0s, opacity 0.3s linear;
+
+            &.animate {
+                background: #fff url(../../../dist/images/pm_logo_294x178.png) 0px 0px no-repeat;
+                background-position: center;
+
+                //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+                animation: animate-background linear 1s 1 normal forwards running;
+                animation-timing-function: ease-out;
+
+                @keyframes animate-background {
+                    from {
+                        background-position: left;
+                    }
+
+                    to {
+                        background-position: center;
+                    }
+                }
+            }
+
+
+            &.fade {
+                visibility: visible;
+                opacity: 1;
+
+                position: fixed;
+                z-index: 9998;
+            }
+
+            .top-menu-nav {
+                list-style: none;
+                text-align: right;
+                line-height: 1;
+                width: 100%;
+                position: relative;
+                right: 5em;
+
+                a {
+                    color: #d81e06;
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    font-weight: 400;
+                    transition: 0.3s;
+                    display: inline-block;
+
+                    &::after {
+                        content: '';
+                        width: 0;
+                        height: 0.1em;
+                        display: block;
+                        background: darkslategray;
+                        transition: 300ms;
+                        text-align: right;
+                        opacity: 0.7;
+                    }
+
+                    &:hover {
+                        color: #901404;
+                        color: darkslategray;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                    &:active {
+                        color: lightcoral;
+                    }
+                }
             }
 
         }

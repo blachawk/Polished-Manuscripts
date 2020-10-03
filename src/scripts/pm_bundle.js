@@ -29,10 +29,10 @@
     for (var i = 0, len = anchors.length; i < len; i++) {
         anchors[i].addEventListener('click', function (e) {
 
-            //ES-DISABLE ALL ANCHORLINKS DURING DEVELOPMENT
+            //DISABLE ALL ANCHORLINKS DURING DEVELOPMENT
             e.preventDefault();
 
-            //ES-TOGGLE SCROLL & FADE ON SPECIFIC CLASS
+            //TOGGLE SCROLL & FADE ON SPECIFIC CLASS
             if (this.classList.contains('scroll-top-btn')) {
 
 
@@ -90,9 +90,11 @@
                 }
             }
 
-            if (this.classList.contains('btn-top-menu')) {
+            //TOGGLE HAMBURGER ICON & NAV MENU ON CLICKS
+            if (this.classList.contains('top-menu-btn')) {
                 this.classList.toggle('clicked');
-                mclick++;
+                document.querySelector('.top-menu').classList.toggle('fade');
+                document.querySelector('.top-menu').classList.toggle('animate');
             }
         });
     }

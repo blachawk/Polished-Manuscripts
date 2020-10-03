@@ -186,6 +186,10 @@ hr {
     &.mw-100 {
         width: 100%;
     }
+    //IE11 does not like using max-width:100% in flexbox.
+    &.mw-200 {
+        width:200px;
+    }
 
     &.wmax-740 {
         max-width: 46.42em;
