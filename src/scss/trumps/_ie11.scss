@@ -3,8 +3,13 @@
 
 @media all and (-ms-high-contrast: none) and (max-width: 2000px),
 all and (-ms-high-contrast: active) and (max-width: 2000px) {
-    body {
-        //test
-        border: solid 1em red;
+    html{
+        body {
+
+            .animate-redbook {
+                background-position: 750px 0;
+            }
+    
+        }
     }
-}
+    }

@@ -1,9 +1,18 @@
 html {
     body {
+
+
+
+        -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
         .animate-redbook {
 
             background: #e9e8e1 url(../../../dist/images/pm_redbooks_1296x400.png) 0px 0px no-repeat;
             background-position: right;
+
+            //FOR IE11 HAVE BOOKS ALREADY ON THE RIGHT SIDE POSITIONED!
 
             //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
             animation: animate-books linear 2s 1 normal forwards running;
@@ -23,7 +32,7 @@ html {
         }
 
         .logo-sm {
-            width:8%;
+            width:50px;
         }
     }
 }
