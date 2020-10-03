@@ -1,1 +1,118 @@
 //CUSTOMIZE WORDPRESS NAVIGATION MENUS
+
+//hamburger menu 
+
+html {
+    body {
+        .mhamburger {
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 0.5rem 1rem;
+
+            button {
+
+                color: rgba(255, 255, 255, 0.5);
+                background-color: #d81e06;
+                border-color: rgba(255, 255, 255, 0.1);
+                opacity: 0.9;
+
+                font-size: 1.25rem;
+                line-height: 1;
+                padding: 0.25rem 0.75rem;
+                border: 1px solid transparent;
+                border-radius: 0.5rem;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: #901404;
+                    text-decoration-color: #901404;
+                }
+
+                &:active {
+                    color: #d81e06;
+                }
+
+                &.clicked {
+                    span {
+
+                        &:before,
+                        &:after {
+                            background-color: #fff;
+                            border-radius: 1px;
+                            content: '';
+                            display: block;
+                            height: 3px;
+                            margin: 7px 0;
+                            transition: all .2s ease-in-out;
+                            top: 0.15em;
+
+                            box-shadow:
+                                0 0 0 0 #fff,
+                                0 0 0 0 #fff;
+                        }
+
+                        &:after {
+                            transform: translateY(6px) rotate(135deg);
+                        }
+
+                        &:before {
+                            transform: translateY(6px) rotate(-135deg);
+                        }
+                    }
+                }
+
+                span {
+                    position: relative;
+                    display: inline-block;
+                    width: 1.5em;
+                    height: 1.75em;
+                    vertical-align: middle;
+                    content: "";
+                    background: no-repeat center center;
+                    background-size: 100% 100%;
+
+                    &:before,
+                    &:after {
+                        background-color: #fff;
+                        content: '';
+                        position: absolute;
+                        top: 0.125em;
+                        left: 0;
+                        right: 0;
+                        width: 1.5em;
+                        height: 0.15em;
+                        box-shadow:
+                            0 0.4em 0 0 #fff,
+                            0 0.8em 0 0 #fff;
+                            transition: all .2s ease-in-out;
+                            transform: translateY(6px) rotate(0deg);
+
+                    }
+                }
+            }
+        }
+
+        .top-menu {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-color: #333;
+            padding: 1em;
+            margin: 0;
+
+            p {
+                color: #fff;
+            }
+
+        }
+    }
+}

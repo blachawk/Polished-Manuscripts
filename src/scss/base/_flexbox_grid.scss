@@ -16,28 +16,23 @@ footer {
         .col {
             display: flex;
             flex-direction: column;
-            flex-basis: 100%;
-            flex: 1;
+            flex:1 1 auto;
 
             &.row-right {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: end;
             }
-
-            &.items-center {
-                align-items: center; 
-                //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!!!
-                //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
-            }
         }
     }
 }
 
-header {
-    .row {
-        .col {
-            flex:1 1 auto;
-        }
-    }
-}
+
+//almost sure we can get rid of this
+// header {
+//     .row {
+//         .col {
+//             flex:1 1 auto;
+//         }
+//     }
+// }

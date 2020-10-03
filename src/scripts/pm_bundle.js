@@ -24,7 +24,8 @@
 
 (function pmevents() {
     //ES-SINGLE EVENT HANDLER FOR MULT PURPOSE USE
-    var anchors = document.getElementsByTagName('a');
+    var anchors = document.querySelectorAll('a, button');
+    var mclick = 0;
     for (var i = 0, len = anchors.length; i < len; i++) {
         anchors[i].addEventListener('click', function (e) {
 
@@ -88,6 +89,11 @@
                     return t * t * t + 1;
                 }
             }
+
+            if (this.classList.contains('btn-top-menu')) {
+                this.classList.toggle('clicked');
+                mclick++;
+            }
         });
     }
 
@@ -105,4 +111,8 @@
 
         }
     });
+})();
+
+(function phamburger() {
+
 })();

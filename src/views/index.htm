@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="_ac-child-stylesheet-css" href="/../dist/css/pm_bundle.css" type="text/css" media="all">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+        <link rel="shortcut icon" href="/../dist/other/favicon-16x16.png">
     <title>View 01 | Polished Manuscripts</title>
 </head>
 
@@ -42,6 +45,9 @@
         IE11 issues to pay attention to
         https://stackoverflow.com/a/30604836/957186
 
+        Centering with Flex
+        https://coryrylan.com/blog/how-to-center-in-css-with-flexbox
+        
     -->
 
     <div id="front-page">
@@ -98,21 +104,42 @@
             background-color: #666;
     
     -->
+
+        <!--floating hamburger menu icon | toggle btn-top-menu to display menu-->
+        <nav class="mhamburger">
+            <button class="btn-top-menu" type="button">
+                <span></span>
+            </button>
+        </nav>
+
         <header>
-            <div class="row top">
-                <div class="col items-center border">
-                    <a href="#"><img class="img flex" src="https://plchldr.co/i/200x200" alt="plchldr.co"></a>
+            <div class="row jc-center border-btm">
+                <!--append a class on row to justify content center, if we want to center the logo-->
+                <div class="col mx-size-sm">
+                    <!--append a class on col, to have max-width:18%; margin:0 auto;  -->
+                    <a class="mlink" href="#"><img class="mimg mw-100"
+                            src="/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png" alt="plchldr.co"></a>
                 </div>
             </div>
         </header>
 
         <main class="m-y-md">
 
+            <!--full window menu when hamberger is clicked-->
+            <section class="top-menu d-none">
+                <div class="row">
+                    <div class="col">
+                        <p>Custom Menu items</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="row">
                 <div class="col wmin-300 p-x-md">
                     <h3>Custom main title</h3>
                     <hr class="sm">
-                    <p><img class="img flex" src="https://plchldr.co/i/500x250" alt="plchldr.co"></p>
+                    <p><img class="mimg mw-100" src="/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png" alt="">
+                    </p>
                     <p>Custom main content</p>
                     <p>Custom main content</p>
                     <h4>Sub Title</h4>
@@ -188,6 +215,7 @@
             </section>
 
         </main>
+
         <footer>
             <div class="row">
                 <div class="col items-center">
