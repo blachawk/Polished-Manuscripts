@@ -1,5 +1,4 @@
-//_ac - IE11 NEEDS
-//add js classes where needed for IE11, then style classes here
+//_ac - IE11 SENSITIVE NEEDS
 
 @media all and (-ms-high-contrast: none) and (max-width: 2000px),
 all and (-ms-high-contrast: active) and (max-width: 2000px) {
@@ -7,6 +6,15 @@ all and (-ms-high-contrast: active) and (max-width: 2000px) {
         body {
             .animate-redbook {
                 background-position: 750px 0;
+            }
+            .wmax-900 {
+                max-width:996px;
+            }
+
+            .author-list {
+                ul {
+                    max-width:300px;
+                }
             }
         }
     }
