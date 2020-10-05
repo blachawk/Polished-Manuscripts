@@ -29,6 +29,10 @@ html {
             }
         }
 
+        .txt-white {
+            color:white;
+        }
+
         .txt-red {
             color: #d81e06;
         }
@@ -77,7 +81,7 @@ html {
 
                     img {
                         max-width: 100%;
-                        filter: brightness(75%);
+                        filter: brightness(85%); //use this for hover animation effects
                     }
 
                     h4 {
@@ -103,11 +107,12 @@ html {
         }
 
         footer {
+            min-height:20em;
             background: repeating-linear-gradient(55deg,
                     #191919,
                     #191919 10px,
-                    #282828 5px,
-                    #282828 11px);
+                    #222 5px,
+                    #222 11px);
         }
     }
 }
