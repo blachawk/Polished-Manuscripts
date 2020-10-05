@@ -1,8 +1,6 @@
 html {
     body {
 
-
-
         -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
         box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
@@ -31,8 +29,39 @@ html {
             }
         }
 
-        .logo-sm {
-            width:50px;
+        .txt-red {
+            color:#d81e06;
         }
+
+        .logo-sm {
+            width: 50px;
+        }
+
+        /* for Firefox */
+        ::-moz-selection {
+            background-color:#df591d;
+            color: #fff;
+        }
+
+        /* for Safari and Chrome */
+        ::selection {
+            background-color:#df591d;
+            color: #fff;
+        }
+
+        .title {
+
+            &.pen {
+                padding:0 0 3em 6em;
+                background:transparent url(../../../dist/images/pm_bg_pen_1916x1902.png) no-repeat;
+                background-size: 100px 90px;
+                background-position: left top;
+            }
+            h4 {
+                margin:0 0 0 0.5em;
+                font-size:1.3em;
+            }
+        }
+       
     }
 }

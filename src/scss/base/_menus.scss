@@ -97,7 +97,7 @@ html {
 
             visibility: hidden;
             opacity: 0;
-            transition: visibility 3s, opacity 0.5s linear;
+            transition: visibility 0.3s, opacity 0.2s linear;
 
             position: absolute;
             top: 0px;
@@ -112,7 +112,7 @@ html {
             -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
             box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 
-            transition: visibility 0s, opacity 0.3s linear;
+            transition: visibility 0s, opacity 0.1s linear;
 
             &.animate {
                 background: #fff url(../../../dist/images/pm_logo_294x178.png) 0px 0px no-repeat;
@@ -121,17 +121,16 @@ html {
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                 animation: animate-background linear 1s 1 normal forwards running;
                 //animation-timing-function: ease-out;
-                //transition-timing-function: cubic-bezier(1, 1, 1.58, 20);
-                animation-timing-function: cubic-bezier(1,.02,.66,.82);
+                animation-timing-function: 1s cubic-bezier(.22,.33,0,1.02);
                 
 
                 @keyframes animate-background {
-                    from {
-                        background-position: left;
+                    0% {
+                        background-position: 0;
                         opacity:0;
                     }
 
-                    to {
+                    100% {
                         background-position: center;
                         opacity:1;
                     }
