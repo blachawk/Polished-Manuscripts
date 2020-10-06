@@ -55,62 +55,8 @@
 
     <div id="front-page">
 
-        <!--
-        original header styling....
-        position:relative;
-        z-index:9999;
-
-        on scroll down, add a class to do the following.  remove that class when we scroll back to the top of the page after a 1 second delay to animate it back to normal.
-        position:fixed;
-        left:0;
-        right:0;
-        margin:auto;
-
-        on scroll down, fade in the drop shadow. when back at the very top, fade out the drop shadow
-
-        when we scroll down just a little bit, use CSS3 to animate the height slightly shorter.
-        when we scroll back up to the very top, add class to animate the height back to normal.
-        in both cases, the logo renames the same height!!
-
-        When hovering over the hamburger icon, fade in the hover color and fade it out
-
-        set main content for books, and "what is the purpose" to have a background color of #696969
-    
-        set next row in main content focused on testimonies, to have a white bg again.
-
-        back to top has the following styling...but look over my store site for finer details
-
-            .back-to-top {
-            position: fixed;
-            -webkit-backface-visibility: visible;
-            -moz-backface-visibility: visible;
-            -o-backface-visibility: visible;
-            -ms-backface-visibility: visible;
-            backface-visibility: visible;
-            bottom: 10px;
-            right: 10px;
-            width: 44px;
-            height: 44px;
-            text-align: center;
-            z-index: 2;
-            -webkit-transform: translateX(100px);
-            -moz-transform: translateX(100px);
-            -ms-transform: translateX(100px);
-            -o-transform: translateX(100px);
-            transform: translateX(100px);
-            -webkit-transition: all .5s;
-            -moz-transition: all .5s;
-            -ms-transition: all .5s;
-            -o-transition: all .5s;
-            transition: all .5s;
-            color: #fff;
-            background-color: #666;
-    
-    -->
-
-        <!--floating hamburger menu icon | toggle top-menu-btn to display menu-->
-        <nav class="mhamburger">
-            <button class="top-menu-btn" type="button">
+        <nav class="hamburger">
+            <button class="top-menu-btn fsize-125 bg-red border-grey03 txt-grey01 hover-red active-red" type="button">
                 <span></span>
             </button>
         </nav>
@@ -118,34 +64,35 @@
         <header>
             <div class="row jc-center">
                 <div class="col ai-center wmin-200">
-                    <a class="mlink" title="Polished Manuscripts" href="#"><img class="mimg wmax-200"
-                            src="/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png"
-                            alt="Polished Manuscripts"></a>
+                    <a class="mlink" title="Polished Manuscripts" href="#">
+                        <img class="mimg wmax-200" src="/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png"
+                            alt="Polished Manuscripts">
+                    </a>
                 </div>
             </div>
         </header>
 
         <main>
 
-            <!--main navigation element-->
-            <section class="top-menu">
+            <!--main navigation-->
+            <section class="top-menu border-red shadow-inset">
                 <div class="row">
                     <div class="col">
                         <ul class="top-menu-nav">
                             <li>
-                                <h2><a href="#">Services</a></h2>
+                                <h2><a class="fsize-2 txt-red" href="#">Services</a></h2>
                             </li>
                             <li>
-                                <h2><a href="#">About Me</a></h2>
+                                <h2><a class="fsize-2 txt-red" href="#">About Me</a></h2>
                             </li>
                             <li>
-                                <h2><a href="#">Testimonials</a></h2>
+                                <h2><a class="fsize-2 txt-red" href="#">Testimonials</a></h2>
                             </li>
                             <li>
-                                <h2><a href="#">Portfolio</a></h2>
+                                <h2><a class="fsize-2 txt-red" href="#">Portfolio</a></h2>
                             </li>
                             <li>
-                                <h2><a href="#">Contact</a></h2>
+                                <h2><a class="fsize-2 txt-red" href="#">Contact</a></h2>
                             </li>
                         </ul>
                     </div>
@@ -153,7 +100,7 @@
             </section>
 
             <!--main content begins...-->
-            <section class="row bg-c-penguin shadow-fall animate-redbook">
+            <section class="row bg-c-penguin shadow-fall animate redbooks">
                 <div class="col wmin-300 wmax-800 p-md p-y-lg">
                     <h3>What is Polished Manuscripts?</h3>
                     <h4 class="p-x-lg">I help authors publish a can’t-put-it-down book by publishing their words until
@@ -163,9 +110,9 @@
 
             <section class="row jc-center">
                 <div class="col ai-center p-top-xlg">
-                    <div class="title pen">
+                    <div class="title pen-red">
                         <h3>Testimonials</h3>
-                        <h4 class="txt-red">Reviews from Top Authors</h4>
+                        <h4 class="fsize-13 txt-red">Reviews from Top Authors</h4>
                     </div>
                 </div>
             </section>
@@ -232,7 +179,7 @@
             </section>
         </main>
 
-        <footer>
+        <footer class="p-y-lg">
             <div class="row wmax-900 jc-center">
                 <div class="col ai-center p-top-md title">
                     <img class="img flex wmax-50" src="/dist/images/pm_logo_onblack_294x178.png" alt="">
@@ -265,7 +212,7 @@
     </div>
 
     <!--CSS to fix this button and fade in if we are scrolled down enough-->
-    <a href="#" class="scroll-top-btn" title="Scroll Up"><span></span></a>
+    <a href="#" class="scroll-top-btn bg-grey" title="Scroll Up"><span></span></a>
 
     <script src="/../dist/scripts/pm_bundle.js"></script>
 </body>

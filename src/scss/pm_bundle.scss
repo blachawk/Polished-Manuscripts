@@ -42,11 +42,11 @@ https://docs.elementor.com/article/663-global-fonts
 
 //base
 @import './base/globalVars';
-@import './base/typo';
 @import './base/flexbox_grid';
-@import './base/flexbox_components';
+@import './base/layouts';
 @import './base/menus';
-@import './base/main';
+@import './base/components';
+
 
 //specific functionality
 // @import './func/menus';

@@ -13,7 +13,7 @@
 }
 
 .flex {
-    display:flex;
+    display: flex;
 }
 
 .align-items-end {
@@ -72,9 +72,7 @@ p {
     margin: 0;
 }
 
-.d-none {
-    display: none !important;
-}
+
 
 .border {
     border: solid 1px darkolivegreen;
@@ -106,8 +104,72 @@ p {
     box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
 }
 
+
+.shadow-inset {
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.fsize-15 {
+    font-size: 1.5rem;
+}
+
+.fsize-2 {
+    font-size:2rem;
+}
+
+.fsize-125 {
+    font-size: 1.25rem;
+}
+
+.fsize-13 {
+    font-size: 1.3rem;
+}
+
+.txt-red {
+    color: #d81e06;
+}
+
+.txt-orange {
+    color: chocolate;
+}
+
 .txt-white {
     color: white;
+}
+
+.txt-grey01 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-grey {
+    background-color: #666;
+}
+
+.bg-red {
+    background-color: #d81e06;
+}
+
+.border-red {
+    border-color: #d81e06;
+}
+
+.border-grey03 {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hover-red {
+    &:hover {
+        background-color: #901404;
+        text-decoration-color: #901404;
+    }
+}
+
+.active-red {
+    &:active {
+        color: #d81e06;
+    }
 }
 
 .m-sm {
@@ -256,6 +318,7 @@ hr {
             text-decoration-color: #348ffc;
         }
     }
+
 }
 
 .mimg {
@@ -333,6 +396,18 @@ blockquote p {
 
 .wmin-900 {
     min-width: 900px;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: visible;
+}
+
+.d-none {
+    display: none !important;
 }
 
 .op-06 {
@@ -432,7 +507,7 @@ ol {
 .action_btn {
     display: block;
     margin: 0 auto;
-     padding: 1em;
+    padding: 1em;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;

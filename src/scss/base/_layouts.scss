@@ -1,0 +1,186 @@
+html {
+    body {
+
+        //scss mixin
+        -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+
+        //decor the text selection process
+        //scss mixin
+        //for Firefox
+        ::-moz-selection {
+            background-color: #df591d; //scss var
+            color: #fff; //scss var
+        }
+        //for Safari and Chrome
+        ::selection {
+            background-color: #df591d; //scss var
+            color: #fff; //scss var
+        }
+
+        .title {
+            &.pen-red {
+                padding: 0 0 3rem 6rem;
+                background: transparent url(../../../dist/images/pm_bg_pen_1916x1902.png) no-repeat;
+                background-size: 100px 90px;
+                h4 {
+                    margin-left:0.5rem;
+                }
+            }
+        }
+
+        header {
+            background-color:transparent;
+        }
+
+        main {
+            .animate {
+                &.redbooks {
+                    background: #e9e8e1 url(../../../dist/images/pm_redbooks_1296x400.png) center right no-repeat;
+
+                    //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+                    //IE11 does not support animate.  IE11 styling is active in trump scss file
+                    animation: animate-books linear 2s 1 normal forwards running;
+                    animation-timing-function: cubic-bezier(1, .02, .66, .82);
+    
+                    @keyframes animate-books {
+                        from {
+                            background-position: 0 0;
+                            opacity: 0;
+                        }
+    
+                        to {
+                            background-position: 750px 0;
+                            opacity: 1;
+                        }
+                    }    
+                }
+            }
+
+            //decor author testimonial
+            .author-list {
+
+                ul {
+                    -webkit-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
+                    -moz-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
+                    box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
+
+                    li {
+                        position: relative;
+
+                        img {
+                            max-width: 100%;
+                            filter: brightness(85%); //use this for hover animation effects
+                        }
+
+                        h4 {
+                            font-family: Helvetica, sans-serif;
+                            font-weight: initial;
+                            font-style: normal;
+                            font-size: 1em;
+                            color: #d81e06;
+                        }
+
+                        h5 {
+                            font-size: 1.5em;
+                        }
+
+                        blockquote {
+                            p {
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-weight: initial;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer { 
+            //scss mixin
+            background: repeating-linear-gradient(55deg,
+                    #191919,
+                    #191919 10px,
+                    #222 5px,
+                    #222 11px
+                    );
+        }
+
+        .scroll-top-btn {
+            z-index: 9997;
+            position: fixed;
+            bottom: 1rem;
+            right: 0;
+            width: 2.75rem;
+            height: 2.75rem;
+
+            visibility: hidden;
+            opacity: 0.5;
+
+            span {
+                position: relative;
+                left: 0.6em;
+                top: 0.8em;
+                border: solid 1em white;
+                border-width: 0 6px 6px 0;
+                display: inline-block;
+                padding: 9px;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg); //135 points left | -135 points up | 47 points down | -47 points right    
+                transition: 0.3s;
+            }
+
+            &:hover {
+                span {
+                    border-color: goldenrod;
+                }
+            }
+
+            &:active {
+                span {
+                    border-color: orangered;
+                    animation: animate-scroll-bounce linear 0.2s 1 normal forwards running;
+
+                    @keyframes animate-scroll-bounce {
+                        0% {
+                            top: 0.8em;
+                        }
+
+                        50% {
+                            top: 0.5em;
+                        }
+
+                        80% {
+                            top: 0.8em;
+                        }
+
+                        100% {
+                            top: 0.8em;
+                        }
+                    }
+                }
+            }
+
+            animation: animate-scroll linear 0.2s 1 normal forwards running;
+
+            @keyframes animate-scroll {
+                0% {
+                    right: -1em;
+                }
+
+                50% {
+                    right: 1em;
+                }
+
+                80% {
+                    right: -1em;
+                }
+
+                100% {
+                    right: 1em;
+                }
+            }
+        }
+    }
+}

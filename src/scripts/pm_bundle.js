@@ -92,25 +92,24 @@
 
             //TOGGLE HAMBURGER ICON & NAV MENU ON CLICKS
             if (this.classList.contains('top-menu-btn')) {
-                this.classList.toggle('clicked');
-                document.querySelector('.top-menu').classList.toggle('fade');
-                document.querySelector('.top-menu').classList.toggle('animate');
+                this.classList.toggle('es-clicked');
+                document.querySelector('.top-menu').classList.toggle('es-fixed-on-top');
+                document.querySelector('.top-menu').classList.toggle('es-animate');
             }
         });
     }
 
     //ES-EVENTS ON SCROLL
     document.addEventListener("scroll", function (e) {
-        //ES-TOGGLE CLASS ON SCROLL BTN TO THEN ANIMIATE VIA CSS3
+        //ES-TOGGLE CLASS ON SCROLL-BTN TO THEN ANIMIATE VIA CSS3
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var msrcbtn = document.querySelector(".scroll-top-btn");
         if (scrollTop > 200) {
-            msrcbtn.classList.add("show");
-            msrcbtn.classList.remove("d-none");
+            msrcbtn.classList.add("visible");
+            msrcbtn.classList.remove("hidden");
         } else {
-            msrcbtn.classList.remove("show");
-            msrcbtn.classList.add("d-none");
-
+            msrcbtn.classList.remove("visible");
+            msrcbtn.classList.add("hidden");
         }
     });
 })();
