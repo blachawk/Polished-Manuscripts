@@ -23,7 +23,7 @@
 })();
 
 (function pmevents() {
-    //ES-SINGLE EVENT HANDLER FOR MULT PURPOSE USE
+    //ES-EVENTS ON ALL ANCHOR & BUTTON CLICKS
     var anchors = document.querySelectorAll('a, button');
     var mclick = 0;
     for (var i = 0, len = anchors.length; i < len; i++) {
@@ -99,7 +99,7 @@
         });
     }
 
-    //ES-EVENT ON SCROLL
+    //ES-EVENTS ON SCROLL
     document.addEventListener("scroll", function (e) {
         //ES-TOGGLE CLASS ON SCROLL BTN TO THEN ANIMIATE VIA CSS3
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -113,8 +113,4 @@
 
         }
     });
-})();
-
-(function phamburger() {
-
 })();

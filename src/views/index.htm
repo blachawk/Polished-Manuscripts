@@ -47,6 +47,9 @@
 
         Centering with Flex
         https://coryrylan.com/blog/how-to-center-in-css-with-flexbox
+
+
+        For every layout, have the classes that switch backgrounds, colors, font families, font styles, font weights, font sizes, shadows, borders, images, onto the elements.  Everything else else can be managed by parent classes on elements.
         
     -->
 
@@ -196,7 +199,7 @@
                             <h4>Julie Bjelland</h4>
                         </li>
                         <li>
-                            <h5><a class="mlnk" href="https://www.juliebjelland.com/books-overview">The Empowered Highly Sensative Person</a></h5>
+                            <h5><a class="mlnk" href="https://www.juliebjelland.com/books-overview">Author of The Empowered Highly Sensative Person</a></h5>
                         </li>
                         <li>
                             <blockquote>
@@ -232,25 +235,37 @@
         <footer>
             <div class="row wmax-900 jc-center">
                 <div class="col ai-center p-top-md title">
+                    <img class="img flex wmax-50" src="/dist/images/pm_logo_onblack_294x178.png" alt="">
                     <h3 class="txt-white">Contact Me</h3>
+                    
                 </div>
             </div>
             <div class="row wmax-900">
-                <div class="col ai-center">
-                    <h5 class="txt-white">Connect</h5>
+                <div class="col ai-center wmax-300">
+                    <h4 class="txt-white p-btm-sm txt-red">Connect</h4>
+                    <ul class="flex txt-white">
+                        <li><a class="font-reset txt-white" href="mailto:Haley@polishedmanuscripts.com">Haley@polishedmanuscripts.com</a></li>
+                    </ul>
+                   
                 </div>
-                <div class="col ai-center">
-                    <h5 class="txt-white">Social</h5>
+                <div class="col ai-center wmax-300">
+                    <h4 class="txt-white p-btm-sm txt-red">Social</h4>
+                    <ul class="flex txt-white">
+                        <li><a class="icon facebook font-reset txt-white" href="#">Facebook</a></li>
+                        <li><a class="icon linkedIn font-reset txt-white" href="#">LinkedIn</a></li>
+                        <li><a class="icon twitter font-reset txt-white" href="#">Twitter</a></li>
+                    </ul>
                 </div>
-                <div class="col ai-center">
-                    <h5 class="txt-white">Contact</h5>
+                <div class="col ai-center wmax-300">
+                    <h4 class="txt-white p-btm-sm txt-red">Contact</h4>
+                    <a class="action_btn font-reset" href="#">Contact Form</a>
                 </div>
             </div>
         </footer>
     </div>
 
     <!--CSS to fix this button and fade in if we are scrolled down enough-->
-    <a href="#" class="scroll-top-btn" title="Scroll Up">Top btn</a>
+    <a href="#" class="scroll-top-btn" title="Scroll Up"><span></span></a>
 
     <script src="/../dist/scripts/pm_bundle.js"></script>
 </body>

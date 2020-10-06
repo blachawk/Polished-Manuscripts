@@ -30,11 +30,15 @@ html {
         }
 
         .txt-white {
-            color:white;
+            color: white;
         }
 
         .txt-red {
             color: #d81e06;
+        }
+
+        .txt-orange {
+            color: chocolate;
         }
 
         .logo-sm {
@@ -107,12 +111,85 @@ html {
         }
 
         footer {
-            min-height:20em;
+            min-height: 20em;
             background: repeating-linear-gradient(55deg,
                     #191919,
                     #191919 10px,
                     #222 5px,
                     #222 11px);
+        }
+
+   
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 1em;
+            right: 0;
+            z-index: 9998;
+            width: 44px;
+            height: 44px;
+            background-color: #666;
+            visibility:hidden;
+            opacity:0.5;
+
+            span {
+                position: relative;
+                left: 0.6em;
+                top: 0.8em;
+                border: solid 1em white;
+                border-width: 0 6px 6px 0;
+                display: inline-block;
+                padding: 9px;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg); //135 points left | -135 points up | 47 points down | -47 points right    
+                transition: 0.3s;
+            }
+
+            &:hover {
+                span {
+                    border-color: goldenrod;
+                }
+            }
+            &:active {
+                span {
+                    border-color: orangered;
+                    animation: animate-scroll-bounce linear 0.2s 1 normal forwards running;
+                    @keyframes animate-scroll-bounce {
+                        0% {
+                            top:0.8em;
+                        }
+                        50% {
+                            top:0.5em;
+                        }
+                        80% {
+                            top:0.8em;
+                        }
+                        100% {
+                            top:0.8em;
+                        }
+                    }
+                }
+            }
+
+            animation: animate-scroll linear 0.2s 1 normal forwards running;
+
+            @keyframes animate-scroll {
+                0% {
+                    right:-1em;
+                }
+                50% {
+                    right:1em;
+                }
+                80% {
+                    right:-1em;
+                }
+                100% {
+                    right:1em;
+                }
+            }
+        }
+
+        .show {
+            visibility: visible;
         }
     }
 }
