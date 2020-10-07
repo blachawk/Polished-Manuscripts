@@ -7,12 +7,6 @@
 html {
 
     body {
-
-        //scss mixin
-        -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-
         //decor the text selection process
         //scss mixin
         //for Firefox
@@ -124,34 +118,34 @@ html {
                 transition: 0.3s;
             }
 
-          
+
 
             &:active {
                 span {
                     border-color: orangered;
 
-                        //this is a special case that cannot be broken up
-                        //convert to mixin
-                        animation: animate-scroll-bounce linear 0.2s 1 normal forwards running;
+                    //this is a special case that cannot be broken up
+                    //convert to mixin
+                    animation: animate-scroll-bounce linear 0.2s 1 normal forwards running;
 
-                        @keyframes animate-scroll-bounce {
-                            0% {
-                                top: 0.8em;
-                            }
-
-                            50% {
-                                top: 0.5em;
-                            }
-
-                            80% {
-                                top: 0.8em;
-                            }
-
-                            100% {
-                                top: 0.8em;
-                            }
+                    @keyframes animate-scroll-bounce {
+                        0% {
+                            top: 0.8em;
                         }
-                    
+
+                        50% {
+                            top: 0.5em;
+                        }
+
+                        80% {
+                            top: 0.8em;
+                        }
+
+                        100% {
+                            top: 0.8em;
+                        }
+                    }
+
                 }
             }
 

@@ -1,0 +1,58 @@
+//COLORS
+
+// @debug #f2ece4; // #f2ece4
+// @debug #b37399aa; // rgba(179, 115, 153, 67%)
+// @debug midnightblue; // #191970
+// @debug rgb(204, 102, 153); // #c69
+// @debug rgba(107, 113, 127, 0.8); // rgba(107, 113, 127, 0.8)
+// @debug hsl(228, 7%, 86%); // #dadbdf
+// @debug hsla(20, 20%, 85%, 0.7); // rgb(225, 215, 210, 0.7)
+
+// $venus: #998099;
+
+// @debug scale-color($venus, $lightness: +15%); // #a893a8
+// @debug mix($venus, midnightblue); // #594d85
+
+
+//LISTS
+//@use "sass:list";
+//@debug list.set-nth(10px 20px 30px, 1, 2em); // 2em 20px 30px
+//@debug list.set-nth(10px 20px 30px, -1, 8em); // 10px, 20px, 8em
+//@debug list.set-nth((Helvetica, Arial, sans-serif), 3, Roboto); // Helvetica, Arial, Roboto
+
+//NUMBERS
+// @debug 100; //we see this in the terminal
+// @debug 5.2e3; // 5200
+// @debug 6e-2; // 0.06
+// @debug 4px * 6px; // 24px*px (read "square pixels")
+// @debug 5px / 2s; // 2.5px/s (read "pixels per second")
+// @debug 5px * 30deg / 2s / 24em; // 3.125px*deg/s*em
+
+// // CSS defines one inch as 96 pixels.
+// @debug 1in + 6px; // 102px or 1.0625in
+
+
+//STRINGS
+//@use "sass:string";
+//@debug string.unquote(".widget:hover"); // .widget:hover
+//@debug string.quote(bold); // "bold"
+
+
+// @debug "\""; // '"'
+// @debug \.widget; // \.widget
+// @debug "\a"; // "\a" (a string containing only a newline)
+// @debug "line1\a line2"; // "line1\a line2"
+// @debug "Nat + Liz \1F46D"; // "Nat + Liz 👭"
+
+
+
+// @debug "Helvetica Neue"; // "Helvetica Neue"
+// @debug "C:\\Program Files"; // "C:\\Program Files"
+// @debug "\"Don't Fear the Reaper\""; // "\"Don't Fear the Reaper\""
+// @debug "line1\a line2"; // "line1\a line2"
+
+// $roboto-variant: "Mono";
+// @debug "Roboto #{$roboto-variant}"; // "Roboto Mono"
+
+
+

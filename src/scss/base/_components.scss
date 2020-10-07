@@ -1,6 +1,7 @@
 //COMPONENTS TO EXTEND CSS
 
-//flex components | add more as we need them
+//FLEX COMPONENTS
+
 .flex {
     display: flex;
 }
@@ -15,382 +16,26 @@
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
-//animation ready 
+//BASE FONT FAMILY | VARS
 
-.trans {
-    transition: 0.3s;
-}
+$base-font-family: 'Playfair Display',
+serif;
 
-//heading elements
+//COLORS | VARS
 
-h6 {
-    font-size: 1rem;
-}
+$olive: darkolivegreen;
+$white: white;
+$red: #901404;
+$gold:goldenrod;
+$grey: grey;
+$grey-light:#ccc;
+$grey-dark: #333;
+$coco: chocolate;
+$floralwhite: floralwhite;
+$palrod: palegoldenrod;
 
-h5 {
-    font-size: 1.50rem;
-}
 
-h4 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 4rem;
-}
-
-h1 {
-    font-size: 5rem;
-}
-
-.border {
-    border: solid 1px darkolivegreen;
-}
-
-.border-btm {
-    border-bottom: solid 1px darkolivegreen;
-}
-
-.border-white {
-    border: solid 1em white;
-}
-
-.shadow-inset {
-    //mixin
-    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-}
-
-.shadow-fall {
-    //mixin
-    -webkit-box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
-    -moz-box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
-    box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
-}
-
-.shadow-box {
-    //mixin
-    -webkit-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
-    -moz-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
-    box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
-}
-
-.fweight-bold {
-    font-weight: bold;
-}
-
-.fweight-400 {
-    font-weight: 400;
-}
-
-.fweight-500 {
-    font-weight: 500;
-}
-
-.fweight-800 {
-    font-weight: 800;
-}
-
-.fsize-1 {
-    font-size: 1rem;
-}
-
-.fsize-15 {
-    font-size: 1.5rem;
-}
-
-.fsize-2 {
-    font-size: 2rem;
-}
-
-.fsize-125 {
-    font-size: 1.25rem;
-}
-
-.fsize-13 {
-    font-size: 1.3rem;
-}
-
-.fsize-175 {
-    font-size: 1.75rem;
-}
-
-.ffam-arial {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: initial;
-}
-
-.fstyle-italic {
-    font-style: italic;
-}
-
-.txt-red {
-    color: #d81e06;
-}
-
-.txt-orange {
-    color: chocolate;
-}
-
-.txt-white {
-    color: white;
-}
-
-.txt-grey {
-    color: #888;
-}
-
-.txt-grey-dark {
-    color: #333;
-}
-
-.txt-dec-white {
-    text-decoration-color: white;
-}
-
-.bg-azure {
-    background-color: azure;
-}
-
-.bg-grey {
-    background-color: #666;
-}
-
-.bg-grey-dark {
-    background-color: #333;   
-}
-
-.bg-red {
-    background-color: #d81e06;
-}
-
-.bg-penguin {
-    background-color: #f4f3ec;
-}
-
-.border-red {
-    border-color: #d81e06;
-}
-
-.border-grey03 {
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.hover-red {
-    &:hover {
-        background-color: #901404;
-        text-decoration-color: #901404;
-    }
-}
-
-.hover-dark {
-    &:hover {
-        color:white;
-        background-color:#901404;
-    }
-}
-
-.hover-txt-red {
-    &:hover {
-        color: #d81e06; //scss var
-    }
-}
-
-.hover-child-goldenrod {
-    &:hover {
-        span {
-            border-color: goldenrod; //scss var
-        }
-    }
-}
-
-.active-border-white {
-    &:active {
-        border-color: white;
-    }
-}
-
-.active-red {
-    &:active {
-        color: #d81e06;
-    }
-}
-
-.active-txt-red {
-    &:active {
-        color: #d81e06; //scss var
-    }
-}
-
-.m-sm {
-    margin: 1em;
-}
-
-.m-md {
-    margin: 2em;
-}
-
-.m-lg {
-    margin: 3em;
-}
-
-.p-sm {
-    padding: 1em;
-}
-
-.p-md {
-    padding: 2em;
-}
-
-.p-lg {
-    padding: 3em;
-}
-
-.p-x-sm {
-    padding: 0 1em;
-}
-
-.p-x-md {
-    padding: 0 2em;
-}
-
-.p-x-lg {
-    padding: 0 3em;
-}
-
-.p-y-sm {
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.p-y-md {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
-.p-y-lg {
-    padding-top: 4em;
-    padding-bottom: 4em;
-}
-
-.p-y-xlg {
-    padding-top: 6em;
-    padding-bottom: 6em;
-}
-
-.p-top-md {
-    padding-top: 3em;
-}
-
-.p-top-lg {
-    padding-top:4em;
-}
-
-.p-top-xlg {
-    padding-top: 6em;
-}
-
-.p-btm-sm {
-    padding-bottom: 1em;
-}
-
-.p-btm-lg {
-    padding-bottom: 3em;
-}
-
-.p-lft-sm {
-    padding-left: 1em;
-}
-
-.m-x-sm {
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.m-x-md {
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.m-y-sm {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.m-y-md {
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-.m-btm-sm {
-    margin-bottom: 1em;
-}
-
-.m-btm-md {
-    margin-bottom: 2em;
-}
-
-hr {
-    &.sm {
-        display: inline-block;
-        margin: 0 0 15px 0;
-        width: 40px;
-        height: 2px;
-        border: 0;
-        background: #ccc;
-    }
-
-    &.fw {
-        display: block;
-        margin: 1em 2em;
-        width: 100%;
-        height: 1px;
-        border: 0;
-        background: palegoldenrod;
-    }
-}
-
-blockquote {
-    border-left: 10px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-     p {
-        display: inline;
-     }
-}
-
-.wmax-50 {
-    max-width: 50px;
-}
-
-.wmax-200 {
-    max-width: 200px;
-}
-
-.wmax-300 {
-    max-width: 300px;
-}
-
-.wmax-800 {
-    max-width: 800px;
-}
-
-.wmax-900 {
-    max-width: 900px;
-}
-
-.wmin-200 {
-    min-width: 200px;
-}
-
-.wmin-300 {
-    min-width: 300px;
-}
+//GENERICS 
 
 .visible {
     visibility: visible;
@@ -411,6 +56,16 @@ blockquote {
 .tint {
     filter: brightness(85%);
 }
+
+.trans {
+    transition: 0.3s;
+}
+
+.lh-125 {
+    line-height:1.25;
+}
+
+//LISTS
 
 ul,
 ol {
@@ -460,14 +115,326 @@ ol {
     }
 }
 
+//BUTTONS
+
 .action_btn {
     display: block;
     margin: 0 auto;
-    padding: 1em;
-    border-radius: 5px;
+    border-radius: 1rem;
     text-decoration: none;
     text-align: center;
-    color: #222;
-    background-color: #ccc;
-    border:solid 0.25rem #222;
+    color: $grey-dark;
+    background-color: $grey-light;
+    border: solid 0.25rem $grey-dark;
+}
+
+//HORIZONTAL RULES 
+
+hr {
+    &.sm {
+        display: inline-block;
+        margin: 0 0 15px 0;
+        width: 40px;
+        height: 2px;
+        border: 0;
+        background-color: $grey-light;
+    }
+
+    &.fw {
+        display: block;
+        margin: 1em 2em;
+        width: 100%;
+        height: 1px;
+        border: 0;
+        background-color: $palrod;
+    }
+}
+
+//BLOCK QUOTES
+
+blockquote {
+    margin: 1.5em 0.625rem;
+    padding: 0.5em 0.625rem;
+
+    p {
+        display: inline;
+    }
+}
+
+//HEADING ELEMENTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$headings: (
+    h6: 1.25rem,
+    h5: 1.50rem,
+    h4: 2rem,
+    h3: 3rem,
+    h2: 4rem,
+    h1: 5rem);
+
+@each $name,
+$val in $headings {
+    #{$name} {
+        font-size: $val;
+    }
+}
+
+//SHADOWS | MIXIN
+//https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
+//https://www.w3schools.com/CSSref/css3_pr_box-shadow.asp
+@mixin shadow($hoffset:0, $voffset:0, $blur:10px, $spread:0, $color:rgba(0, 0, 0, 0.75), $option:null) {
+    -webkit-box-shadow: $option $hoffset $voffset $blur $spread $color;
+    -moz-box-shadow: $option $hoffset $voffset $blur $spread $color;
+    box-shadow: $option $hoffset $voffset $blur $spread $color;
+}
+
+.shadow-inset {
+    @include shadow();
+}
+
+.shadow-fall {
+    @include shadow(0, 117px, 60px, -119px, rgba(0, 0, 0, 1), inset);
+}
+
+.shadow-box {
+    @include shadow(0, 15px, 25px, 0, rgba(51, 51, 51, .15));
+}
+
+.shadow-box-dark {
+    @include shadow(0, 5px, 25px, 0, rgba(51, 51, 51, .35));
+}
+
+//FONT WEIGHTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+//https://www.digitalocean.com/community/tutorials/sass-each-loops
+
+$fontweights: (fweight-bold: bold,
+    fweight-400: 400,
+    fweight-500: 500,
+    fweight-800: 800);
+
+@each $name,
+$val in $fontweights {
+    .#{$name} {
+        font-weight: $val;
+    }
+}
+
+//FONT SIZES | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$fontsizes: (fsize-1: 1rem,
+    fsize-125: 1.25rem,
+    fsize-13: 1.3rem,
+    fsize-15: 1.5rem,
+    fsize-175: 1.75rem,
+    fsize-2: 2rem);
+
+@each $name,
+$val in $fontsizes {
+    .#{$name} {
+        font-size: $val;
+    }
+}
+
+//FONT FAMILIES | MAPS 
+//https://sass-lang.com/documentation/values/maps
+//not in use at the moment...but with more layout options, this map will grow
+
+$fontfams: (ffam-arial: 'Arial, Helvetica, sans-serif'
+);
+
+@each $name,
+$val in $fontfams {
+    .#{$name} {
+        font-family: $val;
+        font-weight: initial;
+    }
+}
+
+//FONT STYLE
+.fstyle-italic {
+    font-style: italic;
+}
+
+//FONT COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$fontcolors: (
+    txt-red: $red,
+    txt-coco: $coco,
+    txt-white: $white,
+    txt-grey: $grey,
+    txt-grey-dark:$grey-dark);
+
+@each $name,
+$val in $fontcolors {
+    .#{$name} {
+        color: $val;
+    }
+}
+
+.txt-dec-white {
+    text-decoration-color: $white;
+}
+
+//BACKGROUND COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$bgcolors: (
+    bg-floralwhite:$floralwhite,
+    bg-grey:$grey,
+    bg-grey-dark:$grey-dark,
+    bg-red: $red,
+    bg-darksalmon: darksalmon
+);
+
+@each $name,
+$val in $bgcolors {
+    .#{$name} {
+        background-color: $val;
+    }
+}
+
+//BORDERS CUSTOM
+
+$borders: (
+  (border, border,solid 0.0625rem $olive),
+  (border-btm, border-bottom,solid 0.0625rem $olive),
+  (border-left-grey-light, border-left,0.625rem solid $grey-light),
+  (border-white, border,solid 1rem $white)
+);
+
+  @each $selector, $prop, $value in $borders {
+    .#{$selector} {
+      #{$prop}: $value;
+    }
+}
+
+//BORDER COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$bordercolors: (
+    border-red: $red,
+    border-grey: $grey
+);
+
+@each $name,
+$val in $bordercolors {
+    .#{$name} {
+        border-color: $val;
+    }
+}
+
+//HOVERS & ACTIVES
+
+.hover-red {
+    &:hover {
+        background-color: $red;
+        text-decoration-color:$red; 
+    }
+}
+
+.hover-dark {
+    &:hover {
+        color: $white;
+        background-color: $red;
+    }
+}
+
+.hover-txt-red {
+    &:hover {
+        color: $red;    
+    }
+}
+
+.hover-child-goldenrod {
+    &:hover {
+        span {
+            border-color: $gold;
+        }
+    }
+}
+
+.active-border-white {
+    &:active {
+        border-color: $white;
+    }
+}
+
+.active-red {
+    &:active {
+        color: $red;
+    }
+}
+
+.active-txt-red {
+    &:active {
+        color: $red;
+    }
+}
+
+//PADDING & MARGIN HELPERS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+//http://sass.js.org/
+//https://www.sitepoint.com/sass-maps-vs-nested-lists/
+//https://www.w3schools.com/Css/css_syntax.asp
+
+$margspads: (
+  (m-sm, margin, 1rem),
+  (m-md, margin, 2rem),
+  (m-lg, margin, 5rem),
+  (m-x-sm, margin, 0 1rem),
+  (m-x-md, margin, 0 2rem),
+  (m-x-lg, margin, 0 5rem),
+  (m-y-sm, margin, 1rem 0),
+  (m-y-md, margin, 2rem 0),
+  (m-y-lg, margin, 5rem 0),
+  (m-btm-sm, margin-bottom, 1rem),
+  (m-btm-md, margin-bottom, 2rem),
+  (m-btm-lg, margin-bottom, 5rem),
+  (p-sm, padding, 1rem),
+  (p-md, padding, 2rem),
+  (p-lg, padding, 5rem),
+  (p-x-sm, padding, 0 1rem),
+  (p-x-md, padding, 0 2rem),
+  (p-x-lg, padding, 0 5rem),
+  (p-y-sm, padding, 1rem 0),
+  (p-y-md, padding, 2rem 0),
+  (p-y-lg, padding, 5rem 0),
+  (p-btm-sm, padding-bottom, 1rem),
+  (p-btm-md, padding-bottom, 2rem),
+  (p-btm-lg, padding-bottom, 5rem),
+  (p-top-sm, padding-top, 1rem),
+  (p-top-md, padding-top, 2rem),
+  (p-top-lg, padding-top, 5rem),
+  (p-lft-sm, padding-left, 1em)
+);
+
+@each $selector, $prop, $value in $margspads {
+    .#{$selector} {
+      #{$prop}: $value;
+    }
+}
+
+//MAX & MIN WIDTHS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+//http://sass.js.org/
+//https://www.sitepoint.com/sass-maps-vs-nested-lists/
+//https://www.w3schools.com/Css/css_syntax.asp
+$wmaxmin: (
+  (wmax-50, max-width, 50px),
+  (wmax-200, max-width, 200px),
+  (wmax-300, max-width, 300px),
+  (wmax-800, max-width, 800px),
+  (wmax-900, max-width, 900px),
+  (wmin-200, min-width, 200px),
+  (wmin-300, min-width, 300px),
+
+);
+
+@each $selector, $prop, $value in $wmaxmin {
+    .#{$selector} {
+      #{$prop}: $value;
+    }
 }

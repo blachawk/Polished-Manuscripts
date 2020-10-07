@@ -83,6 +83,65 @@ html {
             }
         }
 
+        .bigmack {
+            z-index: 9999;
+            position: fixed;
+            top: 5rem;
+            right: 1.7rem;
+            padding: 0;
+
+            .generator-btn {
+                padding: 0.25rem;
+                opacity: 0.9;
+                border:none;
+
+                transition: 0.3s;
+
+                //the inner button on click
+                &.es-clicked {
+                    span.colorbox {
+
+                        //transition the bg color
+
+                        &:before,
+                        &:after {
+                            content: '';
+                            display: block;
+                            top: 0.15rem;
+                            height: 0.1875rem;
+                            margin: 0.4375rem 0;
+                            background-color:blue;
+                            transition: all .2s ease-in-out;
+
+                            //scss mixin
+                            box-shadow:
+                                0 0 0 0 #333,
+                                0 0 0 0 #333;
+                        }
+
+                        &:after {
+                            transform: translateY(6px) rotate(135deg);
+                        }
+
+                        &:before {
+                            transform: translateY(6px) rotate(-135deg);
+                        }
+                    }
+                }
+
+                //the 3 lines inside the button
+                span.colorbox {
+                    position: relative;
+                    display: inline-block;
+                    width: 2rem;
+                    height: 2.125rem;
+                    vertical-align: middle;
+                    background: no-repeat center center;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+
         .top-menu {
             z-index: 9999;
             position: absolute;
