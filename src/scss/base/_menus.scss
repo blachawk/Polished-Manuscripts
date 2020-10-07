@@ -12,17 +12,18 @@ html {
             .top-menu-btn {
                 padding: 0.25rem 0.75rem;
                 opacity: 0.9;
-                
+
                 border-width: 1px;
                 border-style: solid;
-                border-color:transparent;
+                border-color: transparent;
                 border-radius: 0.5rem;
-                
+
                 transition: 0.3s;
 
                 //the x inside the button on click
                 &.es-clicked {
-                    span {
+                    span.bars-white {
+
                         &:before,
                         &:after {
                             content: '';
@@ -30,7 +31,6 @@ html {
                             top: 0.15rem;
                             height: 0.1875rem;
                             margin: 0.4375rem 0;
-
                             border-radius: 1rem;
                             transition: all .2s ease-in-out;
 
@@ -49,12 +49,12 @@ html {
                         }
                     }
                 }
-                
-                //the 3 lines inside the button on load
-                span {
+
+                //the 3 lines inside the button
+                span.bars-white {
                     position: relative;
                     display: inline-block;
-                    width:  2rem;
+                    width: 2rem;
                     height: 2.125rem;
                     vertical-align: middle;
                     background: no-repeat center center;
@@ -69,13 +69,13 @@ html {
                         right: 0;
                         width: 2rem;
                         height: 0.20rem;
-                        background-color: #fff;  //scss var
+                        background-color: #fff; //scss var
 
                         //scss mixin
                         box-shadow:
                             0 0.4em 0 0 #fff,
                             0 0.8em 0 0 #fff;
-                        
+
                         transition: all .2s ease-in-out;
                         transform: translateY(6px) rotate(0deg);
                     }
@@ -84,7 +84,7 @@ html {
         }
 
         .top-menu {
-            z-index:9999;
+            z-index: 9999;
             position: absolute;
             top: 0;
             right: 0;
@@ -93,25 +93,23 @@ html {
             border-style: solid;
             border-width: 0.5rem;
 
-            visibility: hidden;
-            opacity: 0;
-
             &.es-animate {
                 background: #fff url(../../../dist/images/pm_logo_294x178.png) center center no-repeat; //scss  var
 
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                 animation: animate-background 1s 1 normal forwards running;
                 //animation-timing-function communicates with the above animation: ease-out;
-                animation-timing-function: 1s cubic-bezier(.22,.33,0,1.02);
-                
+                animation-timing-function: 1s cubic-bezier(.22, .33, 0, 1.02);
+
                 @keyframes animate-background {
                     0% {
                         background-position: 0;
-                        opacity:0;
+                        opacity: 0;
                     }
+
                     100% {
                         background-position: center;
-                        opacity:1;
+                        opacity: 1;
                     }
                 }
             }
@@ -121,7 +119,7 @@ html {
                 position: fixed;
 
                 visibility: visible;
-                opacity: 1;                
+                opacity: 1;
             }
 
             .top-menu-nav {
@@ -136,23 +134,23 @@ html {
                 a {
                     display: inline-block;
                     text-decoration: none;
-                    font-weight: 400;
-                    transition: 0.3s;
-                    
-                    &::after {
-                        content: '';
-                        display: block;
-                        width: 0;
-                        height: 0.2rem;
-                        text-align: right;
-                        opacity: 0.7;
-                        background: darkslategray; //scss var
-                        transition: 300ms;                         
+
+                    &.after-bg-darkslategrey {
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 0.2rem;
+                            text-align: right;
+                            opacity: 0.7;
+                            background: darkslategray; //scss var
+                            transition: 300ms;
+                        }
                     }
 
                     &:hover {
                         color: #901404; //scss var
-                        color: darkslategray; //scss var
+                        //color: darkslategray; //scss var
 
                         &::after {
                             width: 100%;

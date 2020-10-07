@@ -1,27 +1,10 @@
-//Reusable Chunks and Flex Engine - modified 4/9/2020
+//COMPONENTS TO EXTEND CSS
 
-//GOOGLE FONTS
-//font-family: 'Roboto', sans-serif;
-//font-family: 'Roboto Condensed', sans-serif;
-//font-family: 'Ubuntu', sans-serif;    
-//font-family: 'Muli', sans-serif;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+//flex components | add more as we need them
 .flex {
     display: flex;
-}
-
-.align-items-end {
-    align-items: flex-end;
-}
-
-.align-items-start {
-    align-items: flex-start;
 }
 
 .jc-center {
@@ -34,45 +17,55 @@
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
-.h1 {
-    font-size: 5em;
+
+//animation ready 
+
+.trans {
+    transition: 0.3s;
 }
 
-.h2 {
-    font-size: 4em;
-}
 
-.h3 {
-    font-size: 3em;
-}
+//heading elements
 
-.h4 {
-    font-size: 1.5em;
+.h6 {
+    font-size: 1rem;
 }
 
 .h5 {
-    font-size: 1em;
+    font-size: 1.50rem;
 }
 
-.h6 {
-    font-size: 0.8em;
+.h4 {
+    font-size: 2rem;
+}
+
+.h3 {
+    font-size: 3rem;
+}
+
+.h2 {
+    font-size: 4rem;
+}
+
+.h1 {
+    font-size: 5rem;
 }
 
 
+// h3 {
+//     //font-family: 'Playfair Display', serif;
+//     font-weight: 800;
+//     font-size: 3rem;
+//     color: #333;
+// }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-ul,
-li,
-p {
-    padding: 0;
-    margin: 0;
-}
-
-
+// h4 {
+//     //font-family: 'Playfair Display', serif;
+//     font-style: italic;
+//     font-size: 1.6rem;
+//     font-weight: 500;
+//     color: #333;
+// }
 
 .border {
     border: solid 1px darkolivegreen;
@@ -82,33 +75,49 @@ p {
     border-bottom: solid 1px darkolivegreen;
 }
 
-.no-border {
-    border: none !important;
+.border-white {
+    border: solid 1em white;
 }
 
-.shadow {
-    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+.shadow-inset {
+    //mixin
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .shadow-fall {
+    //mixin
     -webkit-box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
     -moz-box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
     box-shadow: inset 0px 117px 60px -119px rgba(0, 0, 0, 1);
 }
 
 .shadow-box {
+    //mixin
     -webkit-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
     -moz-box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
     box-shadow: 0 15px 25px rgba(51, 51, 51, .15);
 }
 
+.fweight-bold {
+    font-weight: bold;
+}
 
-.shadow-inset {
-    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+.fweight-400 {
+    font-weight: 400;
+}
+
+.fweight-500 {
+    font-weight: 500;
+}
+
+.fweight-800 {
+    font-weight: 800;
+}
+
+.fsize-1 {
+    font-size: 1rem;
 }
 
 .fsize-15 {
@@ -116,7 +125,7 @@ p {
 }
 
 .fsize-2 {
-    font-size:2rem;
+    font-size: 2rem;
 }
 
 .fsize-125 {
@@ -125,6 +134,19 @@ p {
 
 .fsize-13 {
     font-size: 1.3rem;
+}
+
+.fsize-175 {
+    font-size: 1.75rem;
+}
+
+.ffam-arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: initial;
+}
+
+.fstyle-italic {
+    font-style: italic;
 }
 
 .txt-red {
@@ -139,8 +161,20 @@ p {
     color: white;
 }
 
-.txt-grey01 {
-    color: rgba(255, 255, 255, 0.5);
+.txt-grey {
+    color: #888;
+}
+
+.txt-grey-dark {
+    color: #333;
+}
+
+.txt-dec-white {
+    text-decoration-color: white;
+}
+
+.bg-azure {
+    background-color: azure;
 }
 
 .bg-grey {
@@ -166,9 +200,42 @@ p {
     }
 }
 
+.hover-dark {
+    &:hover {
+        color:white;
+        background-color:#901404;
+    }
+}
+
+.hover-txt-red {
+    &:hover {
+        color: #d81e06; //scss var
+    }
+}
+
+.hover-child-goldenrod {
+    &:hover {
+        span {
+            border-color: goldenrod; //scss var
+        }
+    }
+}
+
+.active-border-white {
+    &:active {
+        border-color: white;
+    }
+}
+
 .active-red {
     &:active {
         color: #d81e06;
+    }
+}
+
+.active-txt-red {
+    &:active {
+        color: #d81e06; //scss var
     }
 }
 
@@ -244,6 +311,10 @@ p {
     padding-bottom: 3em;
 }
 
+.p-lft-sm {
+    padding-left: 1em;
+}
+
 .m-x-sm {
     margin-left: 1em;
     margin-right: 1em;
@@ -292,62 +363,17 @@ hr {
     }
 }
 
-.mlnk {
-    color: #333;
-    font-weight: bold;
-    text-decoration-color: white;
-    transition: 0.3s;
-
-    &:hover {
-        color: #d81e06;
-        //text-decoration-color: #d81e06;
-    }
-
-    &:active {
-        color: #d81e06;
-    }
-
-    // &:visited {
-    //     color:#333;
-    // }
-
-    &.txt-blue {
-        color: #348ffc;
-
-        &:hover {
-            text-decoration-color: #348ffc;
-        }
-    }
-
-}
-
-.mimg {
-
-    &.mcenter {
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-
 blockquote {
-    background: #f9f9f9;
     border-left: 10px solid #ccc;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
-}
-
-blockquote p {
-    display: inline;
+     p {
+        display: inline;
+     }
 }
 
 .wmax-50 {
     max-width: 50px;
-}
-
-.wmax-100 {
-    max-width: 100%;
 }
 
 .wmax-200 {
@@ -356,14 +382,6 @@ blockquote p {
 
 .wmax-300 {
     max-width: 300px;
-}
-
-.wmax-400 {
-    max-width: 400px;
-}
-
-.wmax-500 {
-    max-width: 500px;
 }
 
 .wmax-800 {
@@ -382,72 +400,24 @@ blockquote p {
     min-width: 300px;
 }
 
-.wmin-400 {
-    min-width: 400px;
-}
-
-.wmin-500 {
-    min-width: 500px;
-}
-
-.wmin-800 {
-    min-width: 800px;
-}
-
-.wmin-900 {
-    min-width: 900px;
-}
-
 .visible {
     visibility: visible;
 }
 
 .hidden {
-    visibility: visible;
+    visibility: hidden;
 }
 
 .d-none {
     display: none !important;
 }
 
-.op-06 {
-    opacity: 0.6;
+.op-05 {
+    opacity: 0.5;
 }
 
-.css3filter {
-
-    //filter: brightness(50%);
-
-    //alt 2:
-    //background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('http://placehold.it/420')
-
-    //alt 3:
-    //filter: sepia(100%) saturate(200%) brightness(70%) hue-rotate(330deg);
-}
-
-.font-reset {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: initial;
-}
-
-.font-reset-hel {
-    font-family: Helvetica, sans-serif;
-    font-weight: initial;
-}
-
-h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    font-size: 3rem;
-    color: #333;
-}
-
-h4 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #333;
+.tint {
+    filter: brightness(85%);
 }
 
 p {
@@ -460,11 +430,10 @@ ol {
     li {
         position: relative;
         padding: 0.5em;
-        font-size: 1rem;
         list-style: none;
     }
 
-    //PRETTY DISC OPTION
+    //PRETTY DISC OPTION BREAK THIS DOWN THOUGH IT'S NOT USED ON THE FIRST LAYOUT
     &.discs {
         list-style: none;
 
@@ -513,6 +482,7 @@ ol {
     text-align: center;
     color: #222;
     background-color: #ccc;
+    border:solid 0.25rem #222;
 }
 
 .bg-c-penguin {

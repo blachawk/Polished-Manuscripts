@@ -1,9 +1,9 @@
 "use strict";
 
-(function pmtest() {
-    //ES-TEST CONNECTION
-    console.log('ecmascript connected now!!!!!');
-})();
+// (function pmtest() {
+//     //ES-TEST CONNECTION
+//     console.log('ecmascript connected now!!!!!');
+// })();
 
 (function pmdetect() {
     //ES-DETECT IF CSS3 ANIMATIONS ARE SUPPORTED
@@ -35,7 +35,6 @@
             //TOGGLE SCROLL & FADE ON SPECIFIC CLASS
             if (this.classList.contains('scroll-top-btn')) {
 
-
                 //Scrolling the document to position "250" horizontally and "110" vertically 
                 //https://www.w3schools.com/jsref/met_win_scrollto.asp
                 //https://stackoverflow.com/a/50590388/957186
@@ -43,7 +42,7 @@
 
                 //ADD AND OR REMOVE CLASS AS TOGGLE CLASS
                 //https://www.digitalocean.com/community/tutorials/js-classlist
-                this.classList.toggle('cool');
+                //this.classList.toggle('cool');
 
                 //all credit to the following stack dev for this custom solution: 
                 //https://bit.ly/2GklKpk
@@ -106,10 +105,12 @@
         var msrcbtn = document.querySelector(".scroll-top-btn");
         if (scrollTop > 200) {
             msrcbtn.classList.add("visible");
-            msrcbtn.classList.remove("hidden");
+            msrcbtn.classList.remove("d-none");
+            msrcbtn.classList.add("es-animate");
         } else {
             msrcbtn.classList.remove("visible");
-            msrcbtn.classList.add("hidden");
+            msrcbtn.classList.add("d-none");
+            msrcbtn.classList.remove("es-animate");
         }
     });
 })();
