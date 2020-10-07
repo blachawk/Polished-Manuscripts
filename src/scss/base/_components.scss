@@ -1,7 +1,5 @@
 //COMPONENTS TO EXTEND CSS
 
-
-
 //flex components | add more as we need them
 .flex {
     display: flex;
@@ -17,55 +15,37 @@
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
-
 //animation ready 
 
 .trans {
     transition: 0.3s;
 }
 
-
 //heading elements
 
-.h6 {
+h6 {
     font-size: 1rem;
 }
 
-.h5 {
+h5 {
     font-size: 1.50rem;
 }
 
-.h4 {
+h4 {
     font-size: 2rem;
 }
 
-.h3 {
+h3 {
     font-size: 3rem;
 }
 
-.h2 {
+h2 {
     font-size: 4rem;
 }
 
-.h1 {
+h1 {
     font-size: 5rem;
 }
-
-
-// h3 {
-//     //font-family: 'Playfair Display', serif;
-//     font-weight: 800;
-//     font-size: 3rem;
-//     color: #333;
-// }
-
-// h4 {
-//     //font-family: 'Playfair Display', serif;
-//     font-style: italic;
-//     font-size: 1.6rem;
-//     font-weight: 500;
-//     color: #333;
-// }
 
 .border {
     border: solid 1px darkolivegreen;
@@ -187,6 +167,10 @@
 
 .bg-red {
     background-color: #d81e06;
+}
+
+.bg-penguin {
+    background-color: #f4f3ec;
 }
 
 .border-red {
@@ -486,8 +470,4 @@ ol {
     color: #222;
     background-color: #ccc;
     border:solid 0.25rem #222;
-}
-
-.bg-c-penguin {
-    background-color: #f4f3ec;
 }
