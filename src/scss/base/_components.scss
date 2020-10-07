@@ -181,6 +181,10 @@
     background-color: #666;
 }
 
+.bg-grey-dark {
+    background-color: #333;   
+}
+
 .bg-red {
     background-color: #d81e06;
 }
@@ -297,6 +301,10 @@
 
 .p-top-md {
     padding-top: 3em;
+}
+
+.p-top-lg {
+    padding-top:4em;
 }
 
 .p-top-xlg {
@@ -418,11 +426,6 @@ blockquote {
 
 .tint {
     filter: brightness(85%);
-}
-
-p {
-    margin-bottom: 1em;
-    color: #333;
 }
 
 ul,
