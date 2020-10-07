@@ -95,11 +95,18 @@
                 document.querySelector('.top-menu').classList.toggle('es-fixed-on-top');
                 document.querySelector('.top-menu').classList.toggle('es-animate');
             }
+
+            //TOGGLE COLOR GENERATOR BTN FOR GENERATOR MENU ON CLICKS
+            if (this.classList.contains('generator-btn')) {
+                this.classList.toggle('es-clicked');
+                document.querySelector('.generator-menu').classList.toggle('es-animate');
+            }
         });
     }
 
     //ES-EVENTS ON SCROLL
     document.addEventListener("scroll", function (e) {
+
         //ES-TOGGLE CLASS ON SCROLL-BTN TO THEN ANIMIATE VIA CSS3
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var msrcbtn = document.querySelector(".scroll-top-btn");
@@ -113,4 +120,35 @@
             msrcbtn.classList.remove("es-animate");
         }
     });
+
+    //ON SELECTOR OPTIONS FOR GENERATOR
+    var mselect = document.querySelector(".select-options");
+    mselect.addEventListener('change', (e) => {
+        //console.log(`e.target.value = ${ e.target.value }`);
+        if (e.target.value == 'base') {
+            console.log('we picked base');
+            //look for all hook points and toggle their classes to change colors back to base
+            document.querySelector('.header').classList.remove('bg-cream');
+            document.querySelector('.header').classList.add('bg-white');
+        } else if (e.target.value == 'cream') {
+            console.log('we picked cream');
+            //look for all hook points and toggle their classes to change existing colors to cream
+            //document.querySelector('body').classList.remove('bg-white');  
+            document.querySelector('body').classList.add('bg-cream');
+            document.querySelector('.header').classList.remove('bg-white');
+            document.querySelector('.header').classList.add('bg-cream');
+            document.querySelector('.intro h3').classList.remove('txt-brown');
+            document.querySelector('.testimonial-title').classList.remove('bg-white');
+            document.querySelector('.testimonial-title').classList.add('bg-cream');
+            document.querySelector('.testimonial-title .pen-red').classList.add('pen-cream');
+            //  document.querySelectorAll('.hook-testimonials ul')[0].classList.add('bg-white');
+            //  document.querySelectorAll('.hook-testimonials ul')[1].classList.add('bg-white');
+            //  document.querySelectorAll('.hook-testimonials ul')[2].classList.add('bg-white');
+
+        } else {
+            console.log('we picked endless night');
+            //look for all hook points and toggle their classes to change existing colors to endless night
+        }
+    });
+
 })();

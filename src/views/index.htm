@@ -48,9 +48,7 @@
         Centering with Flex
         https://coryrylan.com/blog/how-to-center-in-css-with-flexbox
 
-
         For every layout, have the classes that switch backgrounds, colors, font families, font styles, font weights, font sizes, shadows, borders, images, onto the elements.  Everything else else can be managed by parent classes on elements.
-        
     -->
 
     <div id="front-page">
@@ -66,10 +64,9 @@
             <button class="generator-btn fsize-125 shadow-box-dark bg-darksalmon border-grey txt-grey hover-red active-red" type="button">
                 <span class="colorbox"></span>
             </button>
-
         </nav>
 
-        <header>
+        <header class="header">
             <!--header-->
             <div class="row jc-center">
                 <div class="col ai-center wmin-200">
@@ -80,8 +77,8 @@
             </div>
         </header>
 
-        <main>
-            <!--fixed navigation-->
+        <main class="main">
+            <!--fixed top menu-->
             <section class="top-menu border-red shadow-inset hidden">
                 <div class="row">
                     <div class="col">
@@ -106,8 +103,23 @@
                 </div>
             </section>
 
+            <!--fixed color options menu-->
+            <section class="generator-menu border-red shadow-inset">
+                <div class="row">
+                    <div class="col">
+                         <p class="p-sm ffam-arial fsize-08">Please select from one of the layout options below.</p>
+                         <select class="select-options m-sm" id="mlayouts">
+                            <option value="none">--Select--</option>
+                            <option value="base">Base</option>
+                            <option value="cream">Cream</option>
+                            <option value="endlessnight">Endless Night</option>
+                           </select>
+                    </div>
+                </div>
+            </section>
+
             <!--what is Polished Manuscripts...-->
-            <section class="row bg-floralwhite shadow-fall animate redbooks">
+            <section class="intro row bg-floralwhite shadow-fall animate redbooks">
                 <div class="col wmin-300 wmax-800 p-md p-y-lg">
                     <h3 class="fstyle-italic fweight-800 txt-grey-dark">What is Polished Manuscripts?</h3>
                     <h5 class="p-x-lg fstyle-italic fweight-500 txt-grey-dark">I help authors publish a can’t-put-it-down book by publishing their words until
@@ -116,7 +128,7 @@
             </section>
 
             <!--testimonial title-->
-            <section class="row jc-center">
+            <section class="testimonial-title row jc-center">
                 <div class="col ai-center p-top-lg">
                     <div class="title pen-red">
                         <h3 class="txt-grey-dark">Testimonials</h3>
@@ -126,9 +138,9 @@
             </section>  
 
             <!--testimonials-->
-            <section class="row wmax-900 jc-center p-btm-lg">
+            <section class="testimonials row wmax-900 jc-center p-btm-lg">
                 <!--David-->
-                <div class="col wmax-300 p-x-sm author-list">
+                <div class="author-list col wmax-300 p-x-sm">
                     <ul class="shadow-box">
                         <li>
                             <img class="tint" src="/dist/images/pm_author_headshot_dpk_280x360.jpg" alt="">
@@ -137,9 +149,11 @@
                             <h6 class="fweight-500 txt-red">David Paul Kirkpatrick</h6>
                         </li>
                         <li>
-                            <h4><a class="trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red"
+                            <h4>
+                                <a class="trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red"
                                     href="https://www.amazon.com/dog-David-Paul-Kirkpatrick/dp/1943785856/">Author of
-                                    the dog</a></h4>
+                                    the dog</a>
+                                </h4>
                         </li>
                         <li>
                             <blockquote class="border-left-grey-light">
@@ -158,7 +172,7 @@
                     </ul>
                 </div>
                 <!--Luke-->
-                <div class="col wmax-300 p-x-sm author-list">
+                <div class="author-list col wmax-300 p-x-sm">
                     <ul class="shadow-box">
                         <li>
                             <img class="tint" src="/dist/images/pm_author_headshot_luke_280x360.jpg" alt="">
@@ -185,7 +199,7 @@
                     </ul>
                 </div>
                 <!--Julie-->
-                <div class="col wmax-300 p-x-sm author-list">
+                <div class="author-list col wmax-300 p-x-sm">
                     <ul class="shadow-box">
                         <li>
                             <img class="tint" src="/dist/images/pm_author_headshot_julie_280x360.jpg" alt="">
@@ -212,18 +226,18 @@
             </section>
         </main>
 
-        <footer class="p-top-lg">
+        <footer class="footer p-top-lg">
             <!--contact title-->
             <div class="row wmax-900 jc-center p-btm-sm">
-                <div class="col ai-center title">
+                <div class="title col ai-center">
                     <img class="img flex wmax-50" src="/dist/images/pm_logo_onblack_294x178.png" alt="">
                     <h3 class="txt-white">Contact Me</h3>
                 </div>
             </div>
-            <!--footer columns-->
+            <!--footer sections-->
             <div class="row wmax-900 p-btm-sm">
                 <!--connect-->
-                <div class="col ai-center wmax-300">
+                <div class="connect col ai-center wmax-300">
                     <h5 class="txt-white p-btm-sm txt-red">Email</h5>
                     <ul class="flex txt-white">
                         <li><a class="font-reset txt-white"
@@ -231,7 +245,7 @@
                     </ul>
                 </div>
                 <!--social media-->
-                <div class="col ai-center wmax-300">
+                <div class="social col ai-center wmax-300">
                     <h5 class="txt-white p-btm-sm txt-red">Social</h5>
                     <ul class="flex txt-white">
                         <li><a class="trans hover-txt-red icon facebook txt-white" href="#">Facebook</a></li>
@@ -240,13 +254,13 @@
                     </ul>
                 </div>
                 <!--contact-->
-                <div class="col ai-center wmax-300">
+                <div class="contact col ai-center wmax-300">
                     <h5 class="txt-white p-btm-sm txt-red">Contact</h5>
-                    <a class="trans action_btn font-reset p-sm hover-dark active-border-white"  href="#">Contact Form</a>
+                    <a class="trans action_btn font-reset p-sm hover-dark active-border-white" href="#">Contact Form</a>
                 </div>
             </div>
             <!--footer copy-->
-            <div class="row">
+            <div class="copy row">
                 <div class="col bg-grey-dark txt-grey">
                     <p class="p-sm">Copyright &copy; 2019 Polished Manuscripts | <a class="txt-white" href="https://www.polishedmanuscripts.com">www.polishedmanuscripts.com</a></p>
                 </div>

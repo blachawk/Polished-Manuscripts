@@ -97,39 +97,10 @@ html {
 
                 transition: 0.3s;
 
-                //the inner button on click
-                &.es-clicked {
-                    span.colorbox {
-
-                        //transition the bg color
-
-                        &:before,
-                        &:after {
-                            content: '';
-                            display: block;
-                            top: 0.15rem;
-                            height: 0.1875rem;
-                            margin: 0.4375rem 0;
-                            background-color:blue;
-                            transition: all .2s ease-in-out;
-
-                            //scss mixin
-                            box-shadow:
-                                0 0 0 0 #333,
-                                0 0 0 0 #333;
-                        }
-
-                        &:after {
-                            transform: translateY(6px) rotate(135deg);
-                        }
-
-                        &:before {
-                            transform: translateY(6px) rotate(-135deg);
-                        }
-                    }
+                &:focus {
+                    outline-color:white;
                 }
 
-                //the 3 lines inside the button
                 span.colorbox {
                     position: relative;
                     display: inline-block;
@@ -138,6 +109,10 @@ html {
                     vertical-align: middle;
                     background: no-repeat center center;
                     background-size: 100% 100%;
+                }
+
+                &.es-clicked {
+                    opacity:0.5;
                 }
             }
         }
@@ -218,6 +193,41 @@ html {
 
                     &:active {
                         color: lightcoral; //scss var
+                    }
+                }
+            }
+        }
+
+        .generator-menu {
+            z-index: 9998;
+            position: fixed;
+            top: 4rem;
+            right: -15rem; //transition back to 0;
+            width: 15rem;
+            height: 15rem;
+            background-color:white;
+            border-style: solid;
+            border-width: 0.5rem;
+
+            &.es-animate {
+                
+                animation: animate-generator linear 0.2s 1 normal forwards running;
+
+                @keyframes animate-generator {
+                    0% {
+                        right: -15rem;
+                    }
+
+                    50% {
+                        right: 1em;
+                    }
+
+                    80% {
+                        right: -1em;
+                    }
+
+                    100% {
+                        right: 0em;
                     }
                 }
             }

@@ -18,22 +18,24 @@
 
 //BASE FONT FAMILY | VARS
 
-$base-font-family: 'Playfair Display',
-serif;
+$base-font-family: 'Playfair Display', serif;
 
 //COLORS | VARS
 
-$olive: darkolivegreen;
 $white: white;
-$red: #901404;
-$gold:goldenrod;
-$grey: grey;
-$grey-light:#ccc;
-$grey-dark: #333;
-$coco: chocolate;
 $floralwhite: floralwhite;
 $palrod: palegoldenrod;
-
+$khaki: khaki;
+$darksalmon: darksalmon;
+$coco: chocolate;
+$brown: brown;
+$red: #901404;
+$gold:goldenrod;
+$olive: darkolivegreen;
+$grey: grey;
+$grey-light:#ccc;
+$thistle:thistle;
+$grey-dark: #333;
 
 //GENERICS 
 
@@ -62,7 +64,7 @@ $palrod: palegoldenrod;
 }
 
 .lh-125 {
-    line-height:1.25;
+    line-height: 1.25;
 }
 
 //LISTS
@@ -71,25 +73,24 @@ ul,
 ol {
     li {
         position: relative;
-        padding: 0.5em;
+        padding: 0.5rem;
         list-style: none;
     }
 
-    //PRETTY DISC OPTION BREAK THIS DOWN THOUGH IT'S NOT USED ON THE FIRST LAYOUT
+    //PRETTY DISC OPTION
     &.discs {
         list-style: none;
 
         li:before {
-            content: " ";
-
+            content: "";
             display: inline-block;
             position: relative;
             margin: 0 5px 0 0;
             width: 4px;
             height: 4px;
             border-radius: 11px;
-            border: 4px solid #811a1d;
-            background-color: #811a1d;
+            border: 4px solid $red;
+            background-color: $red;
             opacity: 0.9;
         }
     }
@@ -99,7 +100,7 @@ ol {
         list-style: none;
 
         li:before {
-            content: " ";
+            content: "";
 
             display: inline-block;
             position: relative;
@@ -108,7 +109,7 @@ ol {
             width: 8px;
             height: 8px;
             border-radius: 11px;
-            border: 4px solid #811a1d;
+            border: 4px solid $red;
             background-color: transparent;
             opacity: 0.9;
         }
@@ -126,6 +127,56 @@ ol {
     color: $grey-dark;
     background-color: $grey-light;
     border: solid 0.25rem $grey-dark;
+}
+
+//MULTI-SELECT 
+select {
+    &.select-options {
+        width: 140px;
+        height: 35px;
+        padding: 4px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px $grey;
+        background: $palrod;
+        border: none;
+        outline: none;
+        display: inline-block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+
+    label {
+        position: relative;
+    }
+
+    label:after {
+        content: '<>';
+        font: 11px "Consolas", monospace;
+        color: $grey;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 8px;
+        top: 2px;
+        padding: 0 0 2px;
+        border-bottom: 1px solid $palrod;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    label:before {
+        content: '';
+        right: 6px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        background-color:$grey-light;
+        position: absolute;
+        pointer-events: none;
+        display: block;
+    }
 }
 
 //HORIZONTAL RULES 
@@ -223,7 +274,9 @@ $val in $fontweights {
 //FONT SIZES | MAPS
 //https://sass-lang.com/documentation/values/maps
 
-$fontsizes: (fsize-1: 1rem,
+$fontsizes: (
+    fsize-08: 0.8rem,
+    fsize-1: 1rem,
     fsize-125: 1.25rem,
     fsize-13: 1.3rem,
     fsize-15: 1.5rem,
@@ -241,8 +294,7 @@ $val in $fontsizes {
 //https://sass-lang.com/documentation/values/maps
 //not in use at the moment...but with more layout options, this map will grow
 
-$fontfams: (ffam-arial: 'Arial, Helvetica, sans-serif'
-);
+$fontfams: (ffam-arial: arial);
 
 @each $name,
 $val in $fontfams {
@@ -261,11 +313,19 @@ $val in $fontfams {
 //https://sass-lang.com/documentation/values/maps
 
 $fontcolors: (
-    txt-red: $red,
-    txt-coco: $coco,
     txt-white: $white,
+    txt-floralwhite: $floralwhite,
+    txt-palrod: $palrod,
+    txt-khaki: $khaki,
+    txt-coco: $coco,
+    txt-brown: $brown,
+    txt-red: $red,
+    txt-gold: $gold,
+    txt-olive: $olive,
     txt-grey: $grey,
-    txt-grey-dark:$grey-dark);
+    txt-grey-dark:$grey-dark,
+    txt-thristle:$thistle,
+    );
 
 @each $name,
 $val in $fontcolors {
@@ -282,12 +342,20 @@ $val in $fontcolors {
 //https://sass-lang.com/documentation/values/maps
 
 $bgcolors: (
-    bg-floralwhite:$floralwhite,
-    bg-grey:$grey,
-    bg-grey-dark:$grey-dark,
+
+    bg-white: $white,
+    bg-floralwhite: $floralwhite,
+    bg-palrod: $palrod,
+    bg-khaki: $khaki,
+    bg-coco: $coco,
+    bg-brown: $brown,
     bg-red: $red,
-    bg-darksalmon: darksalmon
-);
+    bg-gold: $gold,
+    bg-olive: $olive,
+    bg-grey: $grey,
+    bg-grey-dark:$grey-dark,
+    bg-darksalmon: $darksalmon
+    );
 
 @each $name,
 $val in $bgcolors {
@@ -299,25 +367,24 @@ $val in $bgcolors {
 //BORDERS CUSTOM
 
 $borders: (
-  (border, border,solid 0.0625rem $olive),
-  (border-btm, border-bottom,solid 0.0625rem $olive),
-  (border-left-grey-light, border-left,0.625rem solid $grey-light),
-  (border-white, border,solid 1rem $white)
-);
+    (border, border, solid 0.0625rem $olive),
+    (border-btm, border-bottom, solid 0.0625rem $olive),
+    (border-left-grey-light, border-left, 0.625rem solid $grey-light),
+    (border-white, border, solid 1rem $white));
 
-  @each $selector, $prop, $value in $borders {
+@each $selector,
+$prop,
+$value in $borders {
     .#{$selector} {
-      #{$prop}: $value;
+        #{$prop}: $value;
     }
 }
 
 //BORDER COLORS | MAPS 
 //https://sass-lang.com/documentation/values/maps
 
-$bordercolors: (
-    border-red: $red,
-    border-grey: $grey
-);
+$bordercolors: (border-red: $red,
+    border-grey: $grey);
 
 @each $name,
 $val in $bordercolors {
@@ -331,7 +398,7 @@ $val in $bordercolors {
 .hover-red {
     &:hover {
         background-color: $red;
-        text-decoration-color:$red; 
+        text-decoration-color: $red;
     }
 }
 
@@ -344,7 +411,7 @@ $val in $bordercolors {
 
 .hover-txt-red {
     &:hover {
-        color: $red;    
+        color: $red;
     }
 }
 
@@ -380,40 +447,40 @@ $val in $bordercolors {
 //https://www.sitepoint.com/sass-maps-vs-nested-lists/
 //https://www.w3schools.com/Css/css_syntax.asp
 
-$margspads: (
-  (m-sm, margin, 1rem),
-  (m-md, margin, 2rem),
-  (m-lg, margin, 5rem),
-  (m-x-sm, margin, 0 1rem),
-  (m-x-md, margin, 0 2rem),
-  (m-x-lg, margin, 0 5rem),
-  (m-y-sm, margin, 1rem 0),
-  (m-y-md, margin, 2rem 0),
-  (m-y-lg, margin, 5rem 0),
-  (m-btm-sm, margin-bottom, 1rem),
-  (m-btm-md, margin-bottom, 2rem),
-  (m-btm-lg, margin-bottom, 5rem),
-  (p-sm, padding, 1rem),
-  (p-md, padding, 2rem),
-  (p-lg, padding, 5rem),
-  (p-x-sm, padding, 0 1rem),
-  (p-x-md, padding, 0 2rem),
-  (p-x-lg, padding, 0 5rem),
-  (p-y-sm, padding, 1rem 0),
-  (p-y-md, padding, 2rem 0),
-  (p-y-lg, padding, 5rem 0),
-  (p-btm-sm, padding-bottom, 1rem),
-  (p-btm-md, padding-bottom, 2rem),
-  (p-btm-lg, padding-bottom, 5rem),
-  (p-top-sm, padding-top, 1rem),
-  (p-top-md, padding-top, 2rem),
-  (p-top-lg, padding-top, 5rem),
-  (p-lft-sm, padding-left, 1em)
-);
+$margspads: ((m-sm, margin, 1rem),
+    (m-md, margin, 2rem),
+    (m-lg, margin, 5rem),
+    (m-x-sm, margin, 0 1rem),
+    (m-x-md, margin, 0 2rem),
+    (m-x-lg, margin, 0 5rem),
+    (m-y-sm, margin, 1rem 0),
+    (m-y-md, margin, 2rem 0),
+    (m-y-lg, margin, 5rem 0),
+    (m-btm-sm, margin-bottom, 1rem),
+    (m-btm-md, margin-bottom, 2rem),
+    (m-btm-lg, margin-bottom, 5rem),
+    (p-sm, padding, 1rem),
+    (p-md, padding, 2rem),
+    (p-lg, padding, 5rem),
+    (p-x-sm, padding, 0 1rem),
+    (p-x-md, padding, 0 2rem),
+    (p-x-lg, padding, 0 5rem),
+    (p-y-sm, padding, 1rem 0),
+    (p-y-md, padding, 2rem 0),
+    (p-y-lg, padding, 5rem 0),
+    (p-btm-sm, padding-bottom, 1rem),
+    (p-btm-md, padding-bottom, 2rem),
+    (p-btm-lg, padding-bottom, 5rem),
+    (p-top-sm, padding-top, 1rem),
+    (p-top-md, padding-top, 2rem),
+    (p-top-lg, padding-top, 5rem),
+    (p-lft-sm, padding-left, 1em));
 
-@each $selector, $prop, $value in $margspads {
+@each $selector,
+$prop,
+$value in $margspads {
     .#{$selector} {
-      #{$prop}: $value;
+        #{$prop}: $value;
     }
 }
 
@@ -422,19 +489,20 @@ $margspads: (
 //http://sass.js.org/
 //https://www.sitepoint.com/sass-maps-vs-nested-lists/
 //https://www.w3schools.com/Css/css_syntax.asp
-$wmaxmin: (
-  (wmax-50, max-width, 50px),
-  (wmax-200, max-width, 200px),
-  (wmax-300, max-width, 300px),
-  (wmax-800, max-width, 800px),
-  (wmax-900, max-width, 900px),
-  (wmin-200, min-width, 200px),
-  (wmin-300, min-width, 300px),
+$wmaxmin: ((wmax-50, max-width, 50px),
+    (wmax-200, max-width, 200px),
+    (wmax-300, max-width, 300px),
+    (wmax-800, max-width, 800px),
+    (wmax-900, max-width, 900px),
+    (wmin-200, min-width, 200px),
+    (wmin-300, min-width, 300px),
 
 );
 
-@each $selector, $prop, $value in $wmaxmin {
+@each $selector,
+$prop,
+$value in $wmaxmin {
     .#{$selector} {
-      #{$prop}: $value;
+        #{$prop}: $value;
     }
 }

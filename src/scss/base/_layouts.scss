@@ -34,6 +34,15 @@ html {
                     margin-left: 0.5rem;
                 }
             }
+            &.pen-cream {
+                padding: 0 0 3rem 6rem;
+                background: transparent url(../../../dist/images/pm_bg_pen_cream_500x472.png) no-repeat;
+                background-size: 100px 90px;
+
+                h4 {
+                    margin-left: 0.5rem;
+                }
+            }
         }
 
         header {
