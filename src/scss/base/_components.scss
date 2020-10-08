@@ -29,7 +29,7 @@ $khaki: khaki;
 $darksalmon: darksalmon;
 $coco: chocolate;
 $brown: brown;
-$red: #901404;
+$red: #DA2A1B;
 $gold:goldenrod;
 $olive: darkolivegreen;
 $grey: grey;
@@ -130,6 +130,7 @@ ol {
 }
 
 //MULTI-SELECT 
+
 select {
     &.select-options {
         width: 140px;
@@ -137,7 +138,7 @@ select {
         padding: 4px;
         border-radius: 4px;
         box-shadow: 2px 2px 8px $grey;
-        background: $palrod;
+        //background: $palrod;
         border: none;
         outline: none;
         display: inline-block;
@@ -145,6 +146,21 @@ select {
         -moz-appearance: none;
         appearance: none;
         cursor: pointer;
+
+        option {
+             &.base {
+                background-color:$white;
+                color:$red; 
+            }
+            &.cream {
+                background-color:$palrod;
+                color:$grey-dark; 
+            }
+            &.darknight {
+                background-color:$grey-dark;
+                color:$white;
+            }
+        }
     }
 
     label {

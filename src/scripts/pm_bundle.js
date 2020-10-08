@@ -1,9 +1,13 @@
 "use strict";
 
-// (function pmtest() {
-//     //ES-TEST CONNECTION
-//     console.log('ecmascript connected now!!!!!');
-// })();
+ (function pmtest() {
+     //ES-TEST CONNECTION
+     //console.log('ecmascript connected now!!!!!');
+     /*
+     Excellent learning points:
+     https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
+     */
+ })();
 
 (function pmdetect() {
     //ES-DETECT IF CSS3 ANIMATIONS ARE SUPPORTED
@@ -130,6 +134,15 @@
             //look for all hook points and toggle their classes to change colors back to base
             document.querySelector('.header').classList.remove('bg-cream');
             document.querySelector('.header').classList.add('bg-white');
+
+
+            //how to remove multiple instances of a classes at once
+            // var els = document.querySelectorAll('.something.active');
+            // for (var i = 0; i < els.length; i++) {
+            //     els[i].classList.remove('active');
+            // }
+
+
         } else if (e.target.value == 'cream') {
             console.log('we picked cream');
             //look for all hook points and toggle their classes to change existing colors to cream
