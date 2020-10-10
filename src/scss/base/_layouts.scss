@@ -52,7 +52,7 @@ html {
         main {
             .animate {
                 &.redbooks {
-                    background: #e9e8e1 url(../../../dist/images/pm_redbooks_1296x400.png) center right no-repeat;
+                    background: transparent url(../../../dist/images/pm_redbooks_1296x400.png) center right no-repeat;
 
                     //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                     //IE11 does not support animate.  IE11 styling is active in trump scss file
@@ -95,15 +95,7 @@ html {
             }
         }
 
-        footer {
-
-            //scss mixin
-            background: repeating-linear-gradient(55deg,
-                    #191919,
-                    #191919 10px,
-                    #222 5px,
-                    #222 11px);
-        }
+        footer {}
 
         .scroll-top-btn {
             z-index: 9997;

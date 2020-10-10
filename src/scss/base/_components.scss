@@ -18,13 +18,14 @@
 
 //BASE FONT FAMILY | VARS
 
-$base-font-family: 'Playfair Display', serif;
+$base-font-family: 'Playfair Display',
+serif;
 
 //COLORS | VARS
 
 $white: white;
 $floralwhite: floralwhite;
-$palrod: palegoldenrod;
+$palrod: #f4f3ec; // palegoldenrod;
 $khaki: khaki;
 $darksalmon: darksalmon;
 $coco: chocolate;
@@ -35,12 +36,14 @@ $olive: darkolivegreen;
 $grey: grey;
 $grey-light:#ccc;
 $thistle:thistle;
+$whitesmoke:whitesmoke;
 $grey-dark: #333;
 
 //GENERICS 
 
 .visible {
     visibility: visible;
+
 }
 
 .hidden {
@@ -148,17 +151,19 @@ select {
         cursor: pointer;
 
         option {
-             &.base {
-                background-color:$white;
-                color:$red; 
+            &.base {
+                background-color: $white;
+                color: $red;
             }
+
             &.cream {
-                background-color:$palrod;
-                color:$grey-dark; 
+                background-color: $palrod;
+                color: $grey-dark;
             }
+
             &.darknight {
-                background-color:$grey-dark;
-                color:$white;
+                background-color: $grey-dark;
+                color: $white;
             }
         }
     }
@@ -188,7 +193,7 @@ select {
         top: 0px;
         width: 20px;
         height: 20px;
-        background-color:$grey-light;
+        background-color: $grey-light;
         position: absolute;
         pointer-events: none;
         display: block;
@@ -231,8 +236,7 @@ blockquote {
 //HEADING ELEMENTS | MAPS
 //https://sass-lang.com/documentation/values/maps
 
-$headings: (
-    h6: 1.25rem,
+$headings: (h6: 1.25rem,
     h5: 1.50rem,
     h4: 2rem,
     h3: 3rem,
@@ -290,8 +294,7 @@ $val in $fontweights {
 //FONT SIZES | MAPS
 //https://sass-lang.com/documentation/values/maps
 
-$fontsizes: (
-    fsize-08: 0.8rem,
+$fontsizes: (fsize-08: 0.8rem,
     fsize-1: 1rem,
     fsize-125: 1.25rem,
     fsize-13: 1.3rem,
@@ -328,8 +331,7 @@ $val in $fontfams {
 //FONT COLORS | MAPS 
 //https://sass-lang.com/documentation/values/maps
 
-$fontcolors: (
-    txt-white: $white,
+$fontcolors: (txt-white: $white,
     txt-floralwhite: $floralwhite,
     txt-palrod: $palrod,
     txt-khaki: $khaki,
@@ -341,7 +343,7 @@ $fontcolors: (
     txt-grey: $grey,
     txt-grey-dark:$grey-dark,
     txt-thristle:$thistle,
-    );
+    txt-whitesmoke:$whitesmoke);
 
 @each $name,
 $val in $fontcolors {
@@ -357,9 +359,7 @@ $val in $fontcolors {
 //BACKGROUND COLORS | MAPS 
 //https://sass-lang.com/documentation/values/maps
 
-$bgcolors: (
-
-    bg-white: $white,
+$bgcolors: (bg-white: $white,
     bg-floralwhite: $floralwhite,
     bg-palrod: $palrod,
     bg-khaki: $khaki,
@@ -370,21 +370,62 @@ $bgcolors: (
     bg-olive: $olive,
     bg-grey: $grey,
     bg-grey-dark:$grey-dark,
-    bg-darksalmon: $darksalmon
-    );
+    bg-darksalmon: $darksalmon,
+    bg-whitesmoke:$whitesmoke);
 
 @each $name,
 $val in $bgcolors {
     .#{$name} {
         background-color: $val;
+
+        @if $name==bg-palrod {
+            & header {
+                background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -100px;
+            }
+        }
     }
 }
 
+
+body {
+
+    &.bg-palrod {
+        background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) -900px center no-repeat;
+    }
+
+    .bg-none {
+        background: none;
+    }
+
+    .bg-dark-lines {
+        //scss mixin
+        background: repeating-linear-gradient(55deg,
+                #191919,
+                #191919 10px,
+                #222 5px,
+                #222 11px);
+    }
+    footer {
+        &.bg-footer-flower {
+            background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) 0 0 center no-repeat;
+        }
+    
+    }
+
+ }
+
+
+
+
+
+
 //BORDERS CUSTOM
 
-$borders: (
-    (border, border, solid 0.0625rem $olive),
+$borders: ((border, border, solid 0.0625rem $olive),
     (border-btm, border-bottom, solid 0.0625rem $olive),
+    (border-btm-brown, border-bottom, solid 1rem $brown),
+    (border-brown, border, solid 1rem $brown),
+    (border-color-brown, border-color,$brown),
     (border-left-grey-light, border-left, 0.625rem solid $grey-light),
     (border-white, border, solid 1rem $white));
 

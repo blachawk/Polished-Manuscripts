@@ -1,13 +1,32 @@
 "use strict";
 
- (function pmtest() {
-     //ES-TEST CONNECTION
-     //console.log('ecmascript connected now!!!!!');
-     /*
-     Excellent learning points:
-     https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
-     */
- })();
+(function pmtest() {
+    //ES-TEST CONNECTION
+    //console.log('ecmascript connected now!!!!!');
+    /*
+    Excellent learning points:
+    https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
+    
+    //Scrolling the document to position "250" horizontally and "110" vertically 
+    //https://www.w3schools.com/jsref/met_win_scrollto.asp
+    //https://stackoverflow.com/a/50590388/957186
+    //window.scrollTo(250, 110);
+
+    //ADD AND OR REMOVE CLASS AS TOGGLE CLASS
+    //https://www.digitalocean.com/community/tutorials/js-classlist
+    //this.classList.toggle('cool');
+    
+    // how to remove multiple instances of a classes at once
+    // var els = document.querySelectorAll('.something.active');
+    // for (var i = 0; i < els.length; i++) {
+    //     els[i].classList.remove('active');
+    // }
+
+
+
+    
+    */
+})();
 
 (function pmdetect() {
     //ES-DETECT IF CSS3 ANIMATIONS ARE SUPPORTED
@@ -27,6 +46,7 @@
 })();
 
 (function pmevents() {
+
     //ES-EVENTS ON ALL ANCHOR & BUTTON CLICKS
     var anchors = document.querySelectorAll('a, button');
     var mclick = 0;
@@ -38,15 +58,6 @@
 
             //TOGGLE SCROLL & FADE ON SPECIFIC CLASS
             if (this.classList.contains('scroll-top-btn')) {
-
-                //Scrolling the document to position "250" horizontally and "110" vertically 
-                //https://www.w3schools.com/jsref/met_win_scrollto.asp
-                //https://stackoverflow.com/a/50590388/957186
-                //window.scrollTo(250, 110);
-
-                //ADD AND OR REMOVE CLASS AS TOGGLE CLASS
-                //https://www.digitalocean.com/community/tutorials/js-classlist
-                //this.classList.toggle('cool');
 
                 //all credit to the following stack dev for this custom solution: 
                 //https://bit.ly/2GklKpk
@@ -130,37 +141,94 @@
     mselect.addEventListener('change', (e) => {
         //console.log(`e.target.value = ${ e.target.value }`);
         if (e.target.value == 'base') {
-            console.log('we picked base');
-            //look for all hook points and toggle their classes to change colors back to base
-            document.querySelector('.header').classList.remove('bg-cream');
-            document.querySelector('.header').classList.add('bg-white');
+            console.log('base');
+            document.querySelector('body').setAttribute("class", "");
+
+            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
+            document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-red shadow-inset hidden");
+
+            document.querySelector('header').setAttribute("class", "header");
+
+            document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks bg-whitesmoke");
+            document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
+            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
+            document.querySelector('main .title').setAttribute("class", "title pen-red");
 
 
-            //how to remove multiple instances of a classes at once
-            // var els = document.querySelectorAll('.something.active');
-            // for (var i = 0; i < els.length; i++) {
-            //     els[i].classList.remove('active');
-            // }
+            document.querySelectorAll('main .testimonials ul').forEach(function (el) {
+                el.setAttribute("class", "shadow-box");
+            });
 
+            document.querySelector('footer').setAttribute("class", "p-top-lg bg-dark-lines");
+            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer h3').setAttribute("class", "txt-white");
+            document.querySelector('footer .action_btn').setAttribute("class","trans action_btn font-reset p-sm hover-dark active-border-white");            
+            document.querySelectorAll('footer h5').forEach(function (el) {
+                el.setAttribute("class", "txt-white p-btm-sm txt-red");
+            });
+            document.querySelectorAll('footer ul li a').forEach(function (el) {
+                el.setAttribute("class", "trans hover-txt-red icon txt-white");
+            });
+
+            document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
         } else if (e.target.value == 'cream') {
-            console.log('we picked cream');
-            //look for all hook points and toggle their classes to change existing colors to cream
-            //document.querySelector('body').classList.remove('bg-white');  
-            document.querySelector('body').classList.add('bg-cream');
-            document.querySelector('.header').classList.remove('bg-white');
-            document.querySelector('.header').classList.add('bg-cream');
-            document.querySelector('.intro h3').classList.remove('txt-brown');
-            document.querySelector('.testimonial-title').classList.remove('bg-white');
-            document.querySelector('.testimonial-title').classList.add('bg-cream');
-            document.querySelector('.testimonial-title .pen-red').classList.add('pen-cream');
-            //  document.querySelectorAll('.hook-testimonials ul')[0].classList.add('bg-white');
-            //  document.querySelectorAll('.hook-testimonials ul')[1].classList.add('bg-white');
-            //  document.querySelectorAll('.hook-testimonials ul')[2].classList.add('bg-white');
+            console.log('cream (palrod)');
+            document.querySelector('body').setAttribute("class", "bg-palrod");
+
+            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-brown border-grey txt-grey hover-red active-red");
+            document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-brown shadow-inset hidden");
+
+            document.querySelector('header').setAttribute("class", "bg-palrod");
+
+            document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks border-btm-brown");
+            document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
+            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
+            document.querySelector('main .title').setAttribute("class", "title pen-cream");
+
+            document.querySelectorAll('main .testimonials ul').forEach(function (el) {
+                el.setAttribute("class", "");
+            });
+
+            document.querySelector('footer').setAttribute("class", "p-top-lg bg-palrod bg-footer-flower shadow-inset");
+            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer h3').setAttribute("class", "txt-grey-dark");
+            document.querySelector('footer .action_btn').setAttribute("class","trans action_btn font-reset p-sm hover-dark active-border-white border-color-brown");            
+            document.querySelectorAll('footer h5').forEach(function (el) {
+                el.setAttribute("class", "txt-white p-btm-sm txt-grey-dark");
+            });
+            document.querySelectorAll('footer ul li a').forEach(function (el) {
+                el.setAttribute("class", "trans hover-txt-red icon txt-brown");
+            });
+
+            document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
         } else {
-            console.log('we picked endless night');
-            //look for all hook points and toggle their classes to change existing colors to endless night
+            console.log('endless night');
+            document.querySelector('body').setAttribute("class", "bg-grey-dark");
+
+            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
+            document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-red shadow-inset hidden");
+
+            document.querySelector('header').setAttribute("class", "bg-grey-dark");
+
+            document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks");
+            document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
+            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
+            document.querySelector('main .title').setAttribute("class", "title pen-white");
+
+            document.querySelectorAll('main .testimonials ul').forEach(function (el) {
+                el.setAttribute("class", "");
+            });
+
+            document.querySelector('footer').setAttribute("class", "p-top-lg bg-dark-lines");
+            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer h3').setAttribute("class", "txt-white");
+
+            document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
         }
     });
 
