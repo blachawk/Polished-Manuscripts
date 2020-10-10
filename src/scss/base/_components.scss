@@ -405,14 +405,11 @@ body {
                 #222 5px,
                 #222 11px);
     }
-    footer {
-        &.bg-footer-flower {
-            background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) 0 0 center no-repeat;
-        }
-    
-    }
 
- }
+    .bg-footer-flower {
+        background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -250px;
+    }
+}
 
 
 
@@ -425,7 +422,7 @@ $borders: ((border, border, solid 0.0625rem $olive),
     (border-btm, border-bottom, solid 0.0625rem $olive),
     (border-btm-brown, border-bottom, solid 1rem $brown),
     (border-brown, border, solid 1rem $brown),
-    (border-color-brown, border-color,$brown),
+    (border-color-brown, border-color, $brown),
     (border-left-grey-light, border-left, 0.625rem solid $grey-light),
     (border-white, border, solid 1rem $white));
 
