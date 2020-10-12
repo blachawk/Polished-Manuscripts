@@ -11,6 +11,7 @@
 }
 
 .ai-center {
+
     align-items: center;
     //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
@@ -25,7 +26,7 @@ serif;
 
 $white: white;
 $floralwhite: floralwhite;
-$palrod: #f4f3ec; // palegoldenrod;
+$palrod: palegoldenrod;  //#f4f3ec; // palegoldenrod;
 $khaki: khaki;
 $darksalmon: darksalmon;
 $coco: chocolate;
@@ -335,6 +336,7 @@ $fontcolors: (txt-white: $white,
     txt-floralwhite: $floralwhite,
     txt-palrod: $palrod,
     txt-khaki: $khaki,
+    txt-darksalmon: $darksalmon,
     txt-coco: $coco,
     txt-brown: $brown,
     txt-red: $red,
@@ -354,6 +356,10 @@ $val in $fontcolors {
 
 .txt-dec-white {
     text-decoration-color: $white;
+}
+
+.txt-dec-grey-dark {
+    text-decoration-color:$grey-dark;
 }
 
 //BACKGROUND COLORS | MAPS 
@@ -390,7 +396,9 @@ $val in $bgcolors {
 body {
 
     &.bg-palrod {
-        background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) -900px center no-repeat;
+        //background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) -900px center no-repeat;
+        //pm_bg_tree_1230x1614.png
+        background: transparent url(../../../dist/images/pm_bg_tree_1230x1614.png) -700px center no-repeat;
     }
 
     .bg-none {
@@ -407,23 +415,21 @@ body {
     }
 
     .bg-footer-flower {
-        background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -250px;
+        background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) 200px 130px;
+
     }
 }
-
-
-
-
-
 
 //BORDERS CUSTOM
 
 $borders: ((border, border, solid 0.0625rem $olive),
     (border-btm, border-bottom, solid 0.0625rem $olive),
-    (border-btm-brown, border-bottom, solid 1rem $brown),
+    (border-btm-brown, border-bottom, solid 0.3rem $brown),
     (border-brown, border, solid 1rem $brown),
     (border-color-brown, border-color, $brown),
     (border-left-grey-light, border-left, 0.625rem solid $grey-light),
+    (border-left-palrod, border-left, 0.225rem solid $palrod),
+    (border-left-white, border-left, 0.425rem solid $white),
     (border-white, border, solid 1rem $white));
 
 @each $selector,
@@ -466,6 +472,12 @@ $val in $bordercolors {
 .hover-txt-red {
     &:hover {
         color: $red;
+    }
+}
+
+.hover-txt-grey {
+    &:hover {
+        color: $grey;
     }
 }
 

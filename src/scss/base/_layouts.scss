@@ -52,11 +52,13 @@ html {
         main {
             .animate {
                 &.redbooks {
-                    background: transparent url(../../../dist/images/pm_redbooks_1296x400.png) center right no-repeat;
+                    background-image: url(../../../dist/images/pm_redbooks_1296x400.png);
+                    background-position: center right;
+                    background-repeat: no-repeat;
 
                     //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                     //IE11 does not support animate.  IE11 styling is active in trump scss file
-                    animation: animate-books linear 2s 1 normal forwards running;
+                    animation: animate-books linear 2s 1 normal forwards;
                     animation-timing-function: cubic-bezier(1, .02, .66, .82);
 
                     @keyframes animate-books {
