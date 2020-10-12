@@ -159,48 +159,31 @@
             document.querySelector('main .title').setAttribute("class", "title pen-red");
 
             document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center");
-
             document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-grey-dark");
             document.querySelector('main .testimonial-title h6').setAttribute("class", "p-lft-sm fstyle-italic fweight-400 txt-red");
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "shadow-box");
-            });
-
-            document.querySelectorAll('main .testimonials ul h6').forEach(function (el) {
-                el.setAttribute("class", "fweight-500 txt-red");
-            });
-
-            document.querySelectorAll('main .testimonials ul h4 a').forEach(function (el) {
-                el.setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote').forEach(function (el) {
-                el.setAttribute("class", "border-left-grey-light");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote p').forEach(function (el) {
-                el.setAttribute("class", "txt-grey-dark lh-125");
+                el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
+                el.querySelector('blockquote').setAttribute("class", "border-left-grey-light");
+                el.querySelector('blockquote p').setAttribute("class", "txt-grey-dark lh-125");
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-dark-lines");
             document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
-
             document.querySelector('footer h3').setAttribute("class", "txt-white");
-            
+
             document.querySelectorAll('footer h5').forEach(function (el) {
                 el.setAttribute("class", "txt-white p-btm-sm txt-red");
             });
 
-            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white");
-            document.querySelectorAll('footer h5').forEach(function (el) {
-                el.setAttribute("class", "txt-white p-btm-sm txt-red");
-            });
             document.querySelectorAll('footer ul li a').forEach(function (el) {
                 el.setAttribute("class", "trans hover-txt-red icon txt-white");
             });
-        
 
+            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white");
+            
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
         } else if (e.target.value == 'cream') {
@@ -217,7 +200,6 @@
             document.querySelector('header').setAttribute("class", "bg-palrod");
 
             document.querySelector('main .intro').classList.remove('animate');
-
             setTimeout(function () {
                 document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks border-btm-brown");
             }, 100);
@@ -227,43 +209,27 @@
             document.querySelector('main .title').setAttribute("class", "title pen-cream");
 
             document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center");
-
             document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-grey-dark");
             document.querySelector('main .testimonial-title h6').setAttribute("class", "p-lft-sm fstyle-italic fweight-400 txt-red");
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
-            });
-
-            document.querySelectorAll('main .testimonials ul h6').forEach(function (el) {
-                el.setAttribute("class", "fweight-500 txt-red");
-            });
-
-            document.querySelectorAll('main .testimonials ul h4 a').forEach(function (el) {
-                el.setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote').forEach(function (el) {
-                el.setAttribute("class", "border-left-palrod");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote p').forEach(function (el) {
-                el.setAttribute("class", "txt-grey-dark lh-125");
+                el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
+                el.querySelector('blockquote').setAttribute("class", "border-left-palrod");
+                el.querySelector('blockquote p').setAttribute("class", "txt-grey-dark lh-125");
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg");
             document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-grey-dark");
-            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white border-color-brown");
-        
-
             document.querySelectorAll('footer h5').forEach(function (el) {
                 el.setAttribute("class", "txt-white p-btm-sm txt-red");
             });
-
             document.querySelectorAll('footer ul a').forEach(function (el) {
                 el.setAttribute("class", "trans hover-txt-red icon txt-brown");
             });
+            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white border-color-brown");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
@@ -284,35 +250,20 @@
             setTimeout(function () {
                 document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks bg-whitesmoke");
             }, 100);
-            
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
             document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
             document.querySelector('main .title').setAttribute("class", "title pen-white");
 
             document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center shadow-fall");
-
             document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-whitesmoke");
             document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-white");
             
-
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
-            });
-
-            document.querySelectorAll('main .testimonials ul h6').forEach(function (el) {
-                el.setAttribute("class", "fweight-500 txt-grey");
-            });
-
-            document.querySelectorAll('main .testimonials ul h4 a').forEach(function (el) {
-                el.setAttribute("class", "trans fweight-bold txt-whitesmoke txt-dec-grey-dark hover-txt-grey active-txt-red");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote').forEach(function (el) {
-                el.setAttribute("class", "border-left-white");
-            });
-
-            document.querySelectorAll('main .testimonials ul blockquote p').forEach(function (el) {
-                el.setAttribute("class", "txt-darksalmon lh-125");
+                el.querySelector('h6').setAttribute("class", "fweight-500 txt-grey");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-whitesmoke txt-dec-grey-dark hover-txt-grey active-txt-red");
+                el.querySelector('blockquote').setAttribute("class", "border-left-white");
+                el.querySelector('blockquote p').setAttribute("class", "txt-darksalmon lh-125");
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-grey-dark");
@@ -330,5 +281,4 @@
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
         }
     });
-
 })();
