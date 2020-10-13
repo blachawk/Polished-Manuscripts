@@ -31,12 +31,14 @@
     flex-direction: row;
 }
 
+//THIS BELONGS IN THE LAYOUT!
 html body footer {
     ul {
 
         display: flex;
         flex-wrap: wrap;
-        text-align:center;
+        justify-content: center;
+        text-align: center;
 
         li:first-of-type {
             width: 100%;
@@ -47,7 +49,44 @@ html body footer {
             flex: 1;
         }
     }
+    .social ul li:not(:first-of-type) {
+        flex-grow: 0;
+        flex-shrink: 1;
+        padding:0;
+     }
 }
+
+
+//FONT AWESOME CDN
+
+.fab {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.fa-facebook-f {
+        background: #3B5998;
+        color: white;
+    }
+
+    &.fa-linkedin-in {
+        background: #007bb5;
+        color: white;
+    }
+
+    &.fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+}
+
 
 
 //BASE FONT FAMILY | VARS
@@ -105,7 +144,7 @@ $grey-dark: #333;
 }
 
 .txt-center {
-    text-align:center;
+    text-align: center;
 }
 
 //LISTS
@@ -459,16 +498,14 @@ body {
 
 //BORDERS CUSTOM
 
-$borders: (
-    (border-white, border, solid 1rem $white),
+$borders: ((border-white, border, solid 1rem $white),
     (border-left-white, border-left, 0.425rem solid $white),
     (border-left-palrod, border-left, 0.225rem solid $palrod),
     (border-olive, border, solid 0.0625rem $olive),
     (border-brown, border, solid 1rem $brown),
     (border-btm-brown, border-bottom, solid 0.3rem $brown),
     (border-color-brown, border-color, $brown),
-    (border-left-grey-light, border-left, 0.625rem solid $grey-light)
-    );
+    (border-left-grey-light, border-left, 0.625rem solid $grey-light));
 
 @each $selector,
 $prop,
@@ -497,6 +534,13 @@ $val in $bordercolors {
     &:hover {
         background-color: $red;
         text-decoration-color: $red;
+    }
+}
+
+.hover-txt-khaki {
+    &:hover {
+        color: $khaki;
+        text-decoration-color: $khaki;
     }
 }
 
