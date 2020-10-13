@@ -169,6 +169,7 @@
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "shadow-box");
+                el.querySelector('img').setAttribute("class","tint");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
                 el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-grey-light");
@@ -221,6 +222,7 @@
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
+                el.querySelector('img').setAttribute("class","tint");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
                 el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-palrod");
@@ -272,6 +274,7 @@
             
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
+                el.querySelector('img').setAttribute("class","tint img-round-150");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-grey");
                 el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-darksalmon txt-dec-grey-dark hover-txt-grey active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-white");
