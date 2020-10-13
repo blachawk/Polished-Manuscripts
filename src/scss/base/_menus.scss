@@ -128,7 +128,14 @@ html {
             border-width: 0.5rem;
 
             &.es-animate {
-                background: #fff url(../../../dist/images/pm_logo_294x178.png) center center no-repeat; //scss  var
+
+                background-image: url(../../../dist/images/pm_logo_294x178.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+
+                &.bg-grey-dark {
+                    background-image: url(../../../dist/images/pm_logo_onblack_294x178.png);  
+                }
 
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
                 animation: animate-background 1s 1 normal forwards running;

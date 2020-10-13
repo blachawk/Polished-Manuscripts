@@ -1,10 +1,15 @@
 "use strict";
 
+
+
+
+
 (function pmtest() {
     //ES-TEST CONNECTION
     //console.log('ecmascript connected now!!!!!');
     /*
     Excellent learning points:
+    https://dev.to/shijiezhou/top-10-javascript-patterns-every-developers-like-168p
     https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
     
     //Scrolling the document to position "250" horizontally and "110" vertically 
@@ -171,19 +176,21 @@
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-dark-lines");
-            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer img').src = "/dist/images/pm_logo_onblack_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-white");
 
             document.querySelectorAll('footer h5').forEach(function (el) {
                 el.setAttribute("class", "txt-white p-btm-sm txt-red");
+            });             
+
+            document.querySelectorAll('footer .lnk').forEach(function (el) {
+                el.setAttribute("class", "lnk trans hover-txt-red icon txt-white");
             });
 
-            document.querySelectorAll('footer ul li a').forEach(function (el) {
-                el.setAttribute("class", "trans hover-txt-red icon txt-white");
-            });
+            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-grey-dark txt-grey");
+            document.querySelector('footer .copy div a').setAttribute("class", "txt-white");
 
-            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white");
-            
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
         } else if (e.target.value == 'cream') {
@@ -195,7 +202,7 @@
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-brown border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-brown shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-olive shadow-inset hidden");
 
             document.querySelector('header').setAttribute("class", "bg-palrod");
 
@@ -223,13 +230,18 @@
             document.querySelector('footer').setAttribute("class", "p-top-lg");
             document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-grey-dark");
+
             document.querySelectorAll('footer h5').forEach(function (el) {
                 el.setAttribute("class", "txt-white p-btm-sm txt-red");
             });
-            document.querySelectorAll('footer ul a').forEach(function (el) {
-                el.setAttribute("class", "trans hover-txt-red icon txt-brown");
+
+            document.querySelectorAll('footer .lnk').forEach(function (el) {
+               el.setAttribute("class", "lnk trans hover-txt-red icon txt-brown");
             });
-            document.querySelector('footer .action_btn').setAttribute("class", "trans action_btn font-reset p-sm hover-dark active-border-white border-color-brown");
+
+            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white border-color-brown");
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-grey-dark txt-grey");
+            document.querySelector('footer .copy div a').setAttribute("class", "txt-white");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
@@ -242,7 +254,7 @@
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-red shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-white bg-grey-dark shadow-inset hidden");
 
             document.querySelector('header').setAttribute("class", "bg-grey-dark");
 
@@ -261,9 +273,9 @@
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-grey");
-                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-whitesmoke txt-dec-grey-dark hover-txt-grey active-txt-red");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-darksalmon txt-dec-grey-dark hover-txt-grey active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-white");
-                el.querySelector('blockquote p').setAttribute("class", "txt-darksalmon lh-125");
+                el.querySelector('blockquote p').setAttribute("class", "txt-white lh-125");
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-grey-dark");
@@ -274,10 +286,14 @@
                 el.setAttribute("class", "txt-white p-btm-sm txt-darksalmon");
             });
 
-            document.querySelectorAll('footer ul a').forEach(function (el) {
-                el.setAttribute("class", "trans hover-txt-red icon txt-grey");
+            document.querySelectorAll('footer .lnk').forEach(function (el) {
+                el.setAttribute("class", "lnk trans hover-txt-red icon txt-grey");
             });
 
+            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-darksalmon txt-grey-dark");
+            document.querySelector('footer .copy div a').setAttribute("class", "txt-grey-dark ");
+            
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
         }
     });

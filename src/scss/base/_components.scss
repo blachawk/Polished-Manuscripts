@@ -17,6 +17,39 @@
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
+.dir-col {
+    flex-direction: column;
+    //row	Default value. The flexible items are displayed horizontally, as a row	
+    //row-reverse	Same as row, but in reverse order	
+    //column	The flexible items are displayed vertically, as a column	
+    //column-reverse	Same as column, but in reverse order	
+    //initial	Sets this property to its default value. Read about initial	
+    //inherit	Inherits this property from its parent element. Read about inherit
+}
+
+.dir-row {
+    flex-direction: row;
+}
+
+html body footer {
+    ul {
+
+        display: flex;
+        flex-wrap: wrap;
+        text-align:center;
+
+        li:first-of-type {
+            width: 100%;
+        }
+
+        li:not(:first-of-type) {
+            //https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
+            flex: 1;
+        }
+    }
+}
+
+
 //BASE FONT FAMILY | VARS
 
 $base-font-family: 'Playfair Display',
@@ -26,7 +59,7 @@ serif;
 
 $white: white;
 $floralwhite: floralwhite;
-$palrod: palegoldenrod;  //#f4f3ec; // palegoldenrod;
+$palrod: palegoldenrod; //#f4f3ec; // palegoldenrod;
 $khaki: khaki;
 $darksalmon: darksalmon;
 $coco: chocolate;
@@ -69,6 +102,10 @@ $grey-dark: #333;
 
 .lh-125 {
     line-height: 1.25;
+}
+
+.txt-center {
+    text-align:center;
 }
 
 //LISTS
@@ -122,7 +159,7 @@ ol {
 
 //BUTTONS
 
-.action_btn {
+.btn {
     display: block;
     margin: 0 auto;
     border-radius: 1rem;
@@ -254,14 +291,14 @@ $val in $headings {
 //SHADOWS | MIXIN
 //https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
 //https://www.w3schools.com/CSSref/css3_pr_box-shadow.asp
-@mixin shadow($hoffset:0, $voffset:0, $blur:10px, $spread:0, $color:rgba(0, 0, 0, 0.75), $option:null) {
+@mixin shadow($hoffset:0, $voffset:0, $blur:50px, $spread:0, $color:rgba(0, 0, 0, 0.75), $option:null) {
     -webkit-box-shadow: $option $hoffset $voffset $blur $spread $color;
     -moz-box-shadow: $option $hoffset $voffset $blur $spread $color;
     box-shadow: $option $hoffset $voffset $blur $spread $color;
 }
 
 .shadow-inset {
-    @include shadow();
+    @include shadow(0, 0, 50px, 0, rgba(0, 0, 0, 0.50), inset);
 }
 
 .shadow-fall {
@@ -359,7 +396,7 @@ $val in $fontcolors {
 }
 
 .txt-dec-grey-dark {
-    text-decoration-color:$grey-dark;
+    text-decoration-color: $grey-dark;
 }
 
 //BACKGROUND COLORS | MAPS 
@@ -422,15 +459,16 @@ body {
 
 //BORDERS CUSTOM
 
-$borders: ((border, border, solid 0.0625rem $olive),
-    (border-btm, border-bottom, solid 0.0625rem $olive),
-    (border-btm-brown, border-bottom, solid 0.3rem $brown),
-    (border-brown, border, solid 1rem $brown),
-    (border-color-brown, border-color, $brown),
-    (border-left-grey-light, border-left, 0.625rem solid $grey-light),
-    (border-left-palrod, border-left, 0.225rem solid $palrod),
+$borders: (
+    (border-white, border, solid 1rem $white),
     (border-left-white, border-left, 0.425rem solid $white),
-    (border-white, border, solid 1rem $white));
+    (border-left-palrod, border-left, 0.225rem solid $palrod),
+    (border-olive, border, solid 0.0625rem $olive),
+    (border-brown, border, solid 1rem $brown),
+    (border-btm-brown, border-bottom, solid 0.3rem $brown),
+    (border-color-brown, border-color, $brown),
+    (border-left-grey-light, border-left, 0.625rem solid $grey-light)
+    );
 
 @each $selector,
 $prop,
