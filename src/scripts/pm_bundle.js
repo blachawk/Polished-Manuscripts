@@ -141,8 +141,8 @@
     var mselect = document.querySelector(".select-options");
     mselect.addEventListener('change', (e) => {
         //console.log(`e.target.value = ${ e.target.value }`);
-        if (e.target.value == 'base') {
-            //BASE LAYOUT
+        if (e.target.value == 'white') {
+            //WHITE LAYOUT
             console.log('base');
             document.querySelector('body').setAttribute("class", "");
 
@@ -193,8 +193,8 @@
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
-        } else if (e.target.value == 'cream') {
-            //CREAM LAYOUT
+        } else if (e.target.value == 'paleGoldenrod') {
+            //PALGOLDENROD
             console.log('cream (palrod)');
             document.querySelector('body').setAttribute("class", "bg-palrod");
 
@@ -202,7 +202,7 @@
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-brown border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-olive shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu bg-white border-olive shadow-inset hidden");
 
             document.querySelector('header').setAttribute("class", "bg-palrod");
 
