@@ -220,6 +220,12 @@ $prefixes-by-browser: ("firefox": moz, "safari": webkit, "ie": ms);
 }
 
 
+  @media (max-width: 330px) {
+                font-size: 1.5rem;
+                /*1rem = 16px*/
+            }
+            
+
 // debug
 
 @debug 100;

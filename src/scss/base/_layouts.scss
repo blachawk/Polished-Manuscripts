@@ -50,26 +50,26 @@ html {
 
         .title {
 
-            //scss mixin because...
-            //we can also so pen-cream and pen-white for other layout options
-            &.pen-red {
-                padding: 0 0 3rem 6rem;
-                background: transparent url(#{$bg-path}/pm_bg_pen_1916x1902.png) no-repeat;
-                background-size: 100px 90px;
-
-                h4 {
-                    margin-left: 0.5rem;
+            @media (min-width: 400px) {
+                &.pen-red {
+                    padding: 0 0 3rem 6rem;
+                    background: transparent url(#{$bg-path}/pm_bg_pen_1916x1902.png) no-repeat;
+                    background-size: 100px 90px;
+    
+                    h4 {
+                        margin-left: 0.5rem;
+                    }
                 }
-            }
-
-            &.pen-cream {
-                padding: 0 0 3rem 6rem;
-                background: transparent url(#{$bg-path}/pm_bg_pen_cream_500x472.png) no-repeat;
-                background-size: 100px 90px;
-
-                h4 {
-                    margin-left: 0.5rem;
-                }
+    
+                &.pen-cream {
+                    padding: 0 0 3rem 6rem;
+                    background: transparent url(#{$bg-path}/pm_bg_pen_cream_500x472.png) no-repeat;
+                    background-size: 100px 90px;
+    
+                    h4 {
+                        margin-left: 0.5rem;
+                    }
+                }    
             }
         }
 
