@@ -10,6 +10,7 @@ html {
             padding: 0.5rem 1rem;
 
             .top-menu-btn {
+
                 padding: 0.25rem 0.75rem;
                 opacity: 0.9;
 
@@ -91,14 +92,15 @@ html {
             padding: 0;
 
             .generator-btn {
+                z-index: 9999;
                 padding: 0.25rem;
                 opacity: 0.9;
-                border:none;
+                border: none;
 
                 transition: 0.3s;
 
                 &:focus {
-                    outline-color:white;
+                    outline-color: white;
                 }
 
                 span.colorbox {
@@ -112,14 +114,13 @@ html {
                 }
 
                 &.es-clicked {
-                    opacity:0.5;
+                    opacity: 0.5;
                 }
             }
         }
 
         .top-menu {
-            z-index: 9999;
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
@@ -127,22 +128,22 @@ html {
             border-style: solid;
             border-width: 0.5rem;
 
-            &.es-animate {
+            &.es-bg-animate {
 
                 background-image: url(../../../dist/images/pm_logo_294x178.png);
                 background-position: center center;
                 background-repeat: no-repeat;
 
                 &.bg-grey-dark {
-                    background-image: url(../../../dist/images/pm_logo_onblack_294x178.png);  
+                    background-image: url(../../../dist/images/pm_logo_onblack_294x178.png);
                 }
 
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-                animation: animate-background 1s 1 normal forwards running;
+                animation: animate-bg-in 1s 1 normal forwards;
                 //animation-timing-function communicates with the above animation: ease-out;
                 animation-timing-function: 1s cubic-bezier(.22, .33, 0, 1.02);
 
-                @keyframes animate-background {
+                @keyframes animate-bg-in {
                     0% {
                         background-position: 0;
                         opacity: 0;
@@ -153,14 +154,6 @@ html {
                         opacity: 1;
                     }
                 }
-            }
-
-            &.es-fixed-on-top {
-                z-index: 9998;
-                position: fixed;
-
-                visibility: visible;
-                opacity: 1;
             }
 
             .top-menu-nav {
@@ -176,7 +169,19 @@ html {
                     display: inline-block;
                     text-decoration: none;
 
-                    &.after-bg-darkslategrey {
+                    &.after-bg-darkslate {
+
+                        &:hover {
+                            color: $red;
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &:active {
+                            color: $sandybrown;
+                        }
+
                         &::after {
                             content: '';
                             display: block;
@@ -184,22 +189,34 @@ html {
                             height: 0.2rem;
                             text-align: right;
                             opacity: 0.7;
-                            background: darkslategray; //scss var
+                            background: $darkslate;
                             transition: 300ms;
                         }
                     }
 
-                    &:hover {
-                        color: #901404; //scss var
-                        //color: darkslategray; //scss var
+                    &.after-bg-bisque {
+
+                        &:hover {
+                            color: $white;
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &:active {
+                            color: $tan;
+                        }
 
                         &::after {
-                            width: 100%;
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 0.2rem;
+                            text-align: right;
+                            opacity: 0.7;
+                            background: $bisque;
+                            transition: 300ms;
                         }
-                    }
-
-                    &:active {
-                        color: lightcoral; //scss var
                     }
                 }
             }
@@ -209,16 +226,16 @@ html {
             z-index: 9998;
             position: fixed;
             top: 4rem;
-            right: -15rem; //transition back to 0;
+            right: -15em; //transition back to 0;
             width: 15rem;
             height: 15rem;
-            background-color:white;
+            background-color: white;
             border-style: solid;
             border-width: 0.5rem;
 
             &.es-animate {
-                
-                animation: animate-generator linear 0.2s 1 normal forwards running;
+
+                animation: animate-generator linear 0.5s 1 normal forwards;
 
                 @keyframes animate-generator {
                     0% {

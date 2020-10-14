@@ -15,6 +15,7 @@ all and (-ms-high-contrast: active) and (max-width: 2000px) {
                         background-position: 50rem 0;
                     }
                 }
+
                 .author-list {
                     ul {
                         max-width: 300px;
@@ -25,6 +26,19 @@ all and (-ms-high-contrast: active) and (max-width: 2000px) {
             footer {
                 .wmax-900 {
                     max-width: 900px;
+                }
+
+                ul {
+
+                    li {
+                        min-width:100px;
+                    }
+                }
+
+                .social {
+                    ul li:not(:first-of-type) {
+                        min-width:75px;
+                    }
                 }
             }
         }

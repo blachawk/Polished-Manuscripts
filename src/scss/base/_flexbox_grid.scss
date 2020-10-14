@@ -18,6 +18,9 @@ footer {
             flex-direction: column;
             flex:1 1 auto;
 
+            &.basis0 {
+                flex-basis:0;
+            }
             &.row-right {
                 flex-direction: row;
                 flex-wrap: wrap;

@@ -1,10 +1,6 @@
 "use strict";
 
-
-
-
-
-(function pmtest() {
+(function pmdefaults() {
     //ES-TEST CONNECTION
     //console.log('ecmascript connected now!!!!!');
     /*
@@ -27,6 +23,35 @@
     //     els[i].classList.remove('active');
     // }    
     */
+
+    //How fade in & Fade out an element on clicks via ECMAScript
+    // <div class="flex demo-toggle">
+    // <a class="m-trigger" href="#">my trigger</a>
+    // <div class="m-model op-0">my model</div>
+    // </div>
+    // the js...
+    // var model = document.querySelector('.m-model');
+    // var trigger = document.querySelector('.m-trigger');
+
+    // trigger.addEventListener('click', function (e) {
+    //     console.log('we are clicking the test trigger');
+    //     if (model.classList.contains("trans-opt-0") || model.classList.contains("trans-opt-1") ) {
+    //         model.classList.toggle("trans-opt-0");
+    //         model.classList.toggle("trans-opt-1");
+    //     } else {
+    //         if (window.getComputedStyle(model).getPropertyValue("opacity") == 0) {
+    //             model.classList.add("trans-opt-1")
+    //         } else {
+    //             model.classList.add("trans-opt-0");
+    //         }
+    //     }
+    // });
+
+        //IE11 HACK TO GET FOREACH FULLY WORKING IN IE11
+        if (typeof NodeList.prototype.forEach !== 'function')  {
+            NodeList.prototype.forEach = Array.prototype.forEach;
+        }
+        
 })();
 
 (function pmdetect() {
@@ -39,7 +64,7 @@
         animation = true;
 
         //IF CLASS NAME EXSIT ON HTML TAG...
-        if (document.querySelector('.view01') !== null) {
+        if (document.querySelector('.view') !== null) {
             //IF SO ADD THE CUSTOM ANIMATION CLASS NAME
             root.className += " " + "css3animation";
         }
@@ -47,10 +72,9 @@
 })();
 
 (function pmevents() {
-
+    
     //ES-EVENTS ON ALL ANCHOR & BUTTON CLICKS
     var anchors = document.querySelectorAll('a, button');
-    var mclick = 0;
     for (var i = 0, len = anchors.length; i < len; i++) {
         anchors[i].addEventListener('click', function (e) {
 
@@ -105,16 +129,36 @@
                 }
             }
 
-            //TOGGLE HAMBURGER ICON & NAV MENU ON CLICKS
+            //TOGGLE HAMBURGER ICON & TOP MENU ON CLICKS
             if (this.classList.contains('top-menu-btn')) {
+             
+                //convert the inner borders to x shape
                 this.classList.toggle('es-clicked');
-                document.querySelector('.top-menu').classList.toggle('es-fixed-on-top');
-                document.querySelector('.top-menu').classList.toggle('es-animate');
+
+                //define the top menu to reference below in multiple places
+                var model = document.querySelector('.top-menu');
+
+                //animate the inner bg on top menu
+                model.classList.toggle('es-bg-animate');
+
+                //improve the fade in and fade out process of the top menu
+                if (model.classList.contains("trans-opt-0") || model.classList.contains("trans-opt-1")) {
+                    model.classList.toggle("trans-opt-0");
+                    model.classList.toggle("trans-opt-1");
+                } else {
+                    if (window.getComputedStyle(model).getPropertyValue("opacity") == 0) {
+                        model.classList.add("trans-opt-1")
+                    } else {
+                        model.classList.add("trans-opt-0");
+                    }
+                }
             }
 
             //TOGGLE COLOR GENERATOR BTN FOR GENERATOR MENU ON CLICKS
             if (this.classList.contains('generator-btn')) {
+                //convert inner color to lighter shade
                 this.classList.toggle('es-clicked');
+                //bring out the generator menu
                 document.querySelector('.generator-menu').classList.toggle('es-animate');
             }
         });
@@ -142,23 +186,24 @@
     mselect.addEventListener('change', (e) => {
         //console.log(`e.target.value = ${ e.target.value }`);
         if (e.target.value == 'white') {
-            //WHITE LAYOUT
-            console.log('base');
+
+            //WHITE
+
             document.querySelector('body').setAttribute("class", "");
 
             document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-red shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-red bg-white shadow-inset trans-opt-0");
 
             document.querySelector('header').setAttribute("class", "header");
-           
+
             document.querySelector('main .intro').classList.remove('animate');
             setTimeout(function () {
                 document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks bg-whitesmoke");
             }, 100);
-           
+
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
             document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
             document.querySelector('main .title').setAttribute("class", "title pen-red");
@@ -169,7 +214,7 @@
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "shadow-box");
-                el.querySelector('img').setAttribute("class","tint");
+                el.querySelector('img').setAttribute("class", "tint");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
                 el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-grey-light");
@@ -182,7 +227,7 @@
 
             document.querySelectorAll('footer h5').forEach(function (el) {
                 el.setAttribute("class", "txt-white p-btm-sm txt-red");
-            });             
+            });
 
             document.querySelectorAll('footer .lnk').forEach(function (el) {
                 el.setAttribute("class", "lnk trans hover-txt-red icon txt-white");
@@ -195,15 +240,16 @@
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
         } else if (e.target.value == 'paleGoldenrod') {
+
             //PALGOLDENROD
-            console.log('cream (palrod)');
+
             document.querySelector('body').setAttribute("class", "bg-palrod");
 
             document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-brown border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu bg-white border-olive shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-olive bg-white shadow-inset trans-opt-0");
 
             document.querySelector('header').setAttribute("class", "bg-palrod");
 
@@ -222,7 +268,7 @@
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
-                el.querySelector('img').setAttribute("class","tint");
+                el.querySelector('img').setAttribute("class", "tint");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-red");
                 el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-grey-dark txt-dec-white hover-txt-red active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-palrod");
@@ -238,27 +284,87 @@
             });
 
             document.querySelectorAll('footer .lnk').forEach(function (el) {
-               el.setAttribute("class", "lnk trans hover-txt-red icon txt-brown");
+                el.setAttribute("class", "lnk trans hover-txt-red icon txt-brown");
             });
 
             document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white border-color-brown");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-grey-dark txt-grey");
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-olive txt-palrod");
             document.querySelector('footer .copy div a').setAttribute("class", "txt-white");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
+        } else if (e.target.value == 'tan') {
+
+            //TAN
+
+            document.querySelector('body').setAttribute("class", "bg-floralwhite");
+
+            document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
+
+            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
+            document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-tan bg-brown shadow-inset trans-opt-0");
+            document.querySelectorAll('.top-menu ul li').forEach(function (el) {
+                el.querySelector('a').setAttribute("class", "trans txt-tan fweight-400 after-bg-bisque"); 
+            });
+
+            document.querySelector('header').setAttribute("class", "bg-floralwhite shadow-fall");
+
+            document.querySelector('main .intro').classList.remove('animate');
+            setTimeout(function () {
+                document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-inset animate redbooks bg-whitesmoke border-btm-peru");
+            }, 100);
+            document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
+            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
+            document.querySelector('main .title').setAttribute("class", "title pen-cream");
+
+            document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center");
+            document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-peru");
+            document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-sienna");
+
+            document.querySelectorAll('main .testimonials ul').forEach(function (el) {
+                el.setAttribute("class", "");
+                el.querySelector('img').setAttribute("class", "tint shadow-box-dark");
+                el.querySelector('h6').setAttribute("class", "fweight-500 txt-grey");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-sienna txt-dec-floralwhite hover-txt-saddlebrown active-txt-red");
+                el.querySelector('blockquote').setAttribute("class", "border-left-tan");
+                el.querySelector('blockquote p').setAttribute("class", "txt-grey-dark lh-125");
+            });
+
+            document.querySelector('footer').setAttribute("class", "p-top-lg bg-sienna-lines shadow-box-top m-top-md");
+            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer h3').setAttribute("class", "txt-white");
+
+            document.querySelectorAll('footer h5').forEach(function (el) {
+                el.setAttribute("class", "txt-white p-btm-sm txt-darksalmon");
+            });
+
+            document.querySelectorAll('footer .lnk').forEach(function (el) {
+                el.setAttribute("class", "lnk trans hover-txt-red icon txt-grey");
+            });
+
+            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-black shadow-fall txt-bisque");
+            document.querySelector('footer .copy div a').setAttribute("class", "txt-tan");
+
+            document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
+
         } else {
+
             //DARK THEME LAYOUT
-            console.log('endless night');
+
             document.querySelector('body').setAttribute("class", "bg-grey-dark");
 
             document.querySelector('header img').src = "/dist/images/pm_logo_onblack_294x253.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-white bg-grey-dark shadow-inset hidden");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-bisque bg-grey-dark shadow-inset trans-opt-0");
+            document.querySelectorAll('.top-menu ul li').forEach(function (el) {
+                el.querySelector('a').setAttribute("class", "trans txt-bisque fweight-400 after-bg-bisque"); 
+            });
 
-            document.querySelector('header').setAttribute("class", "bg-grey-dark");
+            document.querySelector('header').setAttribute("class", "bg-dark-lines");
 
             document.querySelector('main .intro').classList.remove('animate');
             setTimeout(function () {
@@ -270,13 +376,13 @@
 
             document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center shadow-fall");
             document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-whitesmoke");
-            document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-white");
-            
+            document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-peru");
+
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
-                el.querySelector('img').setAttribute("class","tint img-round-150");
+                el.querySelector('img').setAttribute("class", "tint img-round-150");
                 el.querySelector('h6').setAttribute("class", "fweight-500 txt-grey");
-                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-darksalmon txt-dec-grey-dark hover-txt-grey active-txt-red");
+                el.querySelector('h4 a').setAttribute("class", "trans fweight-bold txt-white txt-dec-grey-dark hover-txt-grey active-txt-red");
                 el.querySelector('blockquote').setAttribute("class", "border-left-white");
                 el.querySelector('blockquote p').setAttribute("class", "txt-white lh-125");
             });
@@ -294,9 +400,9 @@
             });
 
             document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-darksalmon txt-grey-dark");
-            document.querySelector('footer .copy div a').setAttribute("class", "txt-grey-dark ");
-            
+            document.querySelector('footer .copy div').setAttribute("class", "col bg-black shadow-inset txt-grey-light");
+            document.querySelector('footer .copy div a').setAttribute("class", "txt-grey-light");
+
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
         }
     });

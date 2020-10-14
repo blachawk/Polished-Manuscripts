@@ -7,18 +7,21 @@
 html {
 
     body {
+
+        font-family:$font-family-base;
+
         //decor the text selection process
         //scss mixin
         //for Firefox
         ::-moz-selection {
-            background-color: #df591d; //scss var
-            color: #fff; //scss var
+            background-color: $coco;
+            color: $white;
         }
 
         //for Safari and Chrome
         ::selection {
-            background-color: #df591d; //scss var
-            color: #fff; //scss var
+            background-color: $coco;
+            color: $white;
         }
 
         .title {
@@ -34,6 +37,7 @@ html {
                     margin-left: 0.5rem;
                 }
             }
+
             &.pen-cream {
                 padding: 0 0 3rem 6rem;
                 background: transparent url(../../../dist/images/pm_bg_pen_cream_500x472.png) no-repeat;
@@ -47,6 +51,10 @@ html {
 
         header {
             background-color: transparent;
+
+            &.bg-palrod {
+                background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -100px;
+            }
         }
 
         main {
@@ -97,10 +105,66 @@ html {
             }
         }
 
-        footer {}
+        footer {
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+
+                li:first-of-type {
+                    width: 100%;
+                }
+
+                li:not(:first-of-type) {
+                    //https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
+                    flex: 1;
+                }
+            }
+
+            //SOCIAL MEDIA ICONS
+            .social {
+
+                //FONT AWESOME CDN OVERRIDES
+                .fab {
+                    padding: 20px;
+                    font-size: 30px;
+                    width: 70px;
+                    text-align: center;
+                    text-decoration: none;
+                    margin: 5px 2px;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+
+                    &.fa-facebook-f {
+                        background: #3B5998;
+                        color: white;
+                    }
+
+                    &.fa-linkedin-in {
+                        background: #007bb5;
+                        color: white;
+                    }
+
+                    &.fa-twitter {
+                        background: #55ACEE;
+                        color: white;
+                    }
+                }
+
+                ul li:not(:first-of-type) {
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    padding: 0;
+                }
+            }
+        }
 
         .scroll-top-btn {
-            z-index: 9997;
+            z-index: 9996;
             position: fixed;
             bottom: 1rem;
             right: 0;
@@ -120,8 +184,6 @@ html {
                 -webkit-transform: rotate(-135deg);
                 transition: 0.3s;
             }
-
-
 
             &:active {
                 span {

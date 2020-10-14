@@ -1,6 +1,237 @@
 //COMPONENTS TO EXTEND CSS
 
+//GLOBALS & DEFAULTS SCSS
+
+//COLORS | VARS
+
+$white: white;
+$floralwhite: floralwhite;
+$whitesmoke:whitesmoke;
+$blanchedalmond:blanchedalmond;
+$bisque:bisque;
+$palrod: palegoldenrod;
+$khaki: khaki;
+$burlywood:burlywood;
+$tan:tan;
+$darksalmon: darksalmon;
+$sandybrown:sandybrown;
+$gold:goldenrod;
+$peru:peru;
+$coco: chocolate;
+$sienna:sienna;
+$saddlebrown:saddlebrown;
+$red: #DA2A1B;
+$firebrick:firebrick;
+$brown: brown;
+$darkred:darkred;
+$maroon:maroon;
+$olive: darkolivegreen;
+$darkslate: darkslategray;
+$thistle:thistle;
+$grey-light:#ccc;
+$grey: grey;
+$grey-dark: #333;
+$black: #222;
+
+//DEFAULT FONT BASE
+$font-family-base: 'Playfair Display',
+serif;
+
+//FONT FAMILIES | MAPS 
+//https://sass-lang.com/documentation/values/maps
+//not in use at the moment...but with more layout options, this map will grow
+
+$fontfams: (ffam-arial: arial);
+
+@each $name,
+$val in $fontfams {
+    .#{$name} {
+        font-family: $val;
+        font-weight: initial;
+    }
+}
+
+//FONT SIZES | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$fontsizes: (fsize-08: 0.8rem,
+    fsize-1: 1rem,
+    fsize-125: 1.25rem,
+    fsize-13: 1.3rem,
+    fsize-15: 1.5rem,
+    fsize-175: 1.75rem,
+    fsize-2: 2rem);
+
+@each $name,
+$val in $fontsizes {
+    .#{$name} {
+        font-size: $val;
+    }
+}
+
+//FONT WEIGHTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+//https://www.digitalocean.com/community/tutorials/sass-each-loops
+
+$fontweights: (fweight-bold: bold,
+    fweight-400: 400,
+    fweight-500: 500,
+    fweight-800: 800);
+
+@each $name,
+$val in $fontweights {
+    .#{$name} {
+        font-weight: $val;
+    }
+}
+
+//FONT STYLE
+.fstyle-italic {
+    font-style: italic;
+}
+
+//FONT COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$fontcolors: (txt-white: $white,
+    txt-whitesmoke:$whitesmoke,
+    txt-blanchedalmond: $blanchedalmond,
+    txt-bisque: $bisque,
+    txt-palrod: $palrod,
+    txt-khaki: $khaki,
+    txt-burlywood: $burlywood,
+    txt-tan: $tan,
+    txt-darksalmon: $darksalmon,
+    txt-sandybrown: $sandybrown,
+    txt-gold: $gold,
+    txt-peru: $peru,
+    txt-coco: $coco,
+    txt-sienna: $sienna,
+    txt-saddlebrown: $saddlebrown,
+    txt-red: $red,
+    txt-firebrick: $firebrick,
+    txt-brown: $brown,
+    txt-darkred: $darkred,
+    txt-maroon: $maroon,
+    txt-olive: $olive,
+    txt-darkslate: $darkslate,
+    txt-thristle: $thistle,
+    txt-grey-light:$grey-light,
+    txt-grey: $grey,
+    txt-grey-dark:$grey-dark,
+    txt-black:$black
+    );
+
+@each $name,
+$val in $fontcolors {
+    .#{$name} {
+        color: $val;
+    }
+}
+
+//TEXT DECORATIONS
+.txt-dec-white {
+    text-decoration-color: $white;
+}
+
+.txt-dec-grey-dark {
+    text-decoration-color: $grey-dark;
+}
+
+.txt-dec-floralwhite {
+    text-decoration-color: $floralwhite;
+}
+
+//HEADING ELEMENTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$headings: (h6: 1.25rem,
+    h5: 1.50rem,
+    h4: 2rem,
+    h3: 3rem,
+    h2: 4rem,
+    h1: 5rem);
+
+@each $name,
+$val in $headings {
+    #{$name} {
+        font-size: $val;
+    }
+}
+
+//BACKGROUND COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$bgcolors: (bg-white: $white,
+    bg-floralwhite: $floralwhite,
+    bg-whitesmoke:$whitesmoke,
+    bg-blanchedalmond: $blanchedalmond,
+    bg-bisque: $bisque,
+    bg-palrod: $palrod,
+    bg-khaki: $khaki,
+    bg-burlywood: $burlywood,
+    bg-tan: $tan,
+    bg-darksalmon: $darksalmon,
+    bg-sandybrown: $sandybrown,
+    bg-gold: $gold,
+    bg-peru: $peru,
+    bg-coco: $coco,
+    bg-sienna: $sienna,
+    bg-saddlebrown: $saddlebrown,
+    bg-red: $red,
+    bg-firebrick: $firebrick,
+    bg-brown:$brown,
+    bg-darkred:$darkred,
+    bg-maroon:$maroon,
+    bg-olive: $olive,
+    bg-darkslate:$darkslate,
+    bg-thistle: $thistle,
+    bg-grey-light: $grey-light,
+    bg-grey: $grey,
+    bg-grey-dark: $grey-dark,
+    bg-black:$black); 
+
+@each $name,
+$val in $bgcolors {
+    .#{$name} {
+        background-color: $val;
+    }
+}
+
+//MIXINS
+
+//SHADOWS | MIXIN
+//https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
+//https://www.w3schools.com/CSSref/css3_pr_box-shadow.asp
+@mixin shadow($hoffset:0, $voffset:0, $blur:50px, $spread:0, $color:rgba(0, 0, 0, 0.75), $option:null) {
+    -webkit-box-shadow: $option $hoffset $voffset $blur $spread $color;
+    -moz-box-shadow: $option $hoffset $voffset $blur $spread $color;
+    box-shadow: $option $hoffset $voffset $blur $spread $color;
+}
+
+.shadow-inset {
+    @include shadow(0, 0, 50px, 0, rgba(0, 0, 0, 0.50), inset);
+}
+
+.shadow-fall {
+    @include shadow(0, 117px, 60px, -119px, rgba(0, 0, 0, 1), inset);
+}
+
+.shadow-box {
+    @include shadow(0, 15px, 25px, 0, rgba(51, 51, 51, .15));
+}
+
+.shadow-box-dark {
+    @include shadow(0, 5px, 25px, 0, rgba(51, 51, 51, .35));
+}
+
+.shadow-box-top {
+    @include shadow(0, -2px, 27px, -5px, rgba(0, 0, 0, .76));
+}
+
+
 //FLEX COMPONENTS
+//https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
 
 .flex {
     display: flex;
@@ -11,112 +242,16 @@
 }
 
 .ai-center {
-
     align-items: center;
     //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
     //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
 }
 
-.dir-col {
-    flex-direction: column;
-    //row	Default value. The flexible items are displayed horizontally, as a row	
-    //row-reverse	Same as row, but in reverse order	
-    //column	The flexible items are displayed vertically, as a column	
-    //column-reverse	Same as column, but in reverse order	
-    //initial	Sets this property to its default value. Read about initial	
-    //inherit	Inherits this property from its parent element. Read about inherit
-}
-
-.dir-row {
-    flex-direction: row;
-}
-
-//THIS BELONGS IN THE LAYOUT!
-html body footer {
-    ul {
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-
-        li:first-of-type {
-            width: 100%;
-        }
-
-        li:not(:first-of-type) {
-            //https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
-            flex: 1;
-        }
-    }
-    .social ul li:not(:first-of-type) {
-        flex-grow: 0;
-        flex-shrink: 1;
-        padding:0;
-     }
-}
-
-
-//FONT AWESOME CDN
-
-.fab {
-    padding: 20px;
-    font-size: 30px;
-    width: 70px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-
-    &:hover {
-        opacity: 0.7;
-    }
-
-    &.fa-facebook-f {
-        background: #3B5998;
-        color: white;
-    }
-
-    &.fa-linkedin-in {
-        background: #007bb5;
-        color: white;
-    }
-
-    &.fa-twitter {
-        background: #55ACEE;
-        color: white;
-    }
-}
-
-
-
-//BASE FONT FAMILY | VARS
-
-$base-font-family: 'Playfair Display',
-serif;
-
-//COLORS | VARS
-
-$white: white;
-$floralwhite: floralwhite;
-$palrod: palegoldenrod; //#f4f3ec; // palegoldenrod;
-$khaki: khaki;
-$darksalmon: darksalmon;
-$coco: chocolate;
-$brown: brown;
-$red: #DA2A1B;
-$gold:goldenrod;
-$olive: darkolivegreen;
-$grey: grey;
-$grey-light:#ccc;
-$thistle:thistle;
-$whitesmoke:whitesmoke;
-$grey-dark: #333;
 
 //GENERICS 
 
 .visible {
     visibility: visible;
-
 }
 
 .hidden {
@@ -125,6 +260,10 @@ $grey-dark: #333;
 
 .d-none {
     display: none !important;
+}
+
+.op-0 {
+    opacity:0;
 }
 
 .op-05 {
@@ -147,16 +286,28 @@ $grey-dark: #333;
     text-align: center;
 }
 
+.trans-opt-0 {
+    z-index:-1;
+    opacity:0;
+    transition:opacity 300ms;
+
+}
+
+.trans-opt-1 {
+    z-index:9997;
+    opacity:1;
+    transition:opacity 300ms;
+}
+
 //IMAGES
 .img-round-150 {
-    display:block;
-    margin:0 auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 100%;
-    width:150px;
+    width: 150px;
 }
 
 //LISTS
-
 ul,
 ol {
     li {
@@ -205,7 +356,6 @@ ol {
 }
 
 //BUTTONS
-
 .btn {
     display: block;
     margin: 0 auto;
@@ -218,7 +368,6 @@ ol {
 }
 
 //MULTI-SELECT 
-
 select {
     &.select-options {
         width: 140px;
@@ -318,164 +467,6 @@ blockquote {
     }
 }
 
-//HEADING ELEMENTS | MAPS
-//https://sass-lang.com/documentation/values/maps
-
-$headings: (h6: 1.25rem,
-    h5: 1.50rem,
-    h4: 2rem,
-    h3: 3rem,
-    h2: 4rem,
-    h1: 5rem);
-
-@each $name,
-$val in $headings {
-    #{$name} {
-        font-size: $val;
-    }
-}
-
-//SHADOWS | MIXIN
-//https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
-//https://www.w3schools.com/CSSref/css3_pr_box-shadow.asp
-@mixin shadow($hoffset:0, $voffset:0, $blur:50px, $spread:0, $color:rgba(0, 0, 0, 0.75), $option:null) {
-    -webkit-box-shadow: $option $hoffset $voffset $blur $spread $color;
-    -moz-box-shadow: $option $hoffset $voffset $blur $spread $color;
-    box-shadow: $option $hoffset $voffset $blur $spread $color;
-}
-
-.shadow-inset {
-    @include shadow(0, 0, 50px, 0, rgba(0, 0, 0, 0.50), inset);
-}
-
-.shadow-fall {
-    @include shadow(0, 117px, 60px, -119px, rgba(0, 0, 0, 1), inset);
-}
-
-.shadow-box {
-    @include shadow(0, 15px, 25px, 0, rgba(51, 51, 51, .15));
-}
-
-.shadow-box-dark {
-    @include shadow(0, 5px, 25px, 0, rgba(51, 51, 51, .35));
-}
-
-//FONT WEIGHTS | MAPS
-//https://sass-lang.com/documentation/values/maps
-//https://www.digitalocean.com/community/tutorials/sass-each-loops
-
-$fontweights: (fweight-bold: bold,
-    fweight-400: 400,
-    fweight-500: 500,
-    fweight-800: 800);
-
-@each $name,
-$val in $fontweights {
-    .#{$name} {
-        font-weight: $val;
-    }
-}
-
-//FONT SIZES | MAPS
-//https://sass-lang.com/documentation/values/maps
-
-$fontsizes: (fsize-08: 0.8rem,
-    fsize-1: 1rem,
-    fsize-125: 1.25rem,
-    fsize-13: 1.3rem,
-    fsize-15: 1.5rem,
-    fsize-175: 1.75rem,
-    fsize-2: 2rem);
-
-@each $name,
-$val in $fontsizes {
-    .#{$name} {
-        font-size: $val;
-    }
-}
-
-//FONT FAMILIES | MAPS 
-//https://sass-lang.com/documentation/values/maps
-//not in use at the moment...but with more layout options, this map will grow
-
-$fontfams: (ffam-arial: arial);
-
-@each $name,
-$val in $fontfams {
-    .#{$name} {
-        font-family: $val;
-        font-weight: initial;
-    }
-}
-
-//FONT STYLE
-.fstyle-italic {
-    font-style: italic;
-}
-
-//FONT COLORS | MAPS 
-//https://sass-lang.com/documentation/values/maps
-
-$fontcolors: (txt-white: $white,
-    txt-floralwhite: $floralwhite,
-    txt-palrod: $palrod,
-    txt-khaki: $khaki,
-    txt-darksalmon: $darksalmon,
-    txt-coco: $coco,
-    txt-brown: $brown,
-    txt-red: $red,
-    txt-gold: $gold,
-    txt-olive: $olive,
-    txt-grey: $grey,
-    txt-grey-dark:$grey-dark,
-    txt-thristle:$thistle,
-    txt-whitesmoke:$whitesmoke);
-
-@each $name,
-$val in $fontcolors {
-    .#{$name} {
-        color: $val;
-    }
-}
-
-.txt-dec-white {
-    text-decoration-color: $white;
-}
-
-.txt-dec-grey-dark {
-    text-decoration-color: $grey-dark;
-}
-
-//BACKGROUND COLORS | MAPS 
-//https://sass-lang.com/documentation/values/maps
-
-$bgcolors: (bg-white: $white,
-    bg-floralwhite: $floralwhite,
-    bg-palrod: $palrod,
-    bg-khaki: $khaki,
-    bg-coco: $coco,
-    bg-brown: $brown,
-    bg-red: $red,
-    bg-gold: $gold,
-    bg-olive: $olive,
-    bg-grey: $grey,
-    bg-grey-dark:$grey-dark,
-    bg-darksalmon: $darksalmon,
-    bg-whitesmoke:$whitesmoke);
-
-@each $name,
-$val in $bgcolors {
-    .#{$name} {
-        background-color: $val;
-
-        @if $name==bg-palrod {
-            & header {
-                background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -100px;
-            }
-        }
-    }
-}
-
 
 body {
 
@@ -498,6 +489,16 @@ body {
                 #222 11px);
     }
 
+    .bg-sienna-lines {
+        //scss mixin
+        background: repeating-linear-gradient(55deg,
+                #251707,
+                #251707 10px,
+                #282828 5px,
+                #282828 11px);
+    }
+
+
     .bg-footer-flower {
         background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) 200px 130px;
 
@@ -509,9 +510,12 @@ body {
 $borders: ((border-white, border, solid 1rem $white),
     (border-left-white, border-left, 0.425rem solid $white),
     (border-left-palrod, border-left, 0.225rem solid $palrod),
+    (border-left-tan, border-left, 0.8rem solid $tan),
     (border-olive, border, solid 0.0625rem $olive),
     (border-brown, border, solid 1rem $brown),
     (border-btm-brown, border-bottom, solid 0.3rem $brown),
+    (border-btm-tan, border-bottom, solid 2rem $tan),
+    (border-btm-peru, border-bottom, solid 2rem $peru),
     (border-color-brown, border-color, $brown),
     (border-left-grey-light, border-left, 0.625rem solid $grey-light));
 
@@ -549,6 +553,12 @@ $val in $bordercolors {
     &:hover {
         color: $khaki;
         text-decoration-color: $khaki;
+    }
+}
+
+.hover-txt-saddlebrown {
+    &:hover {
+        color:$saddlebrown;
     }
 }
 
@@ -615,6 +625,10 @@ $margspads: ((m-sm, margin, 1rem),
     (m-btm-sm, margin-bottom, 1rem),
     (m-btm-md, margin-bottom, 2rem),
     (m-btm-lg, margin-bottom, 5rem),
+    (m-top-sm, margin-top, 1rem),
+    (m-top-md, margin-top, 2rem),
+    (m-top-lg, margin-top, 5rem),
+    (m-lft-sm, margin-left, 1em),
     (p-sm, padding, 1rem),
     (p-md, padding, 2rem),
     (p-lg, padding, 5rem),
@@ -630,7 +644,8 @@ $margspads: ((m-sm, margin, 1rem),
     (p-top-sm, padding-top, 1rem),
     (p-top-md, padding-top, 2rem),
     (p-top-lg, padding-top, 5rem),
-    (p-lft-sm, padding-left, 1em));
+    (p-lft-sm, padding-left, 1em)
+    );
 
 @each $selector,
 $prop,
