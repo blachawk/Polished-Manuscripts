@@ -203,7 +203,7 @@
             setTimeout(function () {
                 document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks bg-whitesmoke");
             }, 100);
-
+            document.querySelector('main .intro div').setAttribute("class", "col wmin-300 wmax-800 p-md p-y-lg txt-center");
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
             document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
             document.querySelector('main .title').setAttribute("class", "title pen-red");
@@ -257,7 +257,7 @@
             setTimeout(function () {
                 document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks border-btm-brown");
             }, 100);
-
+            document.querySelector('main .intro div').setAttribute("class", "col wmin-300 wmax-800 p-md p-y-lg txt-center");
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
             document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
             document.querySelector('main .title').setAttribute("class", "title pen-cream");
@@ -301,26 +301,27 @@
 
             document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
 
-            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
+            document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-tan border-grey hover-sienna");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
-            document.querySelector(".top-menu").setAttribute("class", "top-menu border-tan bg-brown shadow-inset trans-opt-0");
+            document.querySelector(".top-menu").setAttribute("class", "top-menu border-tan bg-floralwhite shadow-inset trans-opt-0");
             document.querySelectorAll('.top-menu ul li').forEach(function (el) {
-                el.querySelector('a').setAttribute("class", "trans txt-tan fweight-400 after-bg-bisque"); 
+                el.querySelector('a').setAttribute("class", "trans txt-sienna fweight-400 after-bg-darkslatev2"); 
             });
 
-            document.querySelector('header').setAttribute("class", "bg-floralwhite shadow-fall");
+            document.querySelector('header').setAttribute("class", "bg-whitesmoke");
 
             document.querySelector('main .intro').classList.remove('animate');
             setTimeout(function () {
-                document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-inset animate redbooks bg-whitesmoke border-btm-peru");
+                document.querySelector('main .intro').setAttribute("class", "intro row bg-whitesmoke border-btm-peru");
             }, 100);
+            document.querySelector('main .intro div').setAttribute("class", "col wmin-300 p-md p-y-lg txt-center");
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
-            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
-            document.querySelector('main .title').setAttribute("class", "title pen-cream");
+            document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-sienna");
+            document.querySelector('main .title').setAttribute("class", "title");
 
-            document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center");
-            document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-peru");
-            document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-sienna");
+            document.querySelector('main .testimonial-title').setAttribute("class", "testimonial-title row jc-center shadow-fall");
+            document.querySelector('main .testimonial-title h3').setAttribute("class", "txt-sienna");
+            document.querySelector('main .testimonial-title h6').setAttribute("class", "fstyle-italic fweight-400 txt-grey-dark");
 
             document.querySelectorAll('main .testimonials ul').forEach(function (el) {
                 el.setAttribute("class", "");
@@ -340,10 +341,10 @@
             });
 
             document.querySelectorAll('footer .lnk').forEach(function (el) {
-                el.setAttribute("class", "lnk trans hover-txt-red icon txt-grey");
+                el.setAttribute("class", "lnk trans hover-txt-sienna icon txt-white");
             });
 
-            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
+            document.querySelector('footer .btn').setAttribute("class", "trans btn-tan font-reset p-sm hover-sienna active-border-white");
             document.querySelector('footer .copy div').setAttribute("class", "col bg-black shadow-fall txt-bisque");
             document.querySelector('footer .copy div a').setAttribute("class", "txt-tan");
 
@@ -368,8 +369,9 @@
 
             document.querySelector('main .intro').classList.remove('animate');
             setTimeout(function () {
-                document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-fall animate redbooks bg-whitesmoke");
+                document.querySelector('main .intro').setAttribute("class", "intro row bg-floralwhite shadow-inset animate redbooks bg-whitesmoke");
             }, 100);
+            document.querySelector('main .intro div').setAttribute("class", "col wmin-300 wmax-800 p-md p-y-lg txt-center");
             document.querySelector('main .intro h3').setAttribute("class", "fstyle-italic fweight-800 txt-grey-dark");
             document.querySelector('main .intro h5').setAttribute("class", "p-x-lg fstyle-italic fweight-500 txt-grey-dark");
             document.querySelector('main .title').setAttribute("class", "title pen-white");
@@ -396,7 +398,7 @@
             });
 
             document.querySelectorAll('footer .lnk').forEach(function (el) {
-                el.setAttribute("class", "lnk trans hover-txt-red icon txt-grey");
+                el.setAttribute("class", "lnk trans hover-txt-bisque icon txt-grey");
             });
 
             document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");

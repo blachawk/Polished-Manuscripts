@@ -193,6 +193,30 @@ html {
                             transition: 300ms;
                         }
                     }
+                    &.after-bg-darkslatev2 {
+
+                        &:hover {
+                            color: $saddlebrown;
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &:active {
+                            color: $grey-dark;
+                        }
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 0.2rem;
+                            text-align: right;
+                            opacity: 0.7;
+                            background: $darkslate;
+                            transition: 300ms;
+                        }
+                    }
 
                     &.after-bg-bisque {
 

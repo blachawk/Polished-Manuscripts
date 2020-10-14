@@ -241,6 +241,10 @@ $val in $bgcolors {
     justify-content: center;
 }
 
+.jc-start {
+    justify-content:start;
+}
+
 .ai-center {
     align-items: center;
     //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
@@ -365,6 +369,17 @@ ol {
     color: $grey-dark;
     background-color: $grey-light;
     border: solid 0.25rem $grey-dark;
+}
+
+.btn-tan {
+    display: block;
+    margin: 0 auto;
+    border-radius: 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: $palrod;
+    background-color: $sienna;
+    border: solid 0.25rem $tan;
 }
 
 //MULTI-SELECT 
@@ -556,16 +571,36 @@ $val in $bordercolors {
     }
 }
 
+.hover-txt-sienna {
+    &:hover {
+        color: $peru;
+    }
+}
+
 .hover-txt-saddlebrown {
     &:hover {
         color:$saddlebrown;
     }
 }
 
+.hover-txt-bisque {
+    &:hover {
+        color:$bisque;
+    }
+}
+
+
 .hover-dark {
     &:hover {
         color: $white;
         background-color: $red;
+    }
+}
+
+.hover-sienna {
+    &:hover {
+        color: $white;
+        background-color: $saddlebrown;
     }
 }
 
