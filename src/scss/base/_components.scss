@@ -122,7 +122,6 @@ $val in $bgcolors {
     }
 }
 
-
 //BORDERS CUSTOM
 
 $borders: ((border-white, border, solid 1rem $white),
@@ -377,17 +376,16 @@ ol {
     color: $grey-dark;
     background-color: $grey-light;
     border: solid 0.25rem $grey-dark;
-}
 
-.btn-tan {
-    display: block;
-    margin: 0 auto;
-    border-radius: 1rem;
-    text-decoration: none;
-    text-align: center;
-    color: $palrod;
-    background-color: $sienna;
-    border: solid 0.25rem $tan;
+    &.btn-olive {
+        color: $white;
+        background-color: $olive;
+    }
+
+    &.btn-tan {
+        color: $bisque;
+        background-color: $sienna;
+    }
 }
 
 //MULTI-SELECT ELEMENT

@@ -196,8 +196,8 @@
             });
 
             document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-grey-dark txt-grey");
-            document.querySelector('footer .copy div a').setAttribute("class", "txt-white");
+            document.querySelector('.copy div').setAttribute("class", "col bg-grey-dark txt-grey");
+            document.querySelector('.copy div a').setAttribute("class", "txt-white");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
@@ -252,9 +252,9 @@
                 el.setAttribute("class", "lnk trans hover-txt-red icon txt-brown");
             });
 
-            document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white border-color-brown");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-olive txt-palrod");
-            document.querySelector('footer .copy div a').setAttribute("class", "txt-white");
+            document.querySelector('footer .btn').setAttribute("class", "trans btn btn-olive font-reset p-sm hover-dark active-border-white border-color-brown");
+            document.querySelector('.copy div').setAttribute("class", "col bg-olive txt-palrod");
+            document.querySelector('.copy div a').setAttribute("class", "txt-white");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
@@ -309,9 +309,14 @@
                 el.setAttribute("class", "lnk trans hover-txt-sienna icon txt-white");
             });
 
-            document.querySelector('footer .btn').setAttribute("class", "trans btn-tan font-reset p-sm hover-sienna active-border-white");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-black shadow-fall txt-bisque");
-            document.querySelector('footer .copy div a').setAttribute("class", "txt-tan");
+            document.querySelector('footer .btn').setAttribute("class", "trans btn btn-tan font-reset p-sm hover-sienna active-border-white");
+            document.querySelector('.copy div').setAttribute("class", "col bg-black shadow-fall txt-bisque");
+            document.querySelector('.copy div a').setAttribute("class", "txt-tan");
+            
+            // document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
+            // document.querySelector('.copy div').setAttribute("class", "col bg-grey-dark txt-grey");
+            // document.querySelector('.copy div a').setAttribute("class", "txt-white");
+
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
 
@@ -367,8 +372,8 @@
             });
 
             document.querySelector('footer .btn').setAttribute("class", "trans btn font-reset p-sm hover-dark active-border-white");
-            document.querySelector('footer .copy div').setAttribute("class", "col bg-black shadow-inset txt-grey-light");
-            document.querySelector('footer .copy div a').setAttribute("class", "txt-grey-light");
+            document.querySelector('.copy div').setAttribute("class", "col bg-black shadow-inset txt-grey-light");
+            document.querySelector('.copy div a').setAttribute("class", "txt-grey-light");
 
             document.querySelector(".scroll-top-btn").setAttribute("class", "scroll-top-btn op-05 d-none bg-grey hover-child-goldenrod");
         }

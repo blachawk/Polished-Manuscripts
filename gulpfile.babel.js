@@ -50,8 +50,8 @@ export const cleanDist = () => del(['dist']);
 export const cleanPackage = () => del(['packaged']);
 
 //A CONTSTANT TO PUSH DEV OR PROD ASSETS
-//development (scss sourcemaps in devtools) or production (pure css in devtools)
-const PRODUCTION = yargs.argv.prod; //I don't know how to use this.
+//yargs.argv.prod(scss sourcemaps in devtools) or production (pure css in devtools)
+const PRODUCTION = 'production'; //yargs.argv.prod; //I don't know how to use this.
 
 //MANAGE SCSS
 export const styles = () => {
