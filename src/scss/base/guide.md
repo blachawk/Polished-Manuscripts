@@ -232,3 +232,53 @@ $prefixes-by-browser: ("firefox": moz, "safari": webkit, "ie": ms);
 
 
 ```
+
+
+
+
+
+# ECMAScript 
+
+    /*
+    Excellent learning points:
+    https://dev.to/shijiezhou/top-10-javascript-patterns-every-developers-like-168p
+    https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
+    
+    //Scrolling the document to position "250" horizontally and "110" vertically 
+    //https://www.w3schools.com/jsref/met_win_scrollto.asp
+    //https://stackoverflow.com/a/50590388/957186
+    //window.scrollTo(250, 110);
+
+    //ADD AND OR REMOVE CLASS AS TOGGLE CLASS
+    //https://www.digitalocean.com/community/tutorials/js-classlist
+    //this.classList.toggle('cool');
+    
+    // how to remove multiple instances of a classes at once
+    // var els = document.querySelectorAll('.something.active');
+    // for (var i = 0; i < els.length; i++) {
+    //     els[i].classList.remove('active');
+    // }    
+    */
+
+    //How fade in & Fade out an element on clicks via ECMAScript
+    // <div class="flex demo-toggle">
+    // <a class="m-trigger" href="#">my trigger</a>
+    // <div class="m-model op-0">my model</div>
+    // </div>
+    // the js...
+    // var model = document.querySelector('.m-model');
+    // var trigger = document.querySelector('.m-trigger');
+
+    // trigger.addEventListener('click', function (e) {
+    //     console.log('we are clicking the test trigger');
+    //     if (model.classList.contains("trans-opt-0") || model.classList.contains("trans-opt-1") ) {
+    //         model.classList.toggle("trans-opt-0");
+    //         model.classList.toggle("trans-opt-1");
+    //     } else {
+    //         if (window.getComputedStyle(model).getPropertyValue("opacity") == 0) {
+    //             model.classList.add("trans-opt-1")
+    //         } else {
+    //             model.classList.add("trans-opt-0");
+    //         }
+    //     }
+    // });

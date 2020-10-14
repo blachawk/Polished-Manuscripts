@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
+//THE CUSTOM LAYOUT
 html {
 
     body {
 
         font-family:$font-family-base;
 
-        //decor the text selection process
-        //scss mixin
+        //DECOR TEXT SELECTIONS
         //for Firefox
         ::-moz-selection {
             background-color: $coco;
@@ -24,13 +24,37 @@ html {
             color: $white;
         }
 
+        &.bg-palrod {
+            background: transparent url(#{$bg-path}/pm_bg_tree_1230x1614.png) -700px center no-repeat;
+        }
+    
+        .bg-dark-lines {
+            background: repeating-linear-gradient(55deg,
+                    #191919,
+                    #191919 10px,
+                    #222 5px,
+                    #222 11px);
+        }
+    
+        .bg-sienna-lines {
+            background: repeating-linear-gradient(55deg,
+                    #251707,
+                    #251707 10px,
+                    #282828 5px,
+                    #282828 11px);
+        }
+    
+        .bg-footer-flower {
+            background: transparent url(#{$bg-path}/pm_bg_leaves_670x1000.png) 200px 130px;
+        }
+
         .title {
 
             //scss mixin because...
             //we can also so pen-cream and pen-white for other layout options
             &.pen-red {
                 padding: 0 0 3rem 6rem;
-                background: transparent url(../../../dist/images/pm_bg_pen_1916x1902.png) no-repeat;
+                background: transparent url(#{$bg-path}/pm_bg_pen_1916x1902.png) no-repeat;
                 background-size: 100px 90px;
 
                 h4 {
@@ -40,7 +64,7 @@ html {
 
             &.pen-cream {
                 padding: 0 0 3rem 6rem;
-                background: transparent url(../../../dist/images/pm_bg_pen_cream_500x472.png) no-repeat;
+                background: transparent url(#{$bg-path}/pm_bg_pen_cream_500x472.png) no-repeat;
                 background-size: 100px 90px;
 
                 h4 {
@@ -50,22 +74,20 @@ html {
         }
 
         header {
-            background-color: transparent;
-
             &.bg-palrod {
-                background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) -100px -100px;
+                background: transparent url(#{$bg-path}/pm_bg_leaves_670x1000.png) -100px -100px;
             }
         }
 
         main {
             .animate {
                 &.redbooks {
-                    background-image: url(../../../dist/images/pm_redbooks_1296x400.png);
+                    background-image: url(#{$bg-path}/pm_redbooks_1296x400.png);
                     background-position: center right;
                     background-repeat: no-repeat;
 
                     //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-                    //IE11 does not support animate.  IE11 styling is active in trump scss file
+                    //Additional IE11 styling is active in trump scss file
                     animation: animate-books linear 2s 1 normal forwards;
                     animation-timing-function: cubic-bezier(1, .02, .66, .82);
 
@@ -76,14 +98,14 @@ html {
                         }
 
                         to {
-                            background-position: 47rem 0;
+                            background-position: 50rem 0;
                             opacity: 1;
                         }
                     }
                 }
             }
 
-            //decor author testimonial
+            //DECOR AUTHOR TESTIMONIALS ON HOME PAGE
             .author-list {
                 ul {
 

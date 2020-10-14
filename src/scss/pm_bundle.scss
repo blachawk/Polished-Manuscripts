@@ -1,6 +1,5 @@
 //_ac-DOCK ALL CUSTOM STYLE SHEET FILES**
 
-
 //CREATE CUSTOM VARS
 //HEADER
 //FOOTER
@@ -40,6 +39,14 @@ https://docs.elementor.com/article/663-global-fonts
 - if needed reshape the footer shell via scss
 */
 
+//GLOBAL REFERENCE TO IMAGE PATHS 
+//LOCAL
+$bg-path:"../../../dist/images";
+//BLUEHOST
+//$bg-path:"../../../dist/images/";
+//USAGE
+//background: url(#{$bg-path}/background.jpg) repeat-x fixed 0 0;
+
 //base
 @import './base/components';
 @import './base/flexbox_grid';
@@ -55,9 +62,11 @@ https://docs.elementor.com/article/663-global-fonts
 // @import './func/widgets';
 
 //templates
-@import './templates/404';
-@import './templates/pages';
-@import './templates/customposttype';
+
+//@import './templates/404';
+//@import './templates/pages';
+//@import './templates/customposttype';
+
 // @import './templates/archive';
 // @import './templates/attachment';
 // @import './templates/author';
@@ -75,7 +84,7 @@ https://docs.elementor.com/article/663-global-fonts
 // @import './templates/term';
 
 //plugins
-@import './plugins/contactform7';
+//@import './plugins/contactform7';
 
 //trumps today
 @import './trumps/ie11';

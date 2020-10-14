@@ -1,7 +1,9 @@
 //CUSTOM NAVIGATION MENUS
 
 html {
+
     body {
+
         .hamburger {
             z-index: 9999;
             position: fixed;
@@ -23,6 +25,7 @@ html {
 
                 //the x inside the button on click
                 &.es-clicked {
+
                     span.bars-white {
 
                         &:before,
@@ -37,8 +40,8 @@ html {
 
                             //scss mixin
                             box-shadow:
-                                0 0 0 0 #fff,
-                                0 0 0 0 #fff;
+                                0 0 0 0 $white,
+                                0 0 0 0 $white;
                         }
 
                         &:after {
@@ -70,12 +73,11 @@ html {
                         right: 0;
                         width: 2rem;
                         height: 0.20rem;
-                        background-color: #fff; //scss var
+                        background-color: $white;
 
-                        //scss mixin
                         box-shadow:
-                            0 0.4em 0 0 #fff,
-                            0 0.8em 0 0 #fff;
+                            0 0.4em 0 0 $white,
+                            0 0.8em 0 0 $white;
 
                         transition: all .2s ease-in-out;
                         transform: translateY(6px) rotate(0deg);
@@ -85,11 +87,12 @@ html {
         }
 
         .bigmack {
+
             z-index: 9999;
             position: fixed;
             top: 5rem;
             right: 1.7rem;
-            padding: 0;
+            //padding: 0;
 
             .generator-btn {
                 z-index: 9999;
@@ -130,12 +133,12 @@ html {
 
             &.es-bg-animate {
 
-                background-image: url(../../../dist/images/pm_logo_294x178.png);
+                background-image: url(#{$bg-path}/pm_logo_294x178.png);
                 background-position: center center;
                 background-repeat: no-repeat;
 
                 &.bg-grey-dark {
-                    background-image: url(../../../dist/images/pm_logo_onblack_294x178.png);
+                    background-image: url(#{$bg-path}/pm_logo_onblack_294x178.png);
                 }
 
                 //animation: name duration timing-function delay iteration-count direction fill-mode play-state;
@@ -179,7 +182,7 @@ html {
                         }
 
                         &:active {
-                            color: $sandybrown;
+                            color: $grey-dark;
                         }
 
                         &::after {
@@ -247,12 +250,13 @@ html {
         }
 
         .generator-menu {
+
             z-index: 9998;
             position: fixed;
             top: 4rem;
-            right: -15em; //transition back to 0;
+            right: -15em;
             width: 15rem;
-            height: 15rem;
+            height: 10rem;
             background-color: white;
             border-style: solid;
             border-width: 0.5rem;

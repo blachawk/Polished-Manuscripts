@@ -1,60 +1,15 @@
 "use strict";
 
 (function pmdefaults() {
-    //ES-TEST CONNECTION
-    //console.log('ecmascript connected now!!!!!');
-    /*
-    Excellent learning points:
-    https://dev.to/shijiezhou/top-10-javascript-patterns-every-developers-like-168p
-    https://stackoverflow.com/questions/11115998/is-there-a-way-to-add-remove-several-classes-in-one-single-instruction-with-clas 
-    
-    //Scrolling the document to position "250" horizontally and "110" vertically 
-    //https://www.w3schools.com/jsref/met_win_scrollto.asp
-    //https://stackoverflow.com/a/50590388/957186
-    //window.scrollTo(250, 110);
 
-    //ADD AND OR REMOVE CLASS AS TOGGLE CLASS
-    //https://www.digitalocean.com/community/tutorials/js-classlist
-    //this.classList.toggle('cool');
-    
-    // how to remove multiple instances of a classes at once
-    // var els = document.querySelectorAll('.something.active');
-    // for (var i = 0; i < els.length; i++) {
-    //     els[i].classList.remove('active');
-    // }    
-    */
-
-    //How fade in & Fade out an element on clicks via ECMAScript
-    // <div class="flex demo-toggle">
-    // <a class="m-trigger" href="#">my trigger</a>
-    // <div class="m-model op-0">my model</div>
-    // </div>
-    // the js...
-    // var model = document.querySelector('.m-model');
-    // var trigger = document.querySelector('.m-trigger');
-
-    // trigger.addEventListener('click', function (e) {
-    //     console.log('we are clicking the test trigger');
-    //     if (model.classList.contains("trans-opt-0") || model.classList.contains("trans-opt-1") ) {
-    //         model.classList.toggle("trans-opt-0");
-    //         model.classList.toggle("trans-opt-1");
-    //     } else {
-    //         if (window.getComputedStyle(model).getPropertyValue("opacity") == 0) {
-    //             model.classList.add("trans-opt-1")
-    //         } else {
-    //             model.classList.add("trans-opt-0");
-    //         }
-    //     }
-    // });
-
-        //IE11 HACK TO GET FOREACH FULLY WORKING IN IE11
+        //IE11 HACK TO GET FOREACH FULLY WORKING
         if (typeof NodeList.prototype.forEach !== 'function')  {
             NodeList.prototype.forEach = Array.prototype.forEach;
-        }
-        
+        }    
 })();
 
 (function pmdetect() {
+
     //ES-DETECT IF CSS3 ANIMATIONS ARE SUPPORTED
     var root = document.getElementsByTagName('html')[0];
     var animation = false;
@@ -72,6 +27,12 @@
 })();
 
 (function pmevents() {
+
+    //PREDEFINE IMAGE PATHS
+    //LOCAL
+     var bgpath = '/dist/images/';
+    //BH
+    //var bgpath = '/dist/images/';
     
     //ES-EVENTS ON ALL ANCHOR & BUTTON CLICKS
     var anchors = document.querySelectorAll('a, button');
@@ -184,18 +145,21 @@
     //ON SELECTOR OPTIONS FOR GENERATOR
     var mselect = document.querySelector(".select-options");
     mselect.addEventListener('change', (e) => {
-        //console.log(`e.target.value = ${ e.target.value }`);
+      
         if (e.target.value == 'white') {
 
             //WHITE
 
             document.querySelector('body').setAttribute("class", "");
 
-            document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
+            document.querySelector('header img').src = bgpath + "pm_logo_trans_768x662.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
             document.querySelector(".top-menu").setAttribute("class", "top-menu border-red bg-white shadow-inset trans-opt-0");
+            document.querySelectorAll('.top-menu ul li').forEach(function (el) {
+                el.querySelector('a').setAttribute("class", "trans txt-red fweight-400 after-bg-darkslate"); 
+            });
 
             document.querySelector('header').setAttribute("class", "header");
 
@@ -222,7 +186,7 @@
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-dark-lines");
-            document.querySelector('footer img').src = "/dist/images/pm_logo_onblack_294x178.png";
+            document.querySelector('footer img').src = bgpath + "pm_logo_onblack_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-white");
 
             document.querySelectorAll('footer h5').forEach(function (el) {
@@ -245,11 +209,14 @@
 
             document.querySelector('body').setAttribute("class", "bg-palrod");
 
-            document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
+            document.querySelector('header img').src = bgpath + "pm_logo_trans_768x662.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-brown border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
             document.querySelector(".top-menu").setAttribute("class", "top-menu border-olive bg-white shadow-inset trans-opt-0");
+            document.querySelectorAll('.top-menu ul li').forEach(function (el) {
+                el.querySelector('a').setAttribute("class", "trans txt-olive fweight-400 after-bg-darkslate"); 
+            });
 
             document.querySelector('header').setAttribute("class", "bg-palrod");
 
@@ -276,7 +243,7 @@
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg");
-            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer img').src = bgpath + "pm_logo_full_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-grey-dark");
 
             document.querySelectorAll('footer h5').forEach(function (el) {
@@ -299,7 +266,7 @@
 
             document.querySelector('body').setAttribute("class", "bg-floralwhite");
 
-            document.querySelector('header img').src = "/dist/images/P-M_Original_2000X2000-Trans-BG-768x662.png";
+            document.querySelector('header img').src = bgpath + "pm_logo_trans_768x662.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-tan border-grey hover-sienna");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
@@ -333,7 +300,7 @@
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-sienna-lines shadow-box-top m-top-md");
-            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer img').src = bgpath + "pm_logo_full_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-white");
 
             document.querySelectorAll('footer h5').forEach(function (el) {
@@ -356,7 +323,7 @@
 
             document.querySelector('body').setAttribute("class", "bg-grey-dark");
 
-            document.querySelector('header img').src = "/dist/images/pm_logo_onblack_294x253.png";
+            document.querySelector('header img').src = bgpath + "pm_logo_onblack_294x253.png";
 
             document.querySelector(".top-menu-btn").setAttribute("class", "top-menu-btn fsize-125 bg-red border-grey txt-grey hover-red active-red");
             document.querySelector(".top-menu-btn span").setAttribute("class", "bars-white");
@@ -390,7 +357,7 @@
             });
 
             document.querySelector('footer').setAttribute("class", "p-top-lg bg-grey-dark");
-            document.querySelector('footer img').src = "/dist/images/pm_logo_full_294x178.png";
+            document.querySelector('footer img').src = bgpath + "pm_logo_full_294x178.png";
             document.querySelector('footer h3').setAttribute("class", "txt-white");
 
             document.querySelectorAll('footer h5').forEach(function (el) {

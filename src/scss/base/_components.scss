@@ -1,6 +1,4 @@
-//COMPONENTS TO EXTEND CSS
-
-//GLOBALS & DEFAULTS SCSS
+//SITE SCSS COMPONENTS
 
 //COLORS | VARS
 
@@ -32,63 +30,6 @@ $grey-light:#ccc;
 $grey: grey;
 $grey-dark: #333;
 $black: #222;
-
-//DEFAULT FONT BASE
-$font-family-base: 'Playfair Display',
-serif;
-
-//FONT FAMILIES | MAPS 
-//https://sass-lang.com/documentation/values/maps
-//not in use at the moment...but with more layout options, this map will grow
-
-$fontfams: (ffam-arial: arial);
-
-@each $name,
-$val in $fontfams {
-    .#{$name} {
-        font-family: $val;
-        font-weight: initial;
-    }
-}
-
-//FONT SIZES | MAPS
-//https://sass-lang.com/documentation/values/maps
-
-$fontsizes: (fsize-08: 0.8rem,
-    fsize-1: 1rem,
-    fsize-125: 1.25rem,
-    fsize-13: 1.3rem,
-    fsize-15: 1.5rem,
-    fsize-175: 1.75rem,
-    fsize-2: 2rem);
-
-@each $name,
-$val in $fontsizes {
-    .#{$name} {
-        font-size: $val;
-    }
-}
-
-//FONT WEIGHTS | MAPS
-//https://sass-lang.com/documentation/values/maps
-//https://www.digitalocean.com/community/tutorials/sass-each-loops
-
-$fontweights: (fweight-bold: bold,
-    fweight-400: 400,
-    fweight-500: 500,
-    fweight-800: 800);
-
-@each $name,
-$val in $fontweights {
-    .#{$name} {
-        font-weight: $val;
-    }
-}
-
-//FONT STYLE
-.fstyle-italic {
-    font-style: italic;
-}
 
 //FONT COLORS | MAPS 
 //https://sass-lang.com/documentation/values/maps
@@ -142,23 +83,6 @@ $val in $fontcolors {
     text-decoration-color: $floralwhite;
 }
 
-//HEADING ELEMENTS | MAPS
-//https://sass-lang.com/documentation/values/maps
-
-$headings: (h6: 1.25rem,
-    h5: 1.50rem,
-    h4: 2rem,
-    h3: 3rem,
-    h2: 4rem,
-    h1: 5rem);
-
-@each $name,
-$val in $headings {
-    #{$name} {
-        font-size: $val;
-    }
-}
-
 //BACKGROUND COLORS | MAPS 
 //https://sass-lang.com/documentation/values/maps
 
@@ -189,7 +113,7 @@ $bgcolors: (bg-white: $white,
     bg-grey-light: $grey-light,
     bg-grey: $grey,
     bg-grey-dark: $grey-dark,
-    bg-black:$black); 
+    bg-black:$black);
 
 @each $name,
 $val in $bgcolors {
@@ -198,7 +122,115 @@ $val in $bgcolors {
     }
 }
 
-//MIXINS
+
+//BORDERS CUSTOM
+
+$borders: ((border-white, border, solid 1rem $white),
+    (border-left-white, border-left, 0.425rem solid $white),
+    (border-left-palrod, border-left, 0.225rem solid $palrod),
+    (border-left-tan, border-left, 0.8rem solid $tan),
+    (border-olive, border, solid 0.0625rem $olive),
+    (border-brown, border, solid 1rem $brown),
+    (border-btm-brown, border-bottom, solid 0.3rem $brown),
+    (border-btm-tan, border-bottom, solid 2rem $tan),
+    (border-btm-peru, border-bottom, solid 2rem $peru),
+    (border-color-brown, border-color, $brown),
+    (border-left-grey-light, border-left, 0.625rem solid $grey-light));
+
+@each $selector,
+$prop,
+$value in $borders {
+    .#{$selector} {
+        #{$prop}: $value;
+    }
+}
+
+//BORDER COLORS | MAPS 
+//https://sass-lang.com/documentation/values/maps
+
+$bordercolors: (border-red: $red,
+    border-grey: $grey);
+
+@each $name,
+$val in $bordercolors {
+    .#{$name} {
+        border-color: $val;
+    }
+}
+
+//FONT FAMILIES | MAPS 
+//https://sass-lang.com/documentation/values/maps
+//not in use at the moment...but with more layout options, this map will grow
+
+$font-family-base: 'Playfair Display',
+serif;
+
+//WE CAN ADD TO THIS LIST IF NEEDED IN THE FUTURE
+$fontfams: (ffam-arial: arial);
+
+@each $name,
+$val in $fontfams {
+    .#{$name} {
+        font-family: $val;
+        font-weight: initial;
+    }
+}
+
+//FONT SIZES | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$fontsizes: (fsize-08: 0.8rem,
+    fsize-1: 1rem,
+    fsize-125: 1.25rem,
+    fsize-13: 1.3rem,
+    fsize-15: 1.5rem,
+    fsize-175: 1.75rem,
+    fsize-2: 2rem);
+
+@each $name,
+$val in $fontsizes {
+    .#{$name} {
+        font-size: $val;
+    }
+}
+
+//FONT WEIGHTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+//https://www.digitalocean.com/community/tutorials/sass-each-loops
+
+$fontweights: (fweight-bold: bold,
+    fweight-400: 400,
+    fweight-500: 500,
+    fweight-800: 800);
+
+@each $name,
+$val in $fontweights {
+    .#{$name} {
+        font-weight: $val;
+    }
+}
+
+//FONT STYLE
+.fstyle-italic {
+    font-style: italic;
+}
+
+//HEADING ELEMENTS | MAPS
+//https://sass-lang.com/documentation/values/maps
+
+$headings: (h6: 1.25rem,
+    h5: 1.50rem,
+    h4: 2rem,
+    h3: 3rem,
+    h2: 4rem,
+    h1: 5rem);
+
+@each $name,
+$val in $headings {
+    #{$name} {
+        font-size: $val;
+    }
+}
 
 //SHADOWS | MIXIN
 //https://stackoverflow.com/questions/3525007/making-a-sass-mixin-with-optional-arguments
@@ -229,29 +261,6 @@ $val in $bgcolors {
     @include shadow(0, -2px, 27px, -5px, rgba(0, 0, 0, .76));
 }
 
-
-//FLEX COMPONENTS
-//https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
-
-.flex {
-    display: flex;
-}
-
-.jc-center {
-    justify-content: center;
-}
-
-.jc-start {
-    justify-content:start;
-}
-
-.ai-center {
-    align-items: center;
-    //effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
-    //https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
-}
-
-
 //GENERICS 
 
 .visible {
@@ -267,7 +276,7 @@ $val in $bgcolors {
 }
 
 .op-0 {
-    opacity:0;
+    opacity: 0;
 }
 
 .op-05 {
@@ -291,16 +300,15 @@ $val in $bgcolors {
 }
 
 .trans-opt-0 {
-    z-index:-1;
-    opacity:0;
-    transition:opacity 300ms;
-
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 300ms;
 }
 
 .trans-opt-1 {
-    z-index:9997;
-    opacity:1;
-    transition:opacity 300ms;
+    z-index: 9997;
+    opacity: 1;
+    transition: opacity 300ms;
 }
 
 //IMAGES
@@ -320,7 +328,7 @@ ol {
         list-style: none;
     }
 
-    //PRETTY DISC OPTION
+    //PRETTY DISC OPTION | DECOR SUB PAGES
     &.discs {
         list-style: none;
 
@@ -338,7 +346,7 @@ ol {
         }
     }
 
-    //PRETTY CIRCLE OPTION
+    //PRETTY CIRCLE OPTION | DECOR SUB PAGES
     &.circles {
         list-style: none;
 
@@ -382,7 +390,7 @@ ol {
     border: solid 0.25rem $tan;
 }
 
-//MULTI-SELECT 
+//MULTI-SELECT ELEMENT
 select {
     &.select-options {
         width: 140px;
@@ -449,7 +457,7 @@ select {
     }
 }
 
-//HORIZONTAL RULES 
+//HORIZONTAL RULES | DECOR SUB PAGES
 
 hr {
     &.sm {
@@ -482,92 +490,12 @@ blockquote {
     }
 }
 
-
-body {
-
-    &.bg-palrod {
-        //background: transparent url(../../../dist/images/pm_bg_tree_1744x2000.png) -900px center no-repeat;
-        //pm_bg_tree_1230x1614.png
-        background: transparent url(../../../dist/images/pm_bg_tree_1230x1614.png) -700px center no-repeat;
-    }
-
-    .bg-none {
-        background: none;
-    }
-
-    .bg-dark-lines {
-        //scss mixin
-        background: repeating-linear-gradient(55deg,
-                #191919,
-                #191919 10px,
-                #222 5px,
-                #222 11px);
-    }
-
-    .bg-sienna-lines {
-        //scss mixin
-        background: repeating-linear-gradient(55deg,
-                #251707,
-                #251707 10px,
-                #282828 5px,
-                #282828 11px);
-    }
-
-
-    .bg-footer-flower {
-        background: transparent url(../../../dist/images/pm_bg_leaves_670x1000.png) 200px 130px;
-
-    }
-}
-
-//BORDERS CUSTOM
-
-$borders: ((border-white, border, solid 1rem $white),
-    (border-left-white, border-left, 0.425rem solid $white),
-    (border-left-palrod, border-left, 0.225rem solid $palrod),
-    (border-left-tan, border-left, 0.8rem solid $tan),
-    (border-olive, border, solid 0.0625rem $olive),
-    (border-brown, border, solid 1rem $brown),
-    (border-btm-brown, border-bottom, solid 0.3rem $brown),
-    (border-btm-tan, border-bottom, solid 2rem $tan),
-    (border-btm-peru, border-bottom, solid 2rem $peru),
-    (border-color-brown, border-color, $brown),
-    (border-left-grey-light, border-left, 0.625rem solid $grey-light));
-
-@each $selector,
-$prop,
-$value in $borders {
-    .#{$selector} {
-        #{$prop}: $value;
-    }
-}
-
-//BORDER COLORS | MAPS 
-//https://sass-lang.com/documentation/values/maps
-
-$bordercolors: (border-red: $red,
-    border-grey: $grey);
-
-@each $name,
-$val in $bordercolors {
-    .#{$name} {
-        border-color: $val;
-    }
-}
-
 //HOVERS & ACTIVES
 
 .hover-red {
     &:hover {
         background-color: $red;
         text-decoration-color: $red;
-    }
-}
-
-.hover-txt-khaki {
-    &:hover {
-        color: $khaki;
-        text-decoration-color: $khaki;
     }
 }
 
@@ -579,16 +507,15 @@ $val in $bordercolors {
 
 .hover-txt-saddlebrown {
     &:hover {
-        color:$saddlebrown;
+        color: $saddlebrown;
     }
 }
 
 .hover-txt-bisque {
     &:hover {
-        color:$bisque;
+        color: $bisque;
     }
 }
-
 
 .hover-dark {
     &:hover {
@@ -642,6 +569,28 @@ $val in $bordercolors {
     }
 }
 
+
+//FLEX COMPONENTS
+//https://stackoverflow.com/questions/37386244/what-does-flex-1-mean
+// align-items: effects horizontal alignment because the parent's flex-direction is set to column.  if flex direction was row, than this value would impact the opposite!!!
+//https://stackoverflow.com/questions/35049262/difference-between-justify-content-vs-align-items
+
+.flex {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-start {
+    justify-content: start;
+}
+
+.ai-center {
+    align-items: center;
+}
+
 //PADDING & MARGIN HELPERS | MAPS 
 //https://sass-lang.com/documentation/values/maps
 //http://sass.js.org/
@@ -679,8 +628,7 @@ $margspads: ((m-sm, margin, 1rem),
     (p-top-sm, padding-top, 1rem),
     (p-top-md, padding-top, 2rem),
     (p-top-lg, padding-top, 5rem),
-    (p-lft-sm, padding-left, 1em)
-    );
+    (p-lft-sm, padding-left, 1em));
 
 @each $selector,
 $prop,
@@ -696,6 +644,7 @@ $value in $margspads {
 //https://www.sitepoint.com/sass-maps-vs-nested-lists/
 //https://www.w3schools.com/Css/css_syntax.asp
 $wmaxmin: ((wmax-50, max-width, 50px),
+    (wmax-150, max-width, 150px),
     (wmax-200, max-width, 200px),
     (wmax-300, max-width, 300px),
     (wmax-800, max-width, 800px),
