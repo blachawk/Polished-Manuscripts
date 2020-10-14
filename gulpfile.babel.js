@@ -13,10 +13,10 @@ import gzip from 'gulp-zip';
 import greplace from 'gulp-replace';
 import info from './package.json';
 
-//create our workspace directory paths
+//DIRECTORY PATHS
 const paths = {
   styles: {
-    src: ['src/scss/pm_bundle.scss'],   //src/sass/test_bundle.scss
+    src: ['src/scss/pm_bundle.scss'],
     dest: 'dist/css'
   },
   images: {
@@ -29,7 +29,7 @@ const paths = {
   },
   views: {
     src: ['src/views/**/*'],
-    dest: 'dist/views'
+    dest: 'dist/'
   },
   other: {
     src: ['src/**/*','!src/{images,scripts,scss,views}','!src/{images,scripts,scss,views}/**/*'],
@@ -38,16 +38,22 @@ const paths = {
   package: {
     src: ['**/*', '!.vscode','!node_modules{,/**}','!packaged{,/**}','!src{,/**}','!dist/login{,/**}','!dist/others{,/**}','!dist/uan{,/**}','!.babelrc','!.gitignore','!gulpfile.babel.js','!package.json','!package-lock.json'],
     dest: 'packaged'
+  },
+  packageBH:{
+    src: ['**/*','!.vscode{,/**}','!lib{,/**}','!node_modules{,/**}','!packaged{,/**}','!src{,/**}','!src/views{,/**}','!.babelrc','!.gitignore','!404.php','!archive.php','!comments.php','!footer.php','!functions.php','!gulpfile.babel.js','!header.php','!index.php','!package-lock.json','!package.json','!page.php','!screenshot.jpg','!search.php','!sidebar.php','!single.php','!style.css'],
+    dest: 'packaged'
   }
 };
 
-//allow the dist directory to be cleaned out
-export const clean = () => del(['dist']);
+//CLEAN THE DIST DIRECTORY
+export const cleanDist = () => del(['dist']);
+export const cleanPackage = () => del(['packaged']);
 
-//a constant to determine if we want to push dev or prod assets | used below
-const PRODUCTION = yargs.argv.prod;
+//A CONTSTANT TO PUSH DEV OR PROD ASSETS
+//development (scss sourcemaps in devtools) or production (pure css in devtools)
+const PRODUCTION = 'production'; //yargs.argv.prod; //I don't know how to use this.
 
-//manage scss
+//MANAGE SCSS
 export const styles = () => {
   return gulp.src(paths.styles.src)
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
@@ -60,12 +66,12 @@ export const styles = () => {
     .pipe(bserver.stream());
 }
 
-//manage js
+//JAVASCRIPT
 export const scripts = () => {
 
-  //webpack stream required options
+  //WEBPACK STREAM OPTIONS
   var options = {
-    mode: "development" //or production
+    mode: "development",
   };
 
   return gulp.src(paths.scripts.src)
@@ -97,42 +103,42 @@ export const scripts = () => {
   .pipe(gulp.dest(paths.scripts.dest));
 }
 
-//manage images
+//MANAGE IMAGES
 export const images = () => {
   return gulp.src(paths.images.src)
     .pipe(gulp.dest(paths.images.dest))
 }
 
-//manage other assets(optional)
+//MANAGE OTHER ASSETS
 export const other = () => {
   return gulp.src(paths.other.src)
   .pipe(gulp.dest(paths.other.dest));
 }
 
-//manage views (optional)
+//MANAGE VIEWS
 export const views = () => {
   return gulp.src(paths.views.src)
   .pipe(gulp.dest(paths.views.dest));
 }
 
-//create the browsersync server & initialize locally with our workspace location
+//MANAGE BROWSERSYNC SERVER & INITIALIZE WORKSPACE
 const bserver = browserSync.create(); 
 export const serve = (done) =>  {
   bserver.init({
     port: 8081,
-    //proxy: "http://local.pm/"
-    proxy: "http://local.pmv/dist/views/"
+    //proxy: "http://local.pm/" //wordpress dev
+    proxy: "http://local.pmv/"  //static layout dev for bluehost
   });
   done();
 }
 
-//create a reloading component via browsersync for watching purposes | used below
+//HELPS THE BROWSER SYNC RELOADING PROCESS WHILE WATCHING, BELOW
 export const reload = (done) => {
   bserver.reload();
   done();
 }
 
-//watch everything
+//WATCH EVERYTHING
 export const watch = () => {
   gulp.watch('src/scss/**/*.scss', styles);
   gulp.watch('src/scripts/**/*.js', gulp.series(scripts,reload));
@@ -142,7 +148,7 @@ export const watch = () => {
   gulp.watch(paths.views.src, gulp.series(views,reload));
 }
 
-//compress project to zip package (optional)
+//CRAFT A PACKAGE FOR THE PROJECT
 export const compress = () => {
   return gulp.src(paths.package.src)
   .pipe(greplace('_ac', info.name))
@@ -150,7 +156,16 @@ export const compress = () => {
   .pipe(gulp.dest(paths.package.dest));
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, other, views), serve, watch);
-export const prod = gulp.series(clean, gulp.parallel(styles, scripts, images));
-export const bundle = gulp.series(prod,compress);
-export default dev;
+//CRAFT A PACKAGE FOR THE PROJECT SPECIFICALLY FOR BLUEHOST
+export const packageBlueHost = () => {
+  return gulp.src(paths.packageBH.src)
+  .pipe(gzip(`pm-bluehost.zip`))
+  .pipe(gulp.dest(paths.packageBH.dest));
+}
+
+export const _dev = gulp.series(cleanDist, cleanPackage, gulp.parallel(styles, scripts, images, other, views), serve, watch);
+export const _prod = gulp.series(cleanDist, cleanPackage, gulp.parallel(styles, scripts, images, other, views));
+export const _cleanEverything = gulp.series(cleanDist,cleanPackage);
+export const _package = gulp.series(_prod,packageBlueHost);
+//export const bundle = gulp.series(prod,compress);
+export default _dev;

@@ -282,3 +282,63 @@ $prefixes-by-browser: ("firefox": moz, "safari": webkit, "ie": ms);
     //         }
     //     }
     // });
+
+
+
+
+
+
+
+
+
+ <!--
+        View 1 - https://auteur.g5plus.net/ 
+        gfont - <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+        font-family: 'Playfair Display', serif;
+
+        View 2 - http://wpbingosite.com/wordpress/bootin/home-3/ 
+        gfont - <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+        font-family: 'Peddana', sans-serif;
+        
+        View 3 - https://mindcare.qodeinteractive.com/
+        gfont - <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+        font-family: 'El Messiri', sans-serif;
+        
+        View 4 - http://kodeforest.net/wp-demo/bookclub/
+        gfont - <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+        font-family: 'Playfair Display', serif;
+        
+        View 5 - https://bebo.beautheme.com/blogs/
+        gfont - <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        font-family: 'Ubuntu', sans-serif;
+
+        Add placeholders where needed
+        https://plchldr.co/
+        i.e.
+        <img src="https://plchldr.co/i/500x250" alt="plchldr.co">
+        
+        Create a pure CSS Tooltip and use it when needed
+        https://www.bitdegree.org/learn/css-tooltip
+
+        IE11 issues to pay attention to
+        https://stackoverflow.com/a/30604836/957186
+
+        Centering with Flex
+        https://coryrylan.com/blog/how-to-center-in-css-with-flexbox
+
+        For every layout, have the classes that switch backgrounds, colors, font families, font styles, font weights, font sizes, shadows, borders, images, onto the elements.  Everything else else can be managed by parent classes on elements.
+    -->
+    
+    <!--
+        Udemy - https://www.udemy.com/course/css3-flexbox-course-build-5-real-flexible-layouts/learn/lecture/15965480#questions
+
+        Add placeholders where needed
+        https://plchldr.co/
+        i.e.
+        <img src="https://plchldr.co/i/500x250" alt="plchldr.co">
+        
+        Create a pure CSS Tooltip and use it when needed
+        https://www.bitdegree.org/learn/css-tooltip
+
+        IE11 issues to pay attention to
+        https://stackoverflow.com/a/30604836/957186

@@ -29,10 +29,8 @@
 (function pmevents() {
 
     //PREDEFINE IMAGE PATHS
-    //LOCAL
-     var bgpath = '/dist/images/';
-    //BH
-    //var bgpath = '/dist/images/';
+
+     var bgpath ='/images/';
     
     //ES-EVENTS ON ALL ANCHOR & BUTTON CLICKS
     var anchors = document.querySelectorAll('a, button');
@@ -142,7 +140,7 @@
         }
     });
 
-    //ON SELECTOR OPTIONS FOR GENERATOR
+    //ON SELECT OPTIONS FOR GENERATOR
     var mselect = document.querySelector(".select-options");
     mselect.addEventListener('change', (e) => {
       
